@@ -428,6 +428,23 @@ button {
     background-color: #D8B97A;
 }
 
+.button-cat-met{
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: .938rem;
+    display: inline-block;
+    background-color: #111111;
+    color: #fcf9f9;
+    border: 3px solid #ffffff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .3s;
+}
+.button-cat-met:hover {
+    background-color: #D8B97A;
+}
+
 .buttonicon {
     font-size: 1.25rem;
 }
@@ -1240,7 +1257,7 @@ opacity: 0.7;
   transition: background .3s ease, color .3s ease;
 }
 .btn-submit:hover {
-  background: #dca929;
+  background: #D8B97A;
   color: #000;
   transform: translateY(-1px);
 }
@@ -2915,4 +2932,94 @@ opacity: 0.7;
 /* Sin la animación, el bloque simplemente aparece */
 @media (prefers-reduced-motion: reduce) {
     .about-mas { transition: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   BOTONES  ·  .button-about  ·  .button-cat-met
+   ═══════════════════════════════════════════════
+   Mismo estilo que .btn-submit del formulario (bloque negro, mayúsculas
+   con tracking, sin radio) y el relleno dorado de .button-cat, que entra
+   desde la izquierda al pasar el cursor.
+
+   Antes eran cajas con borde blanco de 2-3px y radio de .5rem: un borde
+   blanco sobre fondo blanco no se ve, y el radio los dejaba con aire de
+   plantilla. */
+
+.button-about,
+.button-cat-met {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--negro);
+    color: #fff;
+    border: 1px solid var(--negro);
+    border-radius: 0;
+    padding: .95rem 2.1rem;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+
+    transition: color .3s ease, border-color .3s ease;
+}
+
+/* El relleno: anima transform y no width, así no fuerza reflow en cada
+   frame. z-index -1 lo deja por detrás del texto. */
+.button-about::before,
+.button-cat-met::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+    z-index: -1;
+}
+
+.button-about:hover,
+.button-cat-met:hover {
+    color: #111;
+    border-color: var(--dorado);
+    background: var(--negro);   /* anula el hover viejo, que pintaba el fondo de golpe */
+}
+
+.button-about:hover::before,
+.button-cat-met:hover::before {
+    transform: scaleX(1);
+}
+
+.button-about:focus-visible,
+.button-cat-met:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+/* ── Variante secundaria ──
+   .button-outline estaba puesta en dos botones del index pero no existía
+   en ninguna hoja: los tres se veían iguales y no se distinguía cuál era
+   la acción principal. */
+.button-about.button-outline {
+    background: transparent;
+    color: var(--negro);
+    border-color: rgba(0, 0, 0, .28);
+}
+
+.button-about.button-outline:hover {
+    background: transparent;
+    color: #111;
+    border-color: var(--dorado);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button-about::before,
+    .button-cat-met::before { transition: none; }
 }
