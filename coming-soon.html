@@ -14,6 +14,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- ICONOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Debe ir en el <head> y lo antes posible: el navegador restaura la
+         posicion de scroll al recargar, y en este sitio el header y el footer
+         se inyectan con fetch DESPUES de cargar, asi que esa posicion termina
+         apuntando a otro contenido (normalmente el formulario, lo mas bajo de
+         la pagina). Puesto al final del body llegaba tarde. -->
+    <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 </head>
 
 <body>

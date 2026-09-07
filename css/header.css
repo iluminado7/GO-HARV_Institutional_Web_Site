@@ -121,53 +121,139 @@
 
 /* ================= DROPDOWN ================= */
 
+/* ═══════════════════════════════════════════════
+   SUBMENU VERTICAL
+   ═══════════════════════════════════════════════
+   Antes se abria en horizontal (display:flex en fila): obligaba a leer
+   de costado, no escalaba al crecer la lista y empujaba el panel fuera
+   del centro. Ahora es una columna: se lee de arriba a abajo, admite una
+   descripcion por item y soporta cualquier cantidad de entradas. */
+
 .dropdown-menu{
     position:absolute;
-    top:130%;
-    left:50%;
-    transform:translate(-50%,-10px);
+    top:100%;
+    left:0;
+    min-width:260px;
     display:flex;
-    gap:1.5rem;
-    background:#ffffff;
-    border:1px solid #e5e5e5;
-    box-shadow:0 10px 30px rgba(0, 0, 0, 0.126);
-    padding:1rem 1.5rem;
+    flex-direction:column;   /* la vertical */
+    gap:2px;
+
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(191,174,118,.28);
+    /* Filo dorado arriba: marca la pertenencia a la marca sin recargar */
+    border-top:2px solid var(--dorado);
+    border-radius:0 0 10px 10px;
+    box-shadow:0 18px 44px rgba(0,0,0,.14);
+
+    padding:.5rem;
+    margin-top:.5rem;
+
     opacity:0;
     visibility:hidden;
-    transition:.3s;
-    border-radius: 8px;
-        font-family:  'Montserrat', sans-serif;
+    transform:translateY(-8px);
+    transition:opacity .22s ease, transform .22s cubic-bezier(.22,1,.36,1), visibility .22s;
+
+    font-family:'Montserrat', sans-serif;
+    z-index:120;
 }
 
-.dropdown:hover .dropdown-menu{
-    opacity:1;
-    visibility:visible;
-    transform:translate(-50%,0);
+/* Puente invisible: sin esto el menu se cierra al cruzar el hueco
+   entre el link y el panel, y se vuelve dificil de usar. */
+.dropdown-menu::before{
+    content:"";
+    position:absolute;
+    top:-.75rem; left:0; right:0;
+    height:.75rem;
 }
 
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
 .dropdown.open .dropdown-menu{
     opacity:1;
     visibility:visible;
-    transform:translate(-50%,0);
+    transform:translateY(0);
 }
 
-
-
+/* ── Items ── */
 .dropdown-menu a{
-    padding:.4rem .75rem;
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    padding:.7rem .9rem;
+    border-radius:6px;
     color:#111;
     font-size:14px;
     white-space:nowrap;
+    position:relative;
+    transition:background .2s ease, color .2s ease, padding-left .2s ease;
+}
+
+/* Barra dorada que entra desde la izquierda al pasar el cursor */
+.dropdown-menu a::before{
+    content:"";
+    position:absolute;
+    left:0; top:50%;
+    transform:translateY(-50%);
+    width:2px; height:0;
+    background:var(--dorado);
+    border-radius:2px;
+    transition:height .22s cubic-bezier(.22,1,.36,1);
 }
 
 .dropdown-menu a:hover{
-    color: #BFAE76;
+    background:rgba(191,174,118,.10);
+    padding-left:1.15rem;
 }
 
-.dropdown > .navLink::after{
-    content:"▾";
-    margin-left:.4rem;
-    font-size:12px;
+.dropdown-menu a:hover::before{
+    height:60%;
+}
+
+/* Nombre de la unidad */
+.dd-nombre{
+    font-weight:600;
+    letter-spacing:.02em;
+}
+
+/* Linea descriptiva: dice que hace cada unidad sin entrar a la pagina */
+.dd-desc{
+    font-size:11.5px;
+    font-weight:400;
+    color:#8a8a8a;
+    letter-spacing:.01em;
+}
+
+.dropdown-menu a:hover .dd-nombre{
+    color:var(--dorado-oscuro);
+}
+
+/* Chevron del submenu.
+   Va en ::before y no en ::after porque ::after ya es la barra dorada
+   del hover: al reutilizarlo, los items con submenu se quedaban sin
+   subrayado y rompian la coherencia con el resto del menu. */
+.dropdown > .navLink{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+}
+
+.dropdown > .navLink::before{
+    content:"";
+    order:2;                      /* lo manda a la derecha del texto */
+    width:6px; height:6px;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    transform:rotate(45deg) translateY(-2px);
+    transition:transform .25s cubic-bezier(.22,1,.36,1);
+    opacity:.7;
+}
+
+/* Al abrirse, el chevron apunta hacia arriba */
+.dropdown:hover > .navLink::before,
+.dropdown.open > .navLink::before{
+    transform:rotate(-135deg) translateY(-2px);
+    opacity:1;
 }
 
 
@@ -240,28 +326,43 @@
 
 /* DROPDOWN COLORS */
 
+/* ── El panel acompaña al header ──
+   Header negro (arriba de todo) -> panel oscuro.
+   Header blanco (al scrollear)  -> panel claro.
+   Antes solo se cambiaba el fondo y el color del texto, y quedaban sin
+   ajustar el borde, la descripcion y el hover: sobre negro la linea
+   descriptiva casi no se leia. */
+
 .header:not(.scroll-header) .dropdown-menu{
-    background:#000;
+    background:rgba(10,10,10,.97);
+    border-color:rgba(191,174,118,.30);
+    box-shadow:0 18px 44px rgba(0,0,0,.55);
 }
 
 .header:not(.scroll-header) .dropdown-menu a{
-    color:#fff;
+    color:#f0f0f0;
+}
+
+.header:not(.scroll-header) .dropdown-menu .dd-desc{
+    color:#9a9a9a;
+}
+
+.header:not(.scroll-header) .dropdown-menu a:hover{
+    background:rgba(191,174,118,.14);
+}
+
+/* Sobre fondo oscuro el dorado claro rinde mejor que el oscurecido */
+.header:not(.scroll-header) .dropdown-menu a:hover .dd-nombre{
+    color:var(--dorado);
 }
 
 .scroll-header .dropdown-menu a{
-    color:#000;
-}
-
-.scroll-header .dropdown-menu a:hover{
-    color:#BFAE76;
+    color:#111;
 }
 
 
-@media(min-width:768px){
-    .dropdown > .navLink::after{
-        content:"";
-    }
-}
+/* (Se elimino la regla que borraba el indicador en desktop: sin el, nada
+   avisaba que un item tenia submenu hasta pasarle el cursor por encima.) */
 
 /* ================= MOBILE ================= */
 
@@ -355,18 +456,40 @@
     opacity:1;
 }
 
+/* El "padding-left:40%" que habia aca empujaba los items casi fuera del
+   panel: en la estructura nueva (nombre + descripcion) el texto quedaba
+   cortado contra el borde derecho. Se centra de verdad, con el ancho
+   completo disponible. */
 .navM .dropdown-menu li{
-    width:auto;
-    display:flex;
-    justify-content:center;
-    padding-left: 40%;
+    width:100%;
+    display:block;
+    padding-left:0;
 }
 
 .navM .dropdown-menu a{
-    display: block;
+    display:flex;
+    flex-direction:column;   /* nombre arriba, descripcion abajo */
+    align-items:center;
+    gap:2px;
     padding:.75rem 1rem;
     text-align:center;
+    white-space:normal;      /* en pantallas angostas el texto puede cortar */
     color:#000 !important;
+}
+
+/* En mobile la barra dorada lateral no aporta: el panel ocupa todo el
+   ancho y el desplazamiento del texto se veria como un salto. */
+.navM .dropdown-menu a:hover{
+    padding-left:1rem;
+    background:rgba(191,174,118,.10);
+}
+
+.navM .dropdown-menu a::before{
+    display:none;
+}
+
+.navM .dd-desc{
+    font-size:11px;
 }
 
 

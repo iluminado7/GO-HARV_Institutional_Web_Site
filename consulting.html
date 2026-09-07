@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/consulting.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Debe ir en el <head> y lo antes posible: el navegador restaura la
+         posicion de scroll al recargar, y en este sitio el header y el footer
+         se inyectan con fetch DESPUES de cargar, asi que esa posicion termina
+         apuntando a otro contenido (normalmente el formulario, lo mas bajo de
+         la pagina). Puesto al final del body llegaba tarde. -->
+    <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 </head>
 <body>
 

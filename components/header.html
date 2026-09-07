@@ -12,41 +12,105 @@
     <div class="navM" id="nav-menu">
       <ul class="navList">
 
-        <li class="navItem">
-          <a href="index.html#about" class="navLink" data-i18n="nav.nosotros">Nosotros</a>
-        </li>
-
-        <li class="navItem">
-          <a href="team.html" class="navLink" data-i18n="nav.team">Team</a>
-        </li>
-
+        <!-- ── UNIDADES DE NEGOCIO ──
+             Primero: es lo que la empresa vende. El submenú es vertical y
+             cada unidad lleva una línea que dice qué hace, para que se
+             entienda la oferta sin entrar a la página. -->
         <li class="navItem dropdown">
           <a href="index.html#categorias" class="navLink" data-i18n="nav.unidades">Unidades de Negocio</a>
-          <ul class="dropdown-menu">
-            <li><a href="academy.html" translate="no">Academy</a></li>
-            <li><a href="business.html"    translate="no">Business</a></li>
-            <li><a href="compliance.html"  translate="no">Compliance</a></li>
-            <li><a href="consulting.html"  translate="no">Consulting</a></li>
-            <li><a href="ia.html"          translate="no">AI</a></li>
+          <ul class="dropdown-menu dropdown-menu--unidades">
+            <li>
+              <a href="consulting.html">
+                <span class="dd-nombre" translate="no">Consulting</span>
+                <span class="dd-desc" data-i18n="nav.dd.consulting">Consultoría estratégica</span>
+              </a>
+            </li>
+            <li>
+              <a href="business.html">
+                <span class="dd-nombre" translate="no">Business</span>
+                <span class="dd-desc" data-i18n="nav.dd.business">Expansión y desarrollo</span>
+              </a>
+            </li>
+            <li>
+              <a href="academy.html">
+                <span class="dd-nombre" translate="no">Academy</span>
+                <span class="dd-desc" data-i18n="nav.dd.academy">Formación ejecutiva</span>
+              </a>
+            </li>
+            <li>
+              <a href="compliance.html">
+                <span class="dd-nombre" translate="no">Compliance</span>
+                <span class="dd-desc" data-i18n="nav.dd.compliance">Ética y cumplimiento</span>
+              </a>
+            </li>
+            <li>
+              <a href="ia.html">
+                <span class="dd-nombre" translate="no">AI</span>
+                <span class="dd-desc" data-i18n="nav.dd.ai">Inteligencia artificial aplicada</span>
+              </a>
+            </li>
           </ul>
         </li>
 
+        <!-- ── MÉTODO ── -->
         <li class="navItem dropdown">
           <a href="metodo.html" class="navLink" data-i18n="nav.metodo">Método GoHarv.</a>
           <ul class="dropdown-menu">
-            <li><a href="metodo.html#como-trabajamos" data-i18n="nav.comoTrabajamos">¿Cómo trabajamos?</a></li>
+            <li>
+              <a href="metodo.html">
+                <span class="dd-nombre" data-i18n="nav.elMetodo">El método</span>
+              </a>
+            </li>
+            <li>
+              <a href="metodo.html#como-trabajamos">
+                <span class="dd-nombre" data-i18n="nav.comoTrabajamos">¿Cómo trabajamos?</span>
+              </a>
+            </li>
           </ul>
         </li>
 
+        <!-- ── NOSOTROS ──
+             Team pasa acá adentro: es información institucional, su lugar
+             natural. El menú baja de 6 items a 5. -->
+        <li class="navItem dropdown">
+          <a href="index.html#about" class="navLink" data-i18n="nav.nosotros">Nosotros</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="index.html#about">
+                <span class="dd-nombre" data-i18n="nav.quienesSomos">Quiénes somos</span>
+              </a>
+            </li>
+            <li>
+              <a href="team.html">
+                <span class="dd-nombre" data-i18n="nav.team">Team</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- ── CONTENIDO ── -->
         <li class="navItem dropdown">
           <a href="#contenido" class="navLink" data-i18n="nav.contenido">Contenido</a>
           <ul class="dropdown-menu">
-            <li><a href="coming-soon.html" data-i18n="nav.novedades">Novedades</a></li>
-            <li><a href="coming-soon.html" data-i18n="nav.insights">Insights</a></li>
-            <li><a href="coming-soon.html" data-i18n="nav.eventos">Eventos</a></li>
+            <li>
+              <a href="coming-soon.html">
+                <span class="dd-nombre" data-i18n="nav.novedades">Novedades</span>
+              </a>
+            </li>
+            <li>
+              <a href="coming-soon.html">
+                <span class="dd-nombre" data-i18n="nav.insights">Insights</span>
+              </a>
+            </li>
+            <li>
+              <a href="coming-soon.html">
+                <span class="dd-nombre" data-i18n="nav.eventos">Eventos</span>
+              </a>
+            </li>
           </ul>
         </li>
 
+        <!-- ── CONTACTO ── -->
         <li class="navItem">
           <a href="index.html#contacto" class="navLink" data-i18n="nav.contacto">Contacto</a>
         </li>
@@ -56,11 +120,11 @@
 
     <!-- SELECTOR ES | EN | PT -->
     <div class="lang-switcher">
-      <button class="lang-btn lang-active" data-lang="es"><img src="https://flagcdn.com/w20/es.png"></button>
+      <button class="lang-btn lang-active" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="Español"></button>
       <span class="lang-divider"></span>
-      <button class="lang-btn" data-lang="en"><img src="https://flagcdn.com/w20/us.png"></button>
+      <button class="lang-btn" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="English"></button>
       <span class="lang-divider"></span>
-      <button class="lang-btn" data-lang="pt"><img src="https://flagcdn.com/w20/br.png"></button>
+      <button class="lang-btn" data-lang="pt"><img src="https://flagcdn.com/w20/br.png" alt="Português"></button>
     </div>
 
     <div class="navToggle" id="nav-toggle">

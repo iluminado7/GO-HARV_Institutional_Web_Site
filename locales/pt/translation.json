@@ -14,24 +14,37 @@
     "novedades": "Novidades",
     "insights": "Insights",
     "eventos": "Eventos",
-    "contacto": "Contato"
+    "contacto": "Contato",
+    "quienesSomos": "Quem somos",
+    "dd": {
+      "consulting": "Consultoria estratégica",
+      "business": "Expansão e desenvolvimento",
+      "academy": "Formação executiva",
+      "compliance": "Ética e conformidade",
+      "ai": "Inteligência artificial aplicada"
+    },
+    "elMetodo": "O método"
   },
   "home": {
     "slide1": {
       "title": "Relatórios sobre<br>os Departamentos Jurídicos<br>da Argentina 2025",
       "desc": "Baixe aqui o documento completo",
-      "cta": "VER MAIS"
+      "cta": "Baixar o relatório",
+      "eyebrow": "Relatório"
     },
     "slide2": {
       "title": "THE<br>GoHarv.®<br>TEAM",
       "desc": "Governança executiva. Direção estratégica. Ecossistema integrado",
-      "cta": "VER MAIS"
+      "cta": "Conhecer a equipe",
+      "eyebrow": "Equipe"
     },
     "slide3": {
       "title": "Experiência, Ética<br>e Comprometimento Profissional",
       "desc": "Soluções jurídicas para empresas modernas",
-      "cta": "VER MAIS"
-    }
+      "cta": "Ver o método",
+      "eyebrow": "Nossa abordagem"
+    },
+    "scroll": "Descubra mais"
   },
   "about": {
     "hashtag": "#SomosGoHarv.®",
@@ -193,7 +206,7 @@
       "sub": "Corpo acadêmico. Liderança intelectual.",
       "p1": "A unidade de negócio denominada GoHarv. ACADEMY™ opera como uma Business School. Conta com profissionais que integram o corpo acadêmico da GoHarv.®, responsáveis pelo design e ministração de programas de formação executiva em diferentes áreas do negócio.",
       "p2": "Os programas acadêmicos da GoHarv.® são ministrados por profissionais com experiência real no mercado, que integram o ecossistema a partir da prática, da pesquisa e da formação executiva."
-      },
+    },
     "cta": {
       "servicios": "👉 Conheça os serviços que oferecemos",
       "academy": "👉 Ver programas e certificações",

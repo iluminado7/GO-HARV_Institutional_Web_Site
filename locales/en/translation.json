@@ -14,24 +14,37 @@
     "novedades": "News",
     "insights": "Insights",
     "eventos": "Events",
-    "contacto": "Contact"
+    "contacto": "Contact",
+    "quienesSomos": "About us",
+    "dd": {
+      "consulting": "Strategic consulting",
+      "business": "Growth and development",
+      "academy": "Executive training",
+      "compliance": "Ethics and compliance",
+      "ai": "Applied artificial intelligence"
+    },
+    "elMetodo": "The method"
   },
   "home": {
     "slide1": {
       "title": "Reports on<br>Legal Departments<br>in Argentina 2025",
       "desc": "Download the full document here",
-      "cta": "SEE MORE"
+      "cta": "Download the report",
+      "eyebrow": "Report"
     },
     "slide2": {
       "title": "THE<br>GoHarv.®<br>TEAM",
       "desc": "Executive governance. Strategic direction. Integrated ecosystem",
-      "cta": "SEE MORE"
+      "cta": "Meet the team",
+      "eyebrow": "Team"
     },
     "slide3": {
       "title": "Experience, Ethics<br>and Professional Commitment",
       "desc": "Legal solutions for modern businesses",
-      "cta": "SEE MORE"
-    }
+      "cta": "See the method",
+      "eyebrow": "Our approach"
+    },
+    "scroll": "Discover more"
   },
   "about": {
     "hashtag": "#WeAreGoHarv.®",
@@ -187,14 +200,13 @@
       "sub": "Network of independent professional advisors and consultants, experts in various disciplines.",
       "p1": "At GoHarv.® we bring together professionals with executive experience in strategic consulting, corporate governance, compliance, organizational transformation, expansion and business development. Our teams have led processes of organization, professionalization and growth in companies across different industries, sizes and sectors.",
       "p2": "We don't make abstract recommendations — we get involved in each specific project or case, applying our Corporate <strong>Drone Method™</strong> so that actions become real, measurable and sustainable results over time."
-      },
- 
+    },
     "academy": {
       "title": "ACADEMIC FACULTY | Unit: GoHarv. ACADEMY™",
       "sub": "Academic body. Intellectual leadership.",
       "p1": "The business unit called GoHarv. ACADEMY™ operates as a Business School. It has professionals who make up the GoHarv.® academic faculty, responsible for designing and delivering executive training programs in different business areas.",
       "p2": "GoHarv.® academic programs are taught by professionals with real market experience, who integrate the ecosystem from practice, research and executive training."
-      },
+    },
     "cta": {
       "servicios": "👉 Discover the services we provide",
       "academy": "👉 View programs and certifications",

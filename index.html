@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/lang-switcher.css">
+    <!-- Debe ir en el <head> y lo antes posible: el navegador restaura la
+         posicion de scroll al recargar, y en este sitio el header y el footer
+         se inyectan con fetch DESPUES de cargar, asi que esa posicion termina
+         apuntando a otro contenido (normalmente el formulario, lo mas bajo de
+         la pagina). Puesto al final del body llegaba tarde. -->
+    <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 </head>
 
 <body>
@@ -47,55 +53,82 @@
                        data-src="videos/video-3.mp4"></video>
             </div>
 
+            <!-- Dos capas separadas: el degradado da contraste al texto sin
+                 ensuciar el video, y la grilla aporta el guiño tecnico. La
+                 trama de puntos anterior cubria un tercio de la superficie y
+                 dejaba el video con aspecto de impresion de diario. -->
             <div class="home-overlay"></div>
+            <div class="home-grid-lines" aria-hidden="true"></div>
 
             <div class="homecont container grid">
 
                 <!-- Slide 1 -->
                 <div class="homedata active">
+                    <p class="home-eyebrow"><span data-i18n="home.slide1.eyebrow">Reporte</span> <span class="home-eyebrow-sep"></span> 2025</p>
                     <h1 class="homet" data-i18n="home.slide1.title">
                         Reportes sobre <br>
-                        los Departamentos Legales <br>
+                        <strong>los Departamentos Legales</strong> <br>
                         de Argentina 2025
                     </h1>
                     <p class="homedes" data-i18n="home.slide1.desc">
                         Descargue aquí el documento completo
                     </p>
                     <div class="homebut">
-                        <a href="#" class="button-cat" data-i18n="home.slide1.cta">VER MÁS</a>
+                        <a href="#" class="button-cat" data-i18n="home.slide1.cta">Descargar el reporte</a>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="homedata">
+                    <p class="home-eyebrow"><span data-i18n="home.slide2.eyebrow">Equipo</span> <span class="home-eyebrow-sep"></span> GoHarv.®</p>
                     <h1 class="homet" data-i18n="home.slide2.title">
-                        THE <br> GOHARV.® <br> TEAM
+                        THE <br> <strong>GOHARV.®</strong> <br> TEAM
                     </h1>
                     <p class="homedes" data-i18n="home.slide2.desc">
                         Gobernanza ejecutiva. Dirección estratégica. Ecosistema integrado
                     </p>
-                    <a href="team.html" class="button-cat" data-i18n="home.slide2.cta">VER MÁS</a>
+                    <a href="team.html" class="button-cat" data-i18n="home.slide2.cta">Conocer al equipo</a>
                 </div>
 
                 <!-- Slide 3 -->
                 <div class="homedata">
+                    <p class="home-eyebrow"><span data-i18n="home.slide3.eyebrow">Nuestro enfoque</span></p>
                     <h1 class="homet" data-i18n="home.slide3.title">
-                        Experiencia, Ética <br>
+                        Experiencia, <strong>Ética</strong> <br>
                         y Compromiso Profesional
                     </h1>
                     <p class="homedes" data-i18n="home.slide3.desc">
                         Soluciones jurídicas para empresas modernas
                     </p>
-                    <a href="#" class="button-cat" data-i18n="home.slide3.cta">VER MÁS</a>
+                    <a href="metodo.html" class="button-cat" data-i18n="home.slide3.cta">Ver el método</a>
                 </div>
 
             </div>
 
+            <!-- Numeracion + barra de progreso en lugar de los tres puntitos.
+                 La barra se llena durante los 7s del slide, asi el usuario ve
+                 que va a cambiar solo y cuanto falta. -->
             <div class="home-controls">
-                <button class="home-dot active" data-video="0"></button>
-                <button class="home-dot" data-video="1"></button>
-                <button class="home-dot" data-video="2"></button>
+                <button class="home-nav active" data-video="0" aria-label="Slide 1">
+                    <span class="home-nav-num">01</span>
+                    <span class="home-nav-barra"><span class="home-nav-progreso"></span></span>
+                </button>
+                <button class="home-nav" data-video="1" aria-label="Slide 2">
+                    <span class="home-nav-num">02</span>
+                    <span class="home-nav-barra"><span class="home-nav-progreso"></span></span>
+                </button>
+                <button class="home-nav" data-video="2" aria-label="Slide 3">
+                    <span class="home-nav-num">03</span>
+                    <span class="home-nav-barra"><span class="home-nav-progreso"></span></span>
+                </button>
             </div>
+
+            <!-- Señal de que abajo hay más contenido: solo la linea con el
+                 punto que baja, sin texto. El aria-label mantiene el sentido
+                 para quien navega con lector de pantalla. -->
+            <a href="#about" class="home-scroll" aria-label="Ir al contenido">
+                <span class="home-scroll-linea"></span>
+            </a>
         </section>
 
 
@@ -468,7 +501,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const videos = document.querySelectorAll('.home-video');
         const texts  = document.querySelectorAll('.homedata');
-        const dots   = document.querySelectorAll('.home-dot');
+        const navs   = document.querySelectorAll('.home-nav');
         if (!videos.length) return;
 
         let current = 0;
@@ -494,10 +527,22 @@
 
             videos.forEach(v => v.classList.remove('active'));
             texts.forEach(t => t.classList.remove('active'));
-            dots.forEach(d => d.classList.remove('active'));
+            navs.forEach(n => n.classList.remove('active'));
             videos[index].classList.add('active');
             texts[index].classList.add('active');
-            dots[index].classList.add('active');
+            navs[index].classList.add('active');
+
+            /* Reiniciar la barra de progreso.
+               La animacion CSS arranca al recibir la clase 'active', pero
+               si el navegador no re-evalua el elemento la barra se queda
+               llena del ciclo anterior. Forzar un reflow entre quitar y
+               poner la animacion la reinicia de verdad. */
+            const barra = navs[index].querySelector('.home-nav-progreso');
+            if (barra) {
+                barra.style.animation = 'none';
+                void barra.offsetWidth;          // fuerza el reflow
+                barra.style.animation = '';
+            }
 
             // El video oculto se pausa: no gasta CPU ni batería de fondo.
             videos.forEach((v, i) => {
@@ -507,8 +552,8 @@
             current = index;
         }
 
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => showSlide(Number(dot.dataset.video)));
+        navs.forEach(nav => {
+            nav.addEventListener('click', () => showSlide(Number(nav.dataset.video)));
         });
 
         /* Precarga el segundo video mientras el primero ya se está viendo:
@@ -516,15 +561,57 @@
            de banda durante la carga inicial de la página. */
         setTimeout(() => cargarVideo(videos[1]), 3000);
 
-        let interval = setInterval(nextSlide, duration);
-
         function nextSlide() {
-            current = (current + 1) % videos.length;
-            showSlide(current);
+            showSlide((current + 1) % videos.length);
         }
 
-        document.querySelector('.home').addEventListener('mouseenter', () => clearInterval(interval));
-        document.querySelector('.home').addEventListener('mouseleave', () => { interval = setInterval(nextSlide, duration); });
+        /* ── La barra ES el reloj ──
+           Antes había dos relojes independientes: un setInterval que avanzaba
+           el slide y la animación CSS de la barra. Al pasar el mouse por el
+           hero, clearInterval frenaba el avance pero la barra seguía corriendo:
+           se llenaba hasta el final y no pasaba nada. Y como el hero ocupa toda
+           la pantalla, el mouse estaba encima casi siempre.
+
+           Ahora el avance lo dispara el fin de la animación de la barra, así
+           que es imposible que se desincronicen: si la barra corre, el slide
+           avanza; si se pausa, se pausa todo. */
+        navs.forEach(nav => {
+            const barra = nav.querySelector('.home-nav-progreso');
+            if (barra) {
+                barra.addEventListener('animationend', () => {
+                    if (nav.classList.contains('active')) nextSlide();
+                });
+            }
+        });
+
+        /* La pausa al pasar el cursor ahora es CSS puro y solo sobre los
+           controles (ver .home-controls:hover en style.css).
+
+           Antes se pausaba al entrar el mouse a TODA la seccion .home, que
+           ocupa el 100% de la pantalla: al cargar la pagina el cursor casi
+           siempre estaba encima, la barra se congelaba a mitad de camino y
+           el carrusel no arrancaba nunca solo. */
+
+        /* Arranque explicito del primer slide.
+           El primer boton ya viene con la clase 'active' en el HTML, asi que
+           su animacion empieza apenas se aplica el CSS: antes de que este
+           script registre el listener de 'animationend'. Si la carga se
+           demora mas que la animacion, ese primer evento se pierde y la
+           barra queda llena sin avanzar nunca. Reiniciarla aca hace que
+           arranque recien cuando el listener ya esta puesto. */
+        const barraInicial = navs[0] && navs[0].querySelector('.home-nav-progreso');
+        if (barraInicial) {
+            barraInicial.style.animation = 'none';
+            void barraInicial.offsetWidth;
+            barraInicial.style.animation = '';
+        }
+
+        /* Fallback: si el usuario pidió reducir movimiento, la barra no se
+           anima y 'animationend' no llega nunca. En ese caso el carrusel
+           avanza por temporizador. */
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(nextSlide, duration);
+        }
     });
     </script>
 
@@ -569,6 +656,7 @@
     }
     </script>
 
+    <script src="js/hero-scroll.js" defer></script>
     <script src="js/btn-up.js"></script>
 </body>
 </html>

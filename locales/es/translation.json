@@ -14,24 +14,37 @@
     "novedades": "Novedades",
     "insights": "Insights",
     "eventos": "Eventos",
-    "contacto": "Contacto"
+    "contacto": "Contacto",
+    "quienesSomos": "Quiénes somos",
+    "dd": {
+      "consulting": "Consultoría estratégica",
+      "business": "Expansión y desarrollo",
+      "academy": "Formación ejecutiva",
+      "compliance": "Ética y cumplimiento",
+      "ai": "Inteligencia artificial aplicada"
+    },
+    "elMetodo": "El método"
   },
   "home": {
     "slide1": {
       "title": "Reportes sobre<br>los Departamentos Legales<br>de Argentina 2025",
       "desc": "Descargue aquí el documento completo",
-      "cta": "VER MÁS"
+      "cta": "Descargar el reporte",
+      "eyebrow": "Reporte"
     },
     "slide2": {
       "title": "THE<br>GoHarv.®<br>TEAM",
       "desc": "Gobernanza ejecutiva. Dirección estratégica. Ecosistema integrado",
-      "cta": "VER MÁS"
+      "cta": "Conocer al equipo",
+      "eyebrow": "Equipo"
     },
     "slide3": {
       "title": "Experiencia, Ética<br>y Compromiso Profesional",
       "desc": "Soluciones jurídicas para empresas modernas",
-      "cta": "VER MÁS"
-    }
+      "cta": "Ver el método",
+      "eyebrow": "Nuestro enfoque"
+    },
+    "scroll": "Descubrí más"
   },
   "about": {
     "hashtag": "#SomosGoHarv.®",
@@ -162,7 +175,7 @@
     "legal.terms": "Términos y Condiciones",
     "legal.privacy": "Política de Privacidad",
     "legal.legal": "Apartado de Legales de GoHarv.®",
-    "leyenda": "El presente sitio web pertenece a GoHarv. S.A.S., CUIT 30-71925795-6, y se encuentra registrado ante la Dirección Nacional del Registro de Dominios de Internet de la República Argentina. El acceso, navegación o uso del mismo implica la aceptación de sus políticas, términos y condiciones, y demás plexo normativo vigente. El presente sitio web puede contener enlaces a sitios web de terceros respecto de los cuales GoHarv. S.A.S. no resulta responsable por el contenido allí publicado. Los contenidos e imágenes aquí publicados son meramente ilustrativos, de carácter no contractual, y son sólo representaciones referenciales, las cuales no constituyen asesoramiento profesional ni una descripción exacta del producto o servicio final. Los precios aquí publicados son válidos exclusivamente para la República Argentina, pudiendo estar sujetos a modificaciones sin previo aviso. GoHarv.®, GoHarv. CONSULTING®, GoHarv. BUSINESS®, GoHarv. ACADEMY® y GoHarv. COMPLIANCE® son marcas registradas de GoHarv. S.A.S., CUIT 30-71925795-6, Senillosa 235, piso 1° de la Ciudad Autónoma de Buenos Aires (CP1424), República Argentina. | e-mail: info@goharvey.com | Tel: (+5411) 2656-0522 / (+5411) 3400-7699. Copyright © 2026 GoHarv. S.A.S. – Todos los derechos reservados. Prohibida su reproducción total o parcial." 
+    "leyenda": "El presente sitio web pertenece a GoHarv. S.A.S., CUIT 30-71925795-6, y se encuentra registrado ante la Dirección Nacional del Registro de Dominios de Internet de la República Argentina. El acceso, navegación o uso del mismo implica la aceptación de sus políticas, términos y condiciones, y demás plexo normativo vigente. El presente sitio web puede contener enlaces a sitios web de terceros respecto de los cuales GoHarv. S.A.S. no resulta responsable por el contenido allí publicado. Los contenidos e imágenes aquí publicados son meramente ilustrativos, de carácter no contractual, y son sólo representaciones referenciales, las cuales no constituyen asesoramiento profesional ni una descripción exacta del producto o servicio final. Los precios aquí publicados son válidos exclusivamente para la República Argentina, pudiendo estar sujetos a modificaciones sin previo aviso. GoHarv.®, GoHarv. CONSULTING®, GoHarv. BUSINESS®, GoHarv. ACADEMY® y GoHarv. COMPLIANCE® son marcas registradas de GoHarv. S.A.S., CUIT 30-71925795-6, Senillosa 235, piso 1° de la Ciudad Autónoma de Buenos Aires (CP1424), República Argentina. | e-mail: info@goharvey.com | Tel: (+5411) 2656-0522 / (+5411) 3400-7699. Copyright © 2026 GoHarv. S.A.S. – Todos los derechos reservados. Prohibida su reproducción total o parcial."
   },
   "team": {
     "title": "THE GoHarv.® TEAM",
