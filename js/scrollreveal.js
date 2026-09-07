@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var soportaObserver = 'IntersectionObserver' in window;
   var prefiereQuieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Marca en el <html> que las animaciones de entrada estan activas.
+     El CSS engancha a esta clase los efectos que OCULTAN contenido, asi
+     que si este script no llega a correr nada queda invisible: los
+     titulos con clip-path, por ejemplo, se verian recortados para
+     siempre. Se agrega solo cuando de verdad se va a animar. */
+  if (soportaObserver && !prefiereQuieto) {
+      document.documentElement.classList.add('js-anim');
+  }
+
   /* ── Cascada: numerar los hijos ──
      Cada hijo recibe --i (su posición). El CSS convierte ese número en
      un retardo, de modo que entran escalonados sin importar cuántos sean. */

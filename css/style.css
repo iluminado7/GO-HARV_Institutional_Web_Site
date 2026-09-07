@@ -2818,16 +2818,17 @@ opacity: 0.7;
 .contact-map iframe {
     display: block;
     width: 100%;
-    height: 190px;
-    filter: grayscale(1) contrast(.95);
-    transition: filter .4s ease;
+    /* Mas alto que antes: si el mapa es para navegarlo, 190px dejaban muy
+       poco margen para arrastrar sin perder la referencia. */
+    height: 300px;
+    border: 0;
+    /* Sin filtro de escala de grises: tapaba la lectura del mapa, que es
+       justamente lo que se usa al navegarlo. */
 }
-
-.contact-map:hover iframe { filter: grayscale(0); }
 
 @media screen and (max-width: 767px) {
     .contact-form { padding: 1.6rem 1.3rem; }
-    .contact-map iframe { height: 150px; }
+    .contact-map iframe { height: 240px; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -3022,4 +3023,86 @@ opacity: 0.7;
 @media (prefers-reduced-motion: reduce) {
     .button-about::before,
     .button-cat-met::before { transition: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   ANIMACIONES DE ENTRADA — capa "vistosa"
+   ═══════════════════════════════════════════════
+   Tres efectos, no diez. En un sitio que vende consultoría y compliance,
+   la animación tiene que sostener el tono: mucho movimiento lo abarata.
+   ═══════════════════════════════════════════════ */
+
+/* ── 1. Títulos que se descubren ──
+   El título aparece como si una máscara subiera y lo dejara ver, en vez
+   de solo aparecer. Se anima clip-path sobre el elemento entero: no hace
+   falta partir el texto en <span>, que romperia el cambio de idioma. */
+/* La clase js-anim la pone scrollreveal.js: sin JS los titulos se ven
+   normales en lugar de quedar recortados para siempre. */
+.js-anim .stitle,
+.js-anim .sec-title {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(14px);
+    transition: clip-path .85s cubic-bezier(.19, 1, .22, 1),
+                transform .85s cubic-bezier(.19, 1, .22, 1);
+}
+
+.js-anim .reveal.active .stitle,
+.js-anim .reveal.active .sec-title,
+.js-anim .js-stagger.active .stitle,
+.js-anim .js-stagger.active .sec-title {
+    clip-path: inset(0 0 -10% 0);   /* -10%: deja respirar a tildes y colas */
+    transform: translateY(0);
+}
+
+/* ── 2. Las tarjetas entran con escala ──
+   Un desplazamiento vertical solo se percibe poco. Sumar una escala muy
+   leve da sensación de que la tarjeta se acerca, no de que sube. */
+.js-stagger.js-stagger > .catcard,
+.js-stagger.js-stagger > .metodo-item {
+    transform: translateY(var(--anim-recorrido)) scale(.97);
+}
+
+.js-stagger.js-stagger.active > .catcard,
+.js-stagger.js-stagger.active > .metodo-item {
+    transform: translateY(0) scale(1);
+}
+
+/* ── 3. Los iconos de las unidades entran girando apenas ── */
+.js-anim .catcard .card-bg {
+    transform: scale(.82) rotate(-8deg);
+    opacity: 0;
+    transition: transform .8s cubic-bezier(.19, 1, .22, 1) .2s,
+                opacity .6s ease .2s;
+}
+
+.js-anim .js-stagger.active .catcard .card-bg {
+    transform: scale(1) rotate(0deg);
+    opacity: .55;
+}
+
+/* El hover del icono no debe pelear con la entrada */
+.catcard:hover .card-bg {
+    transform: scale(1.06) rotate(0deg);
+    opacity: .85;
+    transition: transform .35s ease, opacity .35s ease;
+}
+
+/* ── Parallax de la banda de Historia ──
+   El fondo se desplaza más lento que el contenido: da profundidad sin el
+   salto que producía background-attachment:fixed. La posición la escribe
+   el JS en esta variable. */
+.historia {
+    background-position: center var(--parallax, 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stitle, .sec-title {
+        clip-path: none;
+        transform: none;
+        transition: none;
+    }
+    .catcard .card-bg { transform: none; opacity: .55; transition: none; }
+    .js-stagger.js-stagger > .catcard,
+    .js-stagger.js-stagger > .metodo-item { transform: none; }
+    .historia { background-position: center center !important; }
 }

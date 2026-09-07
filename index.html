@@ -391,7 +391,7 @@
                     <h2 class="contact-title" data-i18n="contact.title">Contacto</h2>
 
                     <ul class="contact-list">
-                        <li><i class="bx bx-map"></i> Senillosa 233, 1° piso (CP 1424) | <br> Buenos Aires, Argentina.</li>
+                        <li><i class="bx bx-map"></i> Senillosa 235, 1° piso (CP 1424) | <br> Buenos Aires, Argentina.</li>
                         <li><i class="bx bx-map"></i> Av. Piedrabuena 4858, oficina 1C (CP 1439) | <br> Buenos Aires, Argentina.</li>
                         <li><i class="bx bx-phone"></i> Corporativo: (+5411) 2656 - 0522</li>
                         <li><i class="bx bx-phone"></i> Corporativo: (+5411) 3400 - 7699</li>
@@ -407,9 +407,18 @@
                     </ul>
 
                     <div class="contact-map">
+                        <!-- z=16 fija el zoom inicial y hl=es el idioma de los
+                             carteles. Con este formato el mapa se arrastra y
+                             se hace zoom dentro de la propia pagina, sin abrir
+                             Google Maps aparte.
+                             allowfullscreen: se puede expandir a pantalla
+                             completa desde el control del propio mapa. -->
                         <iframe
-                            src="https://www.google.com/maps?q=Senillosa+235+Buenos+Aires&output=embed"
-                            loading="lazy">
+                            src="https://www.google.com/maps?q=Senillosa+235,+Buenos+Aires,+Argentina&hl=es&z=16&output=embed"
+                            title="Ubicación de GoHarv. en Senillosa 235, Buenos Aires"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
@@ -630,6 +639,7 @@
          Su contenido ahora se muestra siempre.) -->
 
     <script src="js/desplegables.js" defer></script>
+    <script src="js/parallax.js" defer></script>
     <script src="js/hero-scroll.js" defer></script>
     <script src="js/btn-up.js"></script>
 </body>
