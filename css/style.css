@@ -2252,3 +2252,667 @@ opacity: 0.7;
     }
     #about { border-radius: 14px 14px 0 0; }
 }
+
+/* ═══════════════════════════════════════════════
+   NOSOTROS  ·  ¿QUÉ ES GoHarv.?
+   ═══════════════════════════════════════════════ */
+
+/* Etiqueta de seccion, mismo lenguaje que el eyebrow del hero */
+.sec-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.sec-eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--dorado), transparent);
+    max-width: 220px;
+}
+
+/* ── Nosotros ── */
+.about { text-align: left; }
+
+/* Frase de apertura: era un parrafo mas, ahora sostiene la seccion */
+.about-lead {
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    line-height: 1.42;
+    font-weight: 300;
+    max-width: 24ch;
+    max-width: min(100%, 62ch);
+    margin-bottom: 2.6rem;
+    text-wrap: balance;
+}
+
+.about-lead strong { font-weight: 700; }
+
+/* Cuerpo en dos columnas: el texto es denso y a un solo ancho
+   cansaba; en dos bloques se lee de a tramos cortos. */
+.about-cuerpo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-cuerpo p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+/* Declaracion destacada: el diferenciador de la marca */
+.about-declaracion {
+    position: relative;
+    margin: 0 0 3rem;
+    padding: 1.9rem 0 1.9rem 2.2rem;
+    border-left: 2px solid var(--dorado);
+    font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 70ch;
+    text-wrap: pretty;
+}
+
+.about-declaracion strong { font-weight: 700; }
+
+.about-buttons { justify-content: flex-start; }
+
+/* ── ¿Qué es GoHarv.? ── */
+.que-es .stitle { text-align: left; }
+
+.que-texto-intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.6rem 3rem;
+    margin-bottom: 3.4rem;
+    max-width: 100%;
+}
+
+.que-texto-intro p {
+    margin: 0;
+    line-height: 1.75;
+    color: #4a4a4a;
+}
+
+/* ── Contrapunto es / no es ──
+   Dos columnas enfrentadas. La division no es decorativa: cada lado
+   afirma lo contrario del otro, y esa oposicion es el argumento. */
+.contrapunto {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(191,174,118,.35);
+}
+
+.contrapunto-col { padding: 2.2rem 2.4rem; }
+
+/* La linea divisoria vive en la segunda columna para que no se
+   duplique ni sobresalga en el corte responsive. */
+.contrapunto-col--no {
+    border-left: 1px solid rgba(191,174,118,.35);
+    background: #fafafa;
+}
+
+.contrapunto-tit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
+    padding-bottom: .9rem;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.contrapunto-col--es .contrapunto-tit { color: var(--dorado-oscuro); }
+.contrapunto-col--no .contrapunto-tit { color: #8a8a8a; }
+
+.contrapunto-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    margin: 0;
+    padding: 0;
+}
+
+.contrapunto-lista li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: .9rem;
+    align-items: start;
+    font-size: .95rem;
+    line-height: 1.6;
+}
+
+.contrapunto-lista i {
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+.contrapunto-col--es i { color: var(--dorado); }
+.contrapunto-col--no i { color: #c0c0c0; font-size: 1rem; }
+
+/* El lado "no es" se atenua: esta ahi para contrastar, no para
+   competir en peso con lo que la marca si ofrece. */
+.contrapunto-col--no li { color: #7a7a7a; }
+
+@media screen and (max-width: 860px) {
+    .contrapunto { grid-template-columns: 1fr; }
+    .contrapunto-col--no {
+        border-left: none;
+        border-top: 1px solid rgba(191,174,118,.35);
+    }
+    .contrapunto-col { padding: 1.8rem 1.5rem; }
+}
+
+/* ── Entrada de la sección Nosotros ──
+   La cascada la maneja .stagger (cada bloque entra detrás del anterior).
+   Acá se afinan dos detalles para que no se sienta como cinco fades
+   sueltos sino como un solo movimiento. */
+
+/* Un paso más largo que el de las grillas: son bloques de texto grandes,
+   no tarjetas, y necesitan más aire entre uno y otro para que se lean
+   como una secuencia y no como un parpadeo. */
+.about .container.js-stagger > * {
+    transition-delay: calc(var(--i, 0) * .12s);
+}
+
+/* La línea del eyebrow se traza de izquierda a derecha en lugar de
+   aparecer entera: da el punto de arranque de toda la secuencia. */
+.sec-eyebrow::after {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .7s cubic-bezier(.19, 1, .22, 1) .15s;
+}
+
+.reveal.active .sec-eyebrow::after,
+.js-stagger.active .sec-eyebrow::after {
+    transform: scaleX(1);
+}
+
+/* La frase de apertura entra con un recorrido un poco mayor: es el
+   elemento que sostiene la sección y conviene que se note. */
+.about .container.js-stagger > .about-lead {
+    transform: translateY(calc(var(--anim-recorrido) * 1.6));
+}
+
+.about .container.js-stagger.active > .about-lead {
+    transform: translateY(0);
+}
+
+/* La barra dorada de la declaración crece en vertical al entrar. */
+.about-declaracion {
+    background-image: linear-gradient(var(--dorado), var(--dorado));
+    background-size: 2px 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    border-left-color: transparent;
+    transition: background-size .8s cubic-bezier(.19, 1, .22, 1) .35s;
+}
+
+.js-stagger:not(.active) .about-declaracion { background-size: 2px 0%; }
+
+@media (prefers-reduced-motion: reduce) {
+    .sec-eyebrow::after,
+    .about .container.js-stagger > .about-lead { transform: none !important; }
+    .about-declaracion { background-size: 2px 100% !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   NUESTRA HISTORIA  ·  UNIDADES DE NEGOCIO
+   Rediseño: mismo contenido, otra estructura visual.
+   ═══════════════════════════════════════════════ */
+
+/* ── Banda de Historia ──
+   Se le suma la misma grilla técnica del hero, para que el lenguaje
+   visual sea uno solo a lo largo de la página. */
+.historia {
+    position: relative;
+    /* background-attachment:fixed produce saltos al scrollear en móvil y
+       lo ignoran varios navegadores: se reemplaza por un fondo fijo por
+       posición, que se ve igual y no cuesta frames. */
+    background-attachment: scroll;
+}
+
+.historia::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(191,174,118,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191,174,118,.07) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(ellipse at 25% 40%, #000 15%, transparent 75%);
+            mask-image: radial-gradient(ellipse at 25% 40%, #000 15%, transparent 75%);
+}
+
+.historia-container,
+.historia-metodo { position: relative; z-index: 1; }
+
+/* Título a la izquierda: el centrado es lo que más envejece un bloque
+   corporativo, y acá compite con el texto que sí está alineado. */
+.historia .stitle {
+    text-align: left;
+    margin-bottom: 1.8rem;
+}
+
+.historia-container .abdes,
+.historia-container p {
+    text-align: left;
+}
+
+/* ── Los cuatro ejes ──
+   Dejan de ser cajas claras sobre fondo oscuro (que las hacía flotar como
+   parches) y pasan a ser paneles del mismo mundo que la banda: fondo
+   apenas más claro, filo dorado y numeración monoespaciada. */
+.historia-metodo { counter-reset: eje; }
+
+.metodo-item {
+    counter-increment: eje;
+    position: relative;
+    padding: 1.9rem 1.7rem 1.7rem;
+    border-radius: 0;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(191,174,118,.22);
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+    transition: background .3s ease, border-color .3s ease, transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* Filo dorado que se traza de izquierda a derecha al pasar el cursor */
+.metodo-item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+.metodo-item:hover {
+    background: rgba(255,255,255,.09);
+    border-color: rgba(191,174,118,.45);
+    transform: translateY(-3px);
+}
+
+.metodo-item:hover::after { transform: scaleX(1); }
+
+/* Número del eje, arriba a la derecha */
+.metodo-item::before {
+    content: counter(eje, decimal-leading-zero);
+    position: absolute;
+    top: 1.35rem;
+    right: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: rgba(191,174,118,.55);
+    font-variant-numeric: tabular-nums;
+}
+
+.metodo-item h4 {
+    padding-right: 2.4rem;   /* no chocar con el número */
+    letter-spacing: -.005em;
+}
+
+/* ── Unidades de Negocio ──
+   Las tarjetas pierden el radio grande y el gris de relleno: quedan
+   definidas por una línea fina, que es lo que las hace ver actuales. */
+.catcard {
+    border-radius: 0;
+    border: 1px solid rgba(191,174,118,.28);
+    background: #fff;
+    min-height: 210px;
+    transition: transform .35s cubic-bezier(.22,1,.36,1),
+                border-color .3s ease,
+                box-shadow .35s ease;
+}
+
+.catcard:hover {
+    border-color: var(--dorado);
+    box-shadow: 0 14px 38px rgba(0,0,0,.09);
+}
+
+/* El acento superior se traza al pasar el cursor en lugar de estar
+   siempre dibujado: la tarjeta reacciona en vez de solo estar. */
+.card-accent {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+.catcard:hover .card-accent { transform: scaleX(1); }
+
+/* La etiqueta de categoría pasa a texto con tracking: menos "píldora
+   de plantilla", más ficha técnica. */
+.card-tag {
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid rgba(191,174,118,.5);
+    color: var(--dorado-oscuro);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    padding: 3px 9px;
+}
+
+.card-name { letter-spacing: -.02em; }
+
+.card-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .metodo-item::after,
+    .card-accent { transform: scaleX(1); }
+    .metodo-item:hover,
+    .catcard:hover { transform: none; }
+}
+
+/* ── Contraste de los ejes sobre la banda oscura ──
+   Al pasar las tarjetas de fondo claro a panel translúcido oscuro, el
+   texto quedó oscuro sobre oscuro y dejó de leerse. Los colores se
+   definen acá, para el fondo que las tarjetas tienen ahora. */
+.metodo-item h4 {
+    color: #ffffff;
+}
+
+.metodo-item span {
+    color: var(--dorado);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.metodo-item p {
+    color: rgba(255,255,255,.78);
+}
+
+/* ═══════════════════════════════════════════════
+   FORMULARIO DE CONTACTO — rediseño
+   ═══════════════════════════════════════════════ */
+
+/* ── EL BUG ──
+   ".contact-form input { width:100% }" alcanzaba tambien a los checkbox,
+   que se estiraban a todo el ancho: el cuadrito quedaba suelto a la
+   derecha y su texto en otra linea. Ademas de verse mal, costaba asociar
+   cada casilla con lo que se acepta, y son casillas de consentimiento. */
+.contact-form input[type="checkbox"] {
+    width: auto;
+    flex-shrink: 0;
+    margin: 0;
+    accent-color: var(--dorado-oscuro);
+    cursor: pointer;
+}
+
+.form-checks label {
+    display: flex;
+    align-items: flex-start;
+    gap: .65rem;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+/* ── Caja del formulario ── */
+.contact-form {
+    border-radius: 0;
+    border: 1px solid rgba(191,174,118,.3);
+    box-shadow: none;
+    background: #fff;
+    padding: 2.4rem;
+}
+
+/* ── Campos ──
+   Se cambia la caja gris con borde por una linea inferior: menos peso
+   visual, la vista recorre los campos mas rapido. */
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    border-radius: 0;
+    padding: .6rem 0;
+    font-size: .95rem;
+    transition: border-color .25s ease;
+}
+
+.contact-form input:not([type="checkbox"]):focus,
+.contact-form textarea:focus {
+    border-bottom-color: var(--dorado);
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #b4b4b4;
+}
+
+.contact-form label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: .15rem;
+}
+
+/* ── Agrupación ──
+   Siete campos seguidos sin jerarquia se leen como una planilla. Los
+   titulos de grupo dan dos tramos cortos en lugar de uno largo. */
+.form-grupo-tit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    padding-bottom: .6rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid rgba(191,174,118,.3);
+}
+
+/* El titulo "Tu consulta" es HERMANO de .form-message, no hijo: con el
+   selector descendiente no recibia margen y se encimaba con el ultimo
+   campo de la grilla de arriba. */
+.form-grid + .form-grupo-tit {
+    margin-top: 2.6rem;
+}
+
+/* ── Envío ── */
+.form-envio {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1.8rem;
+}
+
+.btn-submit {
+    border-radius: 0;
+    padding: .95rem 2.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.form-respuesta {
+    margin: 0;
+    font-size: .82rem;
+    color: #8a8a8a;
+}
+
+/* ── Columna de datos de contacto ── */
+.contact-list li,
+.offices-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: .7rem;
+}
+
+.contact-list i {
+    color: var(--dorado);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+
+.contact-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+}
+
+/* El mapa se achica: en un contacto B2B nadie va a ir a la oficina,
+   quiere que le respondan. Deja de competir con los datos utiles. */
+.contact-map {
+    margin-top: 1.6rem;
+    border: 1px solid rgba(191,174,118,.3);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 190px;
+    filter: grayscale(1) contrast(.95);
+    transition: filter .4s ease;
+}
+
+.contact-map:hover iframe { filter: grayscale(0); }
+
+@media screen and (max-width: 767px) {
+    .contact-form { padding: 1.6rem 1.3rem; }
+    .contact-map iframe { height: 150px; }
+}
+
+/* ═══════════════════════════════════════════════
+   BOTÓN DESPLEGABLE  ·  "Leer más"
+   ═══════════════════════════════════════════════
+   El anterior era una caja con borde de 3px en marrón: pesaba como un
+   CTA principal cuando en realidad es un control secundario. Este es una
+   línea de texto con un signo que se transforma, y no compite con los
+   botones de acción que vienen debajo. */
+
+.btn-desplegar {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    background: none;
+    border: none;
+    padding: .5rem 0;
+    margin-bottom: 2.4rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    transition: color .25s ease, gap .25s ease;
+}
+
+.btn-desplegar:hover { color: var(--negro); gap: 1rem; }
+
+.btn-desplegar:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 4px;
+}
+
+/* Signo "+" dibujado con dos trazos: al abrirse el vertical se recoge y
+   queda un "−". Es el mismo gesto que hace el contenido. */
+.btn-desplegar-icono {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.btn-desplegar-icono::before,
+.btn-desplegar-icono::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* trazo horizontal */
+.btn-desplegar-icono::before {
+    top: 50%; left: 0;
+    width: 100%; height: 1.5px;
+    transform: translateY(-50%);
+}
+
+/* trazo vertical: se recoge al abrir */
+.btn-desplegar-icono::after {
+    left: 50%; top: 0;
+    width: 1.5px; height: 100%;
+    transform: translateX(-50%) scaleY(1);
+}
+
+.btn-desplegar[aria-expanded="true"] .btn-desplegar-icono::after {
+    transform: translateX(-50%) scaleY(0);
+}
+
+/* ── El contenido que se despliega ──
+   grid-template-rows de 0fr a 1fr anima hasta la altura real del
+   contenido. Con max-height habria que adivinar un valor: si queda corto
+   el texto se recorta, y si queda largo la animacion arranca tarde. */
+.about-mas {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s cubic-bezier(.22, 1, .36, 1),
+                opacity .4s ease;
+    opacity: 0;
+}
+
+/* El hijo directo del grid no lleva margenes: es solo la ventana que
+   recorta. El espaciado vive dentro, en el envoltorio. */
+.about-mas > .about-mas-interior {
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* El espaciado va DENTRO del envoltorio, en el propio blockquote: como
+   el envoltorio tiene overflow:hidden, ese margen queda contenido y no
+   infla la fila del grid. Puesto como padding del envoltorio seguia
+   contando, y el bloque cerrado medía 48px en vez de 0. */
+.about-mas .about-declaracion { margin: 0 0 3rem; }
+.about-mas-interior { padding: 0; }
+
+.about-mas.abierto {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* Sin la animación, el bloque simplemente aparece */
+@media (prefers-reduced-motion: reduce) {
+    .about-mas { transition: none; }
+}

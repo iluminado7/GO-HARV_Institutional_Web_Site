@@ -135,124 +135,125 @@
         <!-- ══════════════════════════════════════
              ABOUT — #SOMOSGOHARVEY
         ══════════════════════════════════════ -->
-        <section class="section container about reveal delay-3" id="about">
-            <div class="about-container">
+        <section class="section about reveal" id="about">
+            <!-- stagger: los bloques entran en secuencia (etiqueta, frase,
+                 cuerpo, declaracion, botones) en vez de aparecer todos a la
+                 vez. El orden de lectura y el orden de aparicion coinciden. -->
+            <div class="container stagger">
 
-                <div class="about-header">
-                    <h4 class="stitle" data-i18n="about.hashtag">#SomosGoHarv.®</h4>
-                    <p class="about-intro" data-i18n="about.intro">
-                        Somos <strong>GoHarv.®</strong>, un ecosistema empresarial interdisciplinario diseñado para
-                        acompañar a empresas, empresarios y líderes en sus procesos de orden, profesionalización,
-                        crecimiento y expansión, de manera personalizada y estratégica.
+                <p class="sec-eyebrow" data-i18n="about.hashtag">#SomosGoHarv.®</p>
+
+                <!-- La intro pasa a ser el titular de la seccion: es una frase
+                     declarativa y merece el peso. Antes era un parrafo mas. -->
+                <p class="about-lead" data-i18n="about.intro">
+                    Somos <strong>GoHarv.®</strong>, un ecosistema empresarial interdisciplinario diseñado para
+                    acompañar a empresas, empresarios y líderes en sus procesos de orden, profesionalización,
+                    crecimiento y expansión, de manera personalizada y estratégica.
+                </p>
+  <!-- Boton que despliega la declaracion de abajo.
+                     aria-expanded + aria-controls: quien navega con lector de
+                     pantalla necesita saber que el boton abre algo y si esta
+                     abierto o cerrado. -->
+                <button type="button" class="btn-desplegar" id="btnAbout"
+                        aria-expanded="false" aria-controls="aboutMas">
+                    <span class="btn-desplegar-txt" data-i18n="about.readmore">Leer más</span>
+                    <span class="btn-desplegar-icono" aria-hidden="true"></span>
+                </button>
+
+                <div class="about-mas" id="aboutMas">
+                  <!-- Envoltorio necesario: en un grid los margenes del hijo
+                       cuentan para el alto de la fila, asi que con el margen
+                       del blockquote el bloque cerrado medía 109px en vez de
+                       0 y dejaba ver parte del texto. -->
+                  <div class="about-mas-interior">
+                <!-- Antes esto estaba oculto tras un boton "Leer mas". Es el
+                     contenido que explica de que se trata la empresa: se muestra. -->
+                <div class="about-cuerpo">
+                    <p data-i18n="about.expand1">
+                        Integramos consultoría estratégica, desarrollo de negocios, formación ejecutiva,
+                        prevención de riesgos y soluciones de compliance, conectando empresas con
+                        profesionales especializados, empresas con empresas (B2B) y empresarios con
+                        inversores, incorporando tecnología aplicada —incluyendo Inteligencia Artificial—
+                        para impulsar la toma de decisiones estratégicas, seguras y sostenibles.
                     </p>
-
-                    <button class="btn-leer-mas" id="btnLeerMas" onclick="toggleLeerMas()">
-                        <span data-i18n="about.readmore">Leer más</span> <span class="btn-arrow">↓</span>
-                    </button>
-
-                    <div class="about-expandible" id="aboutExpandible">
-                        <div class="about-line"></div>
-                        <p class="about-header" data-i18n="about.expand1">
-                            Integramos consultoría estratégica, desarrollo de negocios, formación ejecutiva,
-                            prevención de riesgos y soluciones de compliance, conectando empresas con
-                            profesionales especializados, empresas con empresas (B2B) y empresarios con
-                            inversores, incorporando tecnología aplicada —incluyendo Inteligencia Artificial—
-                            para impulsar la toma de decisiones estratégicas, seguras y sostenibles.
-                        </p>
-                        <div class="about-line"></div>
-                        <p class="about-header secondary" data-i18n="about.expand2">
-                            Todo nuestro trabajo se articula bajo un estándar ético, estructurado y escalable,
-                            pensado para el mundo de los negocios de hoy en día: contextos reales, complejos
-                            y cambiantes.
-                        </p>
-                    </div>
+                    <p data-i18n="about.expand2">
+                        Todo nuestro trabajo se articula bajo un estándar ético, estructurado y escalable,
+                        pensado para el mundo de los negocios de hoy en día: contextos reales, complejos
+                        y cambiantes.
+                    </p>
                 </div>
 
-                <div class="about-extra about-expandible" id="aboutExpandible2">
-                    <div class="about-line"></div>
-                    <p data-i18n="about.expand3">
-                        No operamos como un proveedor tradicional de servicios.
-                        En <strong>GoHarv.®</strong> actuamos como socios estratégicos de tu empresa,
-                        involucrándonos en la toma de decisiones clave, en la ejecución y en la consolidación de
-                        resultados que impactan directamente en el negocio.
-                    </p>
+            
+                <!-- El diferenciador mas fuerte del texto. -->
+                <blockquote class="about-declaracion" data-i18n="about.expand3">
+                    No operamos como un proveedor tradicional de servicios.
+                    En <strong>GoHarv.®</strong> actuamos como socios estratégicos de tu empresa,
+                    involucrándonos en la toma de decisiones clave, en la ejecución y en la consolidación de
+                    resultados que impactan directamente en el negocio.
+                </blockquote>
+                  </div>
                 </div>
-
-                <div class="about-line"></div>
 
                 <div class="about-buttons">
                     <a href="metodo.html" class="button-about" data-i18n="about.btn.metodo">Conocé nuestro método</a>
                     <a href="metodo.html#como-trabajamos" class="button-about button-outline" data-i18n="about.btn.como">Cómo trabajamos</a>
                     <a href="unidades_negocio.html" class="button-about button-outline" data-i18n="about.btn.unidades">Unidades de negocio</a>
                 </div>
+
             </div>
         </section>
 
 
-        <!-- ══════════════════════════════════════
-             QUE ES GoHarv.
-        ══════════════════════════════════════ -->
+        <!-- ======================================
+             QUE ES GoHarv. - contrapunto es / no es
+        ====================================== -->
         <section class="section que-es reveal" id="que-es-go">
+            <div class="container">
 
-            <h2 class="stitle" data-i18n="que.title">¿QUÉ ES GOHARV.?</h2>
+                <h2 class="stitle" data-i18n="que.title">¿QUÉ ES GOHARV.?</h2>
 
-            <div class="que-container container">
-
-                <div class="que-carousel">
-                    <button class="que-btn prev" onclick="scrollQue(-1)">❮</button>
-
-                    <div class="que-track" id="queTrack">
-                        <article class="que-card">
-                            <i class='bx bx-network-chart'></i>
-                            <p data-i18n="que.card1">Un hub estratégico que conecta empresas con profesionales especializados bajo una lógica común.</p>
-                        </article>
-                        <article class="que-card">
-                            <i class='bx bx-link-alt'></i>
-                            <p data-i18n="que.card2">Un puente entre empresarios e inversores, facilitando oportunidades reales de desarrollo y expansión.</p>
-                        </article>
-                        <article class="que-card">
-                            <i class='bx bx-layer'></i>
-                            <p data-i18n="que.card3">Una plataforma de soluciones corporativas integradas, no fragmentadas.</p>
-                        </article>
-                        <article class="que-card">
-                            <i class='bx bx-buildings'></i>
-                            <p data-i18n="que.card4">Un ecosistema empresarial diseñado para ordenar, profesionalizar y escalar organizaciones.</p>
-                        </article>
-                        <article class="que-card">
-                            <i class='bx bx-brain'></i>
-                            <p data-i18n="que.card5">Un modelo empresarial que incorpora tecnología e inteligencia artificial para optimizar procesos.</p>
-                        </article>
-                    </div>
-
-                    <button class="que-btn next" onclick="scrollQue(1)">❯</button>
-                </div>
-
-                <div class="que-text">
-                    <p class="abdes" data-i18n="que.text1">
+                <div class="que-texto-intro">
+                    <p data-i18n="que.text1">
                         Cada unidad de negocio de <strong>GoHarv.®</strong> responde a una lógica compartida:
                         <strong>ordenar, profesionalizar y hacer crecer organizaciones.</strong>
                     </p>
-                    <p class="abdes" data-i18n="que.text2">
+                    <p data-i18n="que.text2">
                         Conocemos el mundo empresarial desde adentro.
                         Somos empresarios y profesionales que operamos en contextos reales, y por eso
                         diseñamos soluciones efectivas, aplicables, ejecutables y duraderas.
                     </p>
-
-                    <h3 class="about-subtitle" data-i18n="que.noES.title">Qué NO es GoHarv.®</h3>
-
-                    <button class="btn-leer-mas2" id="btnLeerMas2" onclick="toggleLeerMas2()">
-                        <span data-i18n="about.readmore">Leer más</span> <span class="btn-arrow">↓</span>
-                    </button>
-
-                    <ul class="about-list about-exp" id="aboutExp">
-                        <li><p class="abdes" data-i18n="que.noES.1">Una consultora genérica que vende diagnósticos sin ejecución.</p></li>
-                        <li><p class="abdes" data-i18n="que.noES.2">Una oficina tradicional de profesionales de diferentes disciplinas, trabajando de forma aislada.</p></li>
-                        <li><p class="abdes" data-i18n="que.noES.3">Un marketplace de servicios sin criterio ni responsabilidad estratégica.</p></li>
-                        <li><p class="abdes" data-i18n="que.noES.4">Un proveedor que entrega informes y se retira.</p></li>
-                    </ul>
                 </div>
 
-                <div class="about-line"></div>
+                <!-- Dos columnas enfrentadas. El "que NO es" estaba escondido
+                     tras un boton, siendo el contenido que mas diferencia a la
+                     marca: puesto al lado del "que es", cada afirmacion se lee
+                     contra su opuesto. Ademas reemplaza al carrusel, que
+                     obligaba a interactuar para ver las 5 tarjetas. -->
+                <div class="contrapunto">
+
+                    <div class="contrapunto-col contrapunto-col--es">
+                        <p class="contrapunto-tit" data-i18n="que.esTitle">Qué es GoHarv.®</p>
+                        <ul class="contrapunto-lista stagger">
+                            <li><i class="bx bx-network-chart"></i><span data-i18n="que.card1">Un hub estratégico que conecta empresas con profesionales especializados bajo una lógica común.</span></li>
+                            <li><i class="bx bx-link-alt"></i><span data-i18n="que.card2">Un puente entre empresarios e inversores, facilitando oportunidades reales de desarrollo y expansión.</span></li>
+                            <li><i class="bx bx-layer"></i><span data-i18n="que.card3">Una plataforma de soluciones corporativas integradas, no fragmentadas.</span></li>
+                            <li><i class="bx bx-buildings"></i><span data-i18n="que.card4">Un ecosistema empresarial diseñado para ordenar, profesionalizar y escalar organizaciones.</span></li>
+                            <li><i class="bx bx-chip"></i><span data-i18n="que.card5">Un modelo empresarial que incorpora tecnología e inteligencia artificial para optimizar procesos.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="contrapunto-col contrapunto-col--no">
+                        <p class="contrapunto-tit" data-i18n="que.noES.title">Qué NO es GoHarv.®</p>
+                        <ul class="contrapunto-lista stagger">
+                            <li><i class="bx bx-x"></i><span data-i18n="que.noES.1">Una consultora genérica que vende diagnósticos sin ejecución.</span></li>
+                            <li><i class="bx bx-x"></i><span data-i18n="que.noES.2">Una oficina tradicional de profesionales de diferentes disciplinas, trabajando de forma aislada.</span></li>
+                            <li><i class="bx bx-x"></i><span data-i18n="que.noES.3">Un marketplace de servicios sin criterio ni responsabilidad estratégica.</span></li>
+                            <li><i class="bx bx-x"></i><span data-i18n="que.noES.4">Un proveedor que entrega informes y se retira.</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
@@ -390,11 +391,11 @@
                     <h2 class="contact-title" data-i18n="contact.title">Contacto</h2>
 
                     <ul class="contact-list">
-                        <li>📍 Senillosa 233, 1° piso (CP 1424) | <br> Buenos Aires, Argentina.</li>
-                        <li>📍 Av. Piedrabuena 4858, oficina 1C (CP 1439) | <br> Buenos Aires, Argentina.</li>
-                        <li>📞 Corporativo: (+5411) 2656 - 0522</li>
-                        <li>📞 Corporativo: (+5411) 3400 - 7699</li>
-                        <li>✉️ goharvey@goharvey.com</li>
+                        <li><i class="bx bx-map"></i> Senillosa 233, 1° piso (CP 1424) | <br> Buenos Aires, Argentina.</li>
+                        <li><i class="bx bx-map"></i> Av. Piedrabuena 4858, oficina 1C (CP 1439) | <br> Buenos Aires, Argentina.</li>
+                        <li><i class="bx bx-phone"></i> Corporativo: (+5411) 2656 - 0522</li>
+                        <li><i class="bx bx-phone"></i> Corporativo: (+5411) 3400 - 7699</li>
+                        <li><i class="bx bx-envelope"></i> goharvey@goharvey.com</li>
                     </ul>
 
                     <h3 class="contact-subtitle" data-i18n="contact.offices">Associated Offices</h3>
@@ -416,6 +417,7 @@
                 <!-- Columna derecha — formulario -->
                 <div class="contact-form">
                     <form id="formContacto" method="POST" action="form.php">
+                        <p class="form-grupo-tit" data-i18n="contact.grupo.datos">Tus datos</p>
                         <div class="form-grid">
                             <div>
                                 <label data-i18n="contact.form.nombre">Nombre *</label>
@@ -443,6 +445,7 @@
                             </div>
                         </div>
 
+                        <p class="form-grupo-tit" data-i18n="contact.grupo.consulta">Tu consulta</p>
                         <div class="form-message">
                             <label data-i18n="contact.form.mensaje">Mensaje *</label>
                             <textarea name="mensaje" data-i18n-ph="contact.form.mensaje_ph" placeholder="¿En qué podemos ayudarte?" maxlength="500" required></textarea>
@@ -465,7 +468,11 @@
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
 
-                        <button type="submit" class="btn-submit" data-i18n="contact.send">Enviar</button>
+                        <div class="form-envio">
+                            <button type="submit" class="btn-submit" data-i18n="contact.send">Enviar consulta</button>
+                            <!-- Decir que pasa despues baja la ansiedad de quien envia -->
+                            <p class="form-respuesta" data-i18n="contact.respuesta">Respondemos dentro de las 24 horas hábiles.</p>
+                        </div>
 
                         <!-- role="status" hace que los lectores de pantalla anuncien
                              el resultado sin robarle el foco al usuario. -->
@@ -618,44 +625,11 @@
     <!-- Formulario AJAX — la lógica vive en js/form.js (antes estaba duplicada acá) -->
     <script src="js/form.js" defer></script>
 
-    <!-- Expandibles -->
-    <script>
-    function toggleLeerMas() {
-        const btn = document.getElementById('btnLeerMas');
-        const bloques = document.querySelectorAll('.about-expandible');
-        const estaAbierto = btn.classList.contains('abierto');
-        bloques.forEach(el => el.classList.toggle('abierto'));
-        btn.classList.toggle('abierto');
-        const span = btn.querySelector('[data-i18n]');
-        if (span) {
-            const key = estaAbierto ? 'about.readmore' : 'about.readless';
-            span.setAttribute('data-i18n', key);
-            span.innerHTML = i18next.t(key);
-        }
-    }
-    function toggleLeerMas2() {
-        const btn = document.getElementById('btnLeerMas2');
-        const bloques = document.querySelectorAll('.about-exp');
-        const estaAbierto = btn.classList.contains('abierto');
-        bloques.forEach(el => el.classList.toggle('abierto'));
-        btn.classList.toggle('abierto');
-        const span = btn.querySelector('[data-i18n]');
-        if (span) {
-            const key = estaAbierto ? 'about.readmore' : 'about.readless';
-            span.setAttribute('data-i18n', key);
-            span.innerHTML = i18next.t(key);
-        }
-    }
-    </script>
+    <!-- (Se eliminaron toggleLeerMas, toggleLeerMas2 y scrollQue: los
+         acordeones "Leer mas" y el carrusel de "Que es" ya no existen.
+         Su contenido ahora se muestra siempre.) -->
 
-    <!-- Carousel "Qué es" -->
-    <script>
-    function scrollQue(direction){
-        const track = document.getElementById("queTrack");
-        track.scrollBy({ left: direction * 320, behavior: "smooth" });
-    }
-    </script>
-
+    <script src="js/desplegables.js" defer></script>
     <script src="js/hero-scroll.js" defer></script>
     <script src="js/btn-up.js"></script>
 </body>

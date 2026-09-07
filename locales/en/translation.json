@@ -75,7 +75,8 @@
       "2": "A traditional office of professionals from different disciplines working in isolation.",
       "3": "A services marketplace without criteria or strategic responsibility.",
       "4": "A provider that delivers reports and walks away."
-    }
+    },
+    "esTitle": "What GoHarv.® is"
   },
   "historia": {
     "title": "OUR STORY",
@@ -122,7 +123,7 @@
   "contact": {
     "title": "Contact",
     "offices": "Associated Offices",
-    "send": "Send",
+    "send": "Send enquiry",
     "form": {
       "nombre": "First name *",
       "nombre_ph": "First name",
@@ -142,7 +143,10 @@
       "robot": "I am not a robot",
       "legal": "I have read and accept the Legal Notice",
       "privacidad": "I have read and accept the Privacy Policy"
-    }
+    },
+    "respuesta": "We reply within 24 business hours.",
+    "grupo.datos": "Your details",
+    "grupo.consulta": "Your enquiry"
   },
   "footer": {
     "aboutus": "We are GoHarv.®, a business ecosystem that integrates corporate solutions, business development, executive training and compliance solutions, connecting companies with professionals, entrepreneurs with investors, adding technology to drive order and sustainable growth for your company.",
@@ -257,45 +261,45 @@
     "p6": "The GoHarv.® method is the intersection between strategic thinking, intelligent business design and professional responsibility. It represents a work system, a way of doing things, one hundred percent traceable, auditable and scalable.",
     "p7": "Our method arises from real experience + professional direction + legal-business criteria.",
     "principios.title": "Guiding Principles",
-    "p1.title": "1. Think differently, but with criteria",
+    "p1.title": "Think differently, but with criteria",
     "p1.desc": "Inspired by Steve Jobs' vision, we believe that real innovation does not arise from noise, but from clarity. Simplifying the complex, questioning the given and designing solutions that have strategic and functional sense.",
-    "p2.title": "2. Excellence as minimum standard",
+    "p2.title": "Excellence as minimum standard",
     "p2.desc": "We don't look for \"good enough\". Every service, process or delivery must meet a high, consistent and replicable professional standard.",
-    "p3.title": "3. Operational ethics",
+    "p3.title": "Operational ethics",
     "p3.desc": "Doing things right, even when no one is watching, is not a moral slogan: it is a sustainable competitive advantage.",
-    "p4.title": "4. Strategy + execution",
+    "p4.title": "Strategy + execution",
     "p4.desc": "Ideas without implementation generate no value. The GoHarv.® method integrates strategic vision with concrete and measurable execution.",
-    "p5.title": "5. Conscious business design",
+    "p5.title": "Conscious business design",
     "p5.desc": "Just as a well-designed product improves the user experience, a well-designed company improves its results, reputation and continuity.",
     "como.title": "How do we work?",
-    "e1.title": "1. Comprehensive business diagnosis",
+    "e1.title": "Comprehensive business diagnosis",
     "e1.p": "We analyze the company as a system. If we don't know the business, it would be impossible to apply our method's solutions.",
     "e1.li1": "We survey key processes: Commercial, Operational, Administrative, Financial, Legal, HR and Technological.",
     "e1.li2": "We evaluate the maturity level of each process.",
     "e1.li3": "We detect deviations, inefficiencies, risks and improvement opportunities.",
     "e1.li4": "We develop risk matrices and operational matrices.",
     "e1.entregable": "📄 Deliverable: General diagnostic report, risk and process map.",
-    "e2.title": "2. Definition of strategic objectives",
+    "e2.title": "Definition of strategic objectives",
     "e2.p": "<strong>No improvements without clear objectives.</strong>",
     "e2.li1": "We understand the client's business and context.",
     "e2.li2": "We define concrete and achievable objectives.",
     "e2.li3": "We relate each objective to specific processes to improve.",
     "e2.li4": "We prioritize impact, feasibility and urgency.",
     "e2.highlight": "🧠 GoHarv.® Methodology enhanced by the strategic Canvas method applied to the real business.",
-    "e3.title": "3. Design of comprehensive improvements by process",
+    "e3.title": "Design of comprehensive improvements by process",
     "e3.p": "Each process is worked on specifically. We analyze and propose improvements in:",
     "e3.li1": "<strong>People</strong> → roles, responsibilities, competencies, org charts.",
     "e3.li2": "<strong>Processes</strong> → costs, times, quality, bottlenecks.",
     "e3.li3": "<strong>Technology</strong> → available tools, adoption level, possible automation.",
     "e3.li4": "<strong>Methodology</strong> → GoHarv.® Method + Business Model Canvas (Alexander Osterwalder).",
-    "e4.title": "4. Standardization, control and continuous improvement",
+    "e4.title": "Standardization, control and continuous improvement",
     "e4.p": "<strong>What is not standardized, is lost.</strong>",
     "e4.li1": "We define procedures and indicators.",
     "e4.li2": "We document improved processes.",
     "e4.li3": "We create control and monitoring mechanisms.",
     "e4.li4": "We leave installed capacity in the organization.",
     "e4.entregable": "📄 We provide training based on documented procedures, indicators, flowcharts and operational standards.",
-    "e5.title": "5. Implementation and accompaniment stage",
+    "e5.title": "Implementation and accompaniment stage",
     "e5.p": "<strong>We don't deliver a report and disappear.</strong>",
     "e5.li1": "We build concrete action plans and execute them.",
     "e5.li2": "We assign responsible parties and deadlines.",
@@ -332,6 +336,7 @@
     "res.li12": "✔ Promotes business expansion",
     "res.li13": "✔ Connects your brand with investors",
     "cta.text": "👉 Want to expand your company?",
-    "cta.btn": "Let's schedule a meeting and we'll tell you how"
+    "cta.btn": "Let's schedule a meeting and we'll tell you how",
+    "def.eyebrow": "How we think"
   }
 }

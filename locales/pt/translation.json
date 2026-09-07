@@ -75,7 +75,8 @@
       "2": "Um escritório tradicional de profissionais de diferentes áreas trabalhando de forma isolada.",
       "3": "Um marketplace de serviços sem critério nem responsabilidade estratégica.",
       "4": "Um fornecedor que entrega relatórios e vai embora."
-    }
+    },
+    "esTitle": "O que é a GoHarv.®"
   },
   "historia": {
     "title": "NOSSA HISTÓRIA",
@@ -122,7 +123,7 @@
   "contact": {
     "title": "Contato",
     "offices": "Escritórios Associados",
-    "send": "Enviar",
+    "send": "Enviar consulta",
     "form": {
       "nombre": "Nome *",
       "nombre_ph": "Nome",
@@ -142,7 +143,10 @@
       "robot": "Não sou um robô",
       "legal": "Li e aceito o Aviso Legal",
       "privacidad": "Li e aceito a Política de Privacidade"
-    }
+    },
+    "respuesta": "Respondemos em até 24 horas úteis.",
+    "grupo.datos": "Seus dados",
+    "grupo.consulta": "Sua consulta"
   },
   "footer": {
     "aboutus": "Somos GoHarv.®, um ecossistema empresarial que integra soluções corporativas, desenvolvimento de negócios, capacitações executivas e soluções de compliance, conectando empresas a profissionais, empresários a investidores, somando tecnologia para impulsionar a organização e o crescimento sustentável da sua empresa.",
@@ -257,45 +261,45 @@
     "p6": "O método GoHarv.® é a interseção entre pensamento estratégico, design inteligente do negócio e responsabilidade profissional. Representa um sistema de trabalho, uma forma de fazer as coisas, cem por cento rastreável, auditável e escalável.",
     "p7": "Nosso método surge de experiência real + direção profissional + critério jurídico-empresarial.",
     "principios.title": "Princípios norteadores",
-    "p1.title": "1. Pensar diferente, mas com critério",
+    "p1.title": "Pensar diferente, mas com critério",
     "p1.desc": "Inspirados na visão de Steve Jobs, acreditamos que a inovação real não surge do ruído, mas da clareza. Simplificar o complexo, questionar o estabelecido e projetar soluções que tenham sentido estratégico e funcional.",
-    "p2.title": "2. Excelência como padrão mínimo",
+    "p2.title": "Excelência como padrão mínimo",
     "p2.desc": "Não buscamos o \"suficientemente bom\". Cada serviço, processo ou entrega deve estar à altura de um padrão profissional alto, coerente e replicável.",
-    "p3.title": "3. Ética operacional",
+    "p3.title": "Ética operacional",
     "p3.desc": "Fazer as coisas bem, mesmo quando ninguém está olhando, não é um slogan moral: é uma vantagem competitiva sustentável.",
-    "p4.title": "4. Estratégia + execução",
+    "p4.title": "Estratégia + execução",
     "p4.desc": "Ideias sem implementação não geram valor. O método GoHarv.® integra visão estratégica com execução concreta e mensurável.",
-    "p5.title": "5. Design consciente do negócio",
+    "p5.title": "Design consciente do negócio",
     "p5.desc": "Assim como um produto bem desenhado melhora a experiência do usuário, uma empresa bem desenhada melhora seus resultados, sua reputação e sua continuidade.",
     "como.title": "Como trabalhamos?",
-    "e1.title": "1. Diagnóstico integral da empresa",
+    "e1.title": "Diagnóstico integral da empresa",
     "e1.p": "Analisamos a empresa como um sistema. Se não conhecemos o negócio, seria impossível aplicar as soluções do nosso método.",
     "e1.li1": "Levantamos processos-chave: Comerciais, Operacionais, Administrativos, Financeiros, Jurídicos, RH e Tecnológicos.",
     "e1.li2": "Avaliamos o grau de maturidade de cada processo.",
     "e1.li3": "Detectamos desvios, ineficiências, riscos e oportunidades de melhoria.",
     "e1.li4": "Elaboramos matrizes de risco e matrizes operacionais.",
     "e1.entregable": "📄 Entregável: Relatório de diagnóstico geral, mapa de riscos e processos.",
-    "e2.title": "2. Definição de objetivos estratégicos",
+    "e2.title": "Definição de objetivos estratégicos",
     "e2.p": "<strong>Não há melhorias sem objetivos claros.</strong>",
     "e2.li1": "Entendemos o negócio e o contexto do cliente.",
     "e2.li2": "Definimos objetivos concretos e alcançáveis.",
     "e2.li3": "Relacionamos cada objetivo a processos específicos a melhorar.",
     "e2.li4": "Priorizamos impacto, viabilidade e urgência.",
     "e2.highlight": "🧠 Metodologia GoHarv.® potencializada pelo método Canvas estratégico aplicado ao negócio real.",
-    "e3.title": "3. Design de melhorias integrais por processo",
+    "e3.title": "Design de melhorias integrais por processo",
     "e3.p": "Cada processo é trabalhado de forma específica. Analisamos e propomos melhorias em:",
     "e3.li1": "<strong>Pessoas</strong> → funções, responsabilidades, competências, organogramas.",
     "e3.li2": "<strong>Processos</strong> → custos, tempos, qualidade, gargalos.",
     "e3.li3": "<strong>Tecnologia</strong> → ferramentas disponíveis, nível de adoção, automação possível.",
     "e3.li4": "<strong>Metodologia</strong> → Método GoHarv.® + Business Model Canvas (Alexander Osterwalder).",
-    "e4.title": "4. Padronização, controle e melhoria contínua",
+    "e4.title": "Padronização, controle e melhoria contínua",
     "e4.p": "<strong>O que não se padroniza, se perde.</strong>",
     "e4.li1": "Definimos procedimentos e indicadores.",
     "e4.li2": "Documentamos processos melhorados.",
     "e4.li3": "Criamos mecanismos de controle e acompanhamento.",
     "e4.li4": "Deixamos capacidade instalada na organização.",
     "e4.entregable": "📄 Fornecemos treinamentos baseados em procedimentos documentados, indicadores, fluxogramas e padrões operacionais.",
-    "e5.title": "5. Etapa de implementação e acompanhamento",
+    "e5.title": "Etapa de implementação e acompanhamento",
     "e5.p": "<strong>Não entregamos um relatório e desaparecemos.</strong>",
     "e5.li1": "Construímos planos de ação concretos e os executamos.",
     "e5.li2": "Atribuímos responsáveis e prazos.",
@@ -332,6 +336,7 @@
     "res.li12": "✔ Promove a expansão empresarial",
     "res.li13": "✔ Conecta sua marca com investidores",
     "cta.text": "👉 Quer expandir sua empresa?",
-    "cta.btn": "Vamos agendar uma reunião e te contamos como fazer"
+    "cta.btn": "Vamos agendar uma reunião e te contamos como fazer",
+    "def.eyebrow": "Como pensamos"
   }
 }
