@@ -1,5 +1,7 @@
 /* ================= AI SECTION ================= */
-@import url(style.css);
+/* @import de style.css eliminado: la hoja ya se carga por <link>
+   en cada pagina, y este import la volvia a inyectar DESPUES de
+   estilos.css, invirtiendo la cascada y anulando el responsive. */
 /* HERO */
 
 .ai-hero{

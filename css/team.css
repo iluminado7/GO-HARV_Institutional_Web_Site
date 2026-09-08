@@ -1,4 +1,6 @@
-@import url("style.css");
+/* @import de style.css eliminado: la hoja ya se carga por <link>
+   en cada pagina, y este import la volvia a inyectar DESPUES de
+   estilos.css, invirtiendo la cascada y anulando el responsive. */
 /* TEAM */
 html{
     font-family: 'Roboto' sans-serif;
@@ -280,22 +282,61 @@ html{
 }
 
 /* CTA */
+
 .team-cta {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: #ffffff;
-    background-color: #000;
-    border: 1px solid #BFAE76;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--negro);
+    color: #fff;
+    border: 1px solid var(--negro);
+    border-radius: 0;
+    padding: .95rem 2.1rem;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+
+    transition: color .3s ease, border-color .3s ease;
 }
 
+/* El relleno: anima transform y no width, así no fuerza reflow en cada
+   frame. z-index -1 lo deja por detrás del texto. */
+
+.team-cta{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+    z-index: -1;
+}
+
+
 .team-cta:hover {
-    background: #BFAE76;
-    color: #ffffff;
+    color: #111;
+    border-color: var(--dorado);
+    background: var(--negro);   /* anula el hover viejo, que pintaba el fondo de golpe */
+}
+
+.team-cta:hover::before {
+    transform: scaleX(1);
+}
+
+
+.team-cta:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
 }
 
 /* Frase destacada */
@@ -717,4 +758,227 @@ transform:rotateY(0deg) scale(1);
     transition: transform var(--anim-rapida) ease,
                 box-shadow var(--anim-rapida) ease;
     transition-delay: 0s;
+}
+
+/* ═══════════════════════════════════════════════
+   TEAM — rediseño con el lenguaje del sitio nuevo
+   ═══════════════════════════════════════════════ */
+
+/* ── Tarjetas ──
+   Pierden el radio de 14px y la sombra difusa, que las hacía flotar como
+   parches, y quedan definidas por una línea fina. Mismo criterio que las
+   tarjetas de Unidades de Negocio. */
+.team-grid .team-card {
+    background: #fff;
+    border: 1px solid rgba(191,174,118,.28);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.6rem 1.4rem 1.8rem;
+    width: 250px;
+    /* Todas terminan a la misma altura aunque el cargo ocupe más líneas:
+       antes quedaban desparejas y la fila se veía rota. */
+    justify-content: flex-start;
+    transition: border-color .3s ease, transform .35s cubic-bezier(.22,1,.36,1),
+                box-shadow .35s ease;
+}
+
+.team-grid .team-card:hover {
+    border-color: var(--dorado);
+    box-shadow: 0 14px 34px rgba(0,0,0,.08);
+    transform: translateY(-4px);
+}
+
+/* Un filo dorado arriba que se traza al pasar el cursor */
+.team-grid .team-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-grid .team-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+.team-grid .team-card:hover::after { transform: scaleX(1); }
+
+/* ── Nombre y cargo ── */
+.team-name {
+    font-size: 1rem;
+    letter-spacing: -.01em;
+    margin-bottom: .35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+}
+
+/* El cargo pasa a etiqueta con tracking: se distingue del nombre sin
+   depender solo del tamaño. */
+.team-card span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    line-height: 1.55;
+    letter-spacing: .04em;
+    color: #7d7d7d;
+}
+
+/* ── LinkedIn ──
+   Era un cuadrado azul #0077b5: un color ajeno a la paleta repetido diez
+   veces en la misma pantalla. Ahora es un contorno que se llena de dorado
+   al pasar el cursor. */
+.team-i {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid rgba(191,174,118,.55);
+    border-radius: 0;
+    color: var(--dorado-oscuro);
+    font-size: 1rem;
+    transition: background .28s ease, color .28s ease, border-color .28s ease;
+}
+
+.team-i:hover {
+    background: var(--dorado);
+    border-color: var(--dorado);
+    color: #111;
+}
+
+/* ── Títulos de bloque ──
+   Mismo tratamiento que los eyebrow del resto del sitio. */
+.team-core-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    padding-bottom: .7rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(191,174,118,.3);
+    text-align: left;
+}
+
+/* ── Botón "Ver más" de cada ficha ── */
+.team-card .btn-ver-mas,
+.team-card .team-btn {
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: .6rem 1.2rem;
+}
+
+@media screen and (max-width: 767px) {
+    .team-grid .team-card { width: 100%; max-width: 320px; }
+    .team-core-title { font-size: .66rem; letter-spacing: .14em; }
+}
+
+
+/* ── Fichas de igual altura ──
+   .team-grid tenia align-items:start, asi que cada tarjeta media lo que
+   su contenido: con cargos de distinto largo la fila quedaba despareja y
+   los botones "Ver mas" no alineaban entre si. */
+.team-grid { align-items: stretch; }
+
+.team-grid .team-card { height: 100%; }
+
+/* El boton se ancla abajo: sin esto seguia pegado al ultimo renglon del
+   cargo, que es lo que rompia la alineacion. */
+.team-grid .team-card .placa-btn,
+.team-grid .team-card .btn-ver-mas,
+.team-grid .team-card .team-btn {
+    margin-top: auto;
+}
+
+/* Un poco de aire entre el cargo y el boton */
+.team-grid .team-card span { margin-bottom: 1rem; }
+
+/* (Estas reglas apuntaban a .placa-btn dentro de .team-grid, pero el
+   boton de las fichas es .button-team: no llegaban a aplicarse y ademas
+   su especificidad hubiera pisado al bloque unificado de mas abajo.) */
+
+/* ═══════════════════════════════════════════════
+   BOTONES DE TEAM — mismo tratamiento que .button-about
+   ═══════════════════════════════════════════════
+   Los tres tipos que había (.button-team con radio de 12px, .placa-btn
+   con degradado dorado y .team-cta) pasan al mismo lenguaje: bloque
+   negro, mayúsculas con tracking, sin radio, y el relleno dorado que
+   entra desde la izquierda al pasar el cursor. */
+
+.button-team,
+.placa-btn,
+.team-cta {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--negro);
+    color: #fff;
+    border: 1px solid var(--negro);
+    border-radius: 0;
+    padding: .78rem 1.6rem;
+    width: auto;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+
+    transition: color .3s ease, border-color .3s ease;
+}
+
+/* El relleno: anima transform, no width, así no fuerza reflow */
+.button-team::before,
+.placa-btn::before,
+.team-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+    z-index: -1;
+}
+
+.button-team:hover,
+.placa-btn:hover,
+.team-cta:hover {
+    color: #111;
+    border-color: var(--dorado);
+    /* anula los hover viejos, que pintaban el fondo de golpe */
+    background: var(--negro);
+}
+
+.button-team:hover::before,
+.placa-btn:hover::before,
+.team-cta:hover::before {
+    transform: scaleX(1);
+}
+
+.button-team:focus-visible,
+.placa-btn:focus-visible,
+.team-cta:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+/* En la ficha, el botón se ancla al pie para que todos alineen */
+.team-grid .team-card .button-team {
+    margin-top: auto;
 }
