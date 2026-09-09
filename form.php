@@ -190,7 +190,7 @@ try {
     gh_json([
         'ok'      => true,
         'codigo'  => 'OK_SIN_MAIL',
-        'mensaje' => 'Recibimos tu mensaje. Te contactaremos a la brevedad.',
+        'mensaje' => 'Recibimos tu mensaje! Gracias por ponernos en contacto.',
     ]);
 }
 

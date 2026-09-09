@@ -25,15 +25,22 @@
 }
 
 .footer-logo{
-    width: 700px;
+    /* Antes: 700px fijos. Era mas grande que el logo del header y en
+       pantallas angostas se desbordaba, porque no habia ninguna regla
+       responsive. max-width lo mantiene dentro de su columna siempre. */
+    width: 340px;
+    max-width: 100%;
     height: auto;
     display: block;
-    margin-left: -40px;
+    /* Se quita el margin-left:-40px: compensaba el margen transparente que
+       tenia el archivo viejo. El logo actual esta recortado, asi que ese
+       desplazamiento ahora lo corre de mas hacia la izquierda. */
 }
 .footer-socials {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 11px;
 }
 
 .footer-socials a {
@@ -497,4 +504,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+@media screen and (max-width: 767px) {
+    .footer-logo { width: 260px; }
 }

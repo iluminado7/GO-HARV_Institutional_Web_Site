@@ -2161,6 +2161,12 @@ opacity: 0.7;
 /* En pantallas chicas el indicador lateral estorba */
 @media screen and (max-width: 767px) {
     .home-scroll { display: none; }
+
+    /* El eyebrow es un contenedor flex: el text-align:center de .homecont
+       centra el texto pero no mueve los items de un flex. Sin esto quedaba
+       pegado a la izquierda mientras el titulo, la bajada y el boton si se
+       centraban. */
+    .home-eyebrow { justify-content: center; }
     .home-controls { justify-content: center; gap: 1.1rem; }
     .home-nav-barra { width: 32px; }
     .home-eyebrow { font-size: .65rem; letter-spacing: .18em; }
