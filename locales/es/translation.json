@@ -1,5 +1,6 @@
 {
   "nav": {
+    "inicio": "Inicio",
     "nosotros": "Nosotros",
     "team": "Team",
     "unidades": "Unidades de Negocio",
@@ -8,8 +9,6 @@
     "compliance": "Compliance",
     "consulting": "Consulting",
     "ai": "AI",
-    "metodo": "Método GoHarv.",
-    "comoTrabajamos": "¿Cómo trabajamos?",
     "contenido": "Contenido",
     "novedades": "Novedades",
     "insights": "Insights",

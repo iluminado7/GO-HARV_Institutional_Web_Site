@@ -829,24 +829,23 @@ transform:rotateY(0deg) scale(1);
 }
 
 /* ── LinkedIn ──
-   Era un cuadrado azul #0077b5: un color ajeno a la paleta repetido diez
-   veces en la misma pantalla. Ahora es un contorno que se llena de dorado
-   al pasar el cursor. */
+   Azul de marca de LinkedIn con el icono en blanco, como el original: es
+   el color con el que la gente reconoce el boton de un vistazo. */
 .team-i {
     width: 30px;
     height: 30px;
-    background: transparent;
-    border: 1px solid rgba(191,174,118,.55);
+    background: #0077b5;
+    border: 1px solid #0077b5;
     border-radius: 0;
-    color: var(--dorado-oscuro);
+    color: #fff;
     font-size: 1rem;
-    transition: background .28s ease, color .28s ease, border-color .28s ease;
+    transition: background .28s ease, border-color .28s ease;
 }
 
 .team-i:hover {
-    background: var(--dorado);
-    border-color: var(--dorado);
-    color: #111;
+    background: #005582;
+    border-color: #005582;
+    color: #fff;
 }
 
 /* ── Títulos de bloque ──
