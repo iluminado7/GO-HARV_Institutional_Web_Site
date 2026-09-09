@@ -156,6 +156,42 @@ function gh_limpiar_rate(): void
 /* ══════════════ 5b. Respaldo local de contactos ══════════════ */
 
 /**
+ * Archiva el CSV cuando supera el tamaño maximo y empieza uno nuevo.
+ *
+ * El archivo crece con cada contacto y nunca se limpia solo. En vez de
+ * esperar a que alguien lo note, al pasar el limite se renombra con la
+ * fecha y el siguiente contacto arranca uno limpio: no se pierde nada y
+ * el archivo activo se mantiene manejable.
+ *
+ * Es silencioso a proposito: solo deja constancia en app.log. Es una tarea
+ * de mantenimiento, no algo que quien recibe los contactos deba atender.
+ */
+function gh_rotar_csv(string $archivo, float $maxMB): void
+{
+    if ($maxMB <= 0 || !is_file($archivo)) {
+        return;
+    }
+
+    /* PHP cachea el resultado de filesize(): si el archivo cambio de tamaño
+       durante esta misma peticion, devolveria el valor viejo y el archivado
+       no se dispararia cuando corresponde. */
+    clearstatcache(true, $archivo);
+
+    if (filesize($archivo) < $maxMB * 1048576) {
+        return;
+    }
+
+    $destino = dirname($archivo) . '/contactos-' . date('Y-m-d_His') . '.csv';
+
+    if (@rename($archivo, $destino)) {
+        gh_log('Respaldo de contactos archivado: ' . basename($destino));
+        return;
+    }
+
+    gh_log('No se pudo archivar el respaldo de contactos.');
+}
+
+/**
  * Guarda el contacto en un CSV local ANTES de intentar el envío.
  *
  * Sin base de datos, el email es el único registro que queda: si Gmail está
@@ -165,7 +201,12 @@ function gh_limpiar_rate(): void
 function gh_respaldar_contacto(array $campos, string $ip): void
 {
     $archivo = gh_dir_logs() . '/contactos.csv';
-    $nuevo   = !is_file($archivo);
+
+    /* Se comprueba ANTES de escribir: si toca archivar, esta fila ya
+       inaugura el archivo nuevo. */
+    gh_rotar_csv($archivo, gh_config_csv_max());
+
+    $nuevo = !is_file($archivo);
 
     $fh = @fopen($archivo, 'a');
     if ($fh === false) {

@@ -49,6 +49,11 @@ return [
         // Sin base de datos, es lo único que evita perder un contacto si el
         // SMTP falla. Poné false para desactivarlo.
         'respaldo_csv'      => true,
+
+        // Al superar este tamaño, el CSV se archiva con la fecha en el
+        // nombre y se empieza uno nuevo, en silencio. Los archivados quedan
+        // en la carpeta logs. 0 = no archivar nunca.
+        'max_csv_mb'        => 5,
     ],
 
     /* ─────────── Entorno ─────────── */

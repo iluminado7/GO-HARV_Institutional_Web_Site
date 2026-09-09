@@ -94,3 +94,17 @@ function gh_ip(): string
     }
     return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 }
+
+/**
+ * Tamaño maximo del CSV de contactos, en MB, leido de config.php.
+ * 0 desactiva el archivado.
+ */
+function gh_config_csv_max(): float
+{
+    static $valor = null;
+    if ($valor === null) {
+        $cfg = require __DIR__ . '/../config.php';
+        $valor = (float)($cfg['antispam']['max_csv_mb'] ?? 5);
+    }
+    return $valor;
+}

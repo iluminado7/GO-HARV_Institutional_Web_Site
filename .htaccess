@@ -3,7 +3,7 @@
 # ═══════════════════════════════════════════════
 
 # ─────────── Archivos que nunca deben servirse por HTTP ───────────
-<FilesMatch "^(config\.php|config\.example\.php|composer\.(json|lock)|\.gitignore|.*\.log|.*\.sql|.*\.md)$">
+<FilesMatch "^(config\.php|config\.example\.php|composer\.(json|lock)|\.gitignore|.*\.log|.*\.sql|.*\.md|.*\.txt)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
