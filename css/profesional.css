@@ -246,9 +246,9 @@
 
 .perfil-indice-tit {
     font-family: 'Montserrat', sans-serif;
-    font-size: .66rem;
+    font-size: .72rem;          /* igual que la barra Perfil · Menciones · Contenido */
     font-weight: 700;
-    letter-spacing: .18em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: #8a8a8a;
     margin-bottom: 1rem;
@@ -265,7 +265,7 @@
     position: relative;
     display: block;
     padding: .5rem 0 .5rem 1.1rem;
-    font-size: .86rem;
+    font-size: .98rem;          /* igual que los párrafos de la biografía */
     line-height: 1.35;
     color: #6b6b6b;
     text-decoration: none;
