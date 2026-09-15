@@ -64,9 +64,13 @@
         csrfToken = data.csrf_token || '';
         montarTurnstile(data.turnstile_sitekey);
       })
-      .catch(function () {
-        // Sin token no se puede enviar: mejor avisar que fallar en silencio.
-        mostrar('No pudimos preparar el formulario. Recargá la página.', 'error');
+      .catch(function (err) {
+        /* No se avisa acá: mostrar() desplaza la página hasta el aviso, y
+           como esto corre al CARGAR, cada recarga terminaba en el formulario
+           aunque el visitante no lo hubiera tocado. Sin token el envío queda
+           bloqueado y el aviso aparece recién si intenta enviar (ver submit).
+           Pasa siempre donde no hay PHP: GitHub Pages, Live Server, file://. */
+        console.warn('[form] No se pudo obtener el token:', err);
       });
   }
 
