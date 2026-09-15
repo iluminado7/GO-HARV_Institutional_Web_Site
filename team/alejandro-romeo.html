@@ -63,134 +63,233 @@
             </div>
         </section>
 
-        <!-- ── BIOGRAFÍA ── -->
-        <div class="perfil-cuerpo">
-            <div class="container perfil-cuerpo-in">
+        <!-- ── ATAJOS ──
+             Perfil, Menciones y Contenido están uno debajo del otro en esta
+             misma página. La barra queda fija arriba al bajar y sirve para
+             saltar rápido a cada parte; marca en cuál se está leyendo. -->
+        <nav class="perfil-tabs" aria-label="Secciones del perfil">
+            <div class="container perfil-tabs-in">
+                <a href="team/alejandro-romeo.html#seccion-perfil" class="perfil-tab" data-i18n="perfil.tabPerfil">Perfil</a>
+                <a href="team/alejandro-romeo.html#menciones" class="perfil-tab"><span data-i18n="perfil.tabMenciones">Menciones</span><span class="perfil-tab-num" hidden></span></a>
+                <a href="team/alejandro-romeo.html#contenido" class="perfil-tab"><span data-i18n="perfil.tabContenido">Contenido</span><span class="perfil-tab-num" hidden></span></a>
+            </div>
+        </nav>
 
-                <aside class="perfil-indice" aria-label="Índice del perfil">
-                    <p class="perfil-indice-tit" data-i18n="perfil.indice">Perfil</p>
-                    <ol>
-                        <li><a href="team/alejandro-romeo.html#perfil-intro">Perfil</a></li>
-                        <li><a href="team/alejandro-romeo.html#formacion">Formación</a></li>
-                        <li><a href="team/alejandro-romeo.html#membresias">Membresías</a></li>
-                        <li><a href="team/alejandro-romeo.html#perfil">Perfil ejecutivo</a></li>
-                        <li><a href="team/alejandro-romeo.html#en-goharv">En GoHarv.®</a></li>
-                        <li><a href="team/alejandro-romeo.html#areas">Áreas</a></li>
-                        <li><a href="team/alejandro-romeo.html#reconocimientos">Reconocimientos</a></li>
-                    </ol>
-                </aside>
+        <!-- ══════════ 1. PERFIL ══════════ -->
+        <div class="perfil-bloque" id="seccion-perfil">
+            <!-- ── BIOGRAFÍA ── -->
+            <div class="perfil-cuerpo">
+                <div class="container perfil-cuerpo-in">
 
-                <article class="perfil-contenido">
-                    <section class="perfil-sec perfil-intro reveal" id="perfil-intro" aria-label="Perfil">
+                    <aside class="perfil-indice" aria-label="Índice del perfil">
+                        <p class="perfil-indice-tit" data-i18n="perfil.indice">Perfil</p>
+                        <ol>
+                            <li><a href="team/alejandro-romeo.html#perfil-intro">Perfil</a></li>
+                            <li><a href="team/alejandro-romeo.html#formacion">Formación</a></li>
+                            <li><a href="team/alejandro-romeo.html#membresias">Membresías</a></li>
+                            <li><a href="team/alejandro-romeo.html#perfil">Perfil ejecutivo</a></li>
+                            <li><a href="team/alejandro-romeo.html#en-goharv">En GoHarv.®</a></li>
+                            <li><a href="team/alejandro-romeo.html#areas">Áreas</a></li>
+                            <li><a href="team/alejandro-romeo.html#reconocimientos">Reconocimientos</a></li>
+                        </ol>
+                    </aside>
 
-                        <p>El Dr. Alejandro Romeo es Co-Fundador y miembro de la alta dirección de GoHarv.®.</p>
+                    <article class="perfil-contenido">
+                        <section class="perfil-sec perfil-intro reveal" id="perfil-intro" aria-label="Perfil">
 
-                        <p>En su carácter de Chief Commercial Officer, lidera la estrategia comercial del ecosistema, integrando visión financiera, desarrollo y creación de nuevos negocios y optimización de estructuras empresariales.</p>
+                            <p>El Dr. Alejandro Romeo es Co-Fundador y miembro de la alta dirección de GoHarv.®.</p>
 
-                        <p>Como hombre de negocios, su enfoque combina análisis económico, prevención de riesgos fiscales e inteligencia comercial para impulsar el crecimiento sostenible de empresas.</p>
+                            <p>En su carácter de Chief Commercial Officer, lidera la estrategia comercial del ecosistema, integrando visión financiera, desarrollo y creación de nuevos negocios y optimización de estructuras empresariales.</p>
 
-                    </section>
+                            <p>Como hombre de negocios, su enfoque combina análisis económico, prevención de riesgos fiscales e inteligencia comercial para impulsar el crecimiento sostenible de empresas.</p>
 
-                    <section class="perfil-sec reveal" id="formacion" aria-labelledby="formacion-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">01</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="formacion-tit">Formación académica</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><strong class="perfil-item-tit">Contador Público Nacional</strong><span class="perfil-item-det">Universidad Kennedy</span></li>
-                            <li><strong class="perfil-item-tit">Formación ejecutiva continua</strong><span class="perfil-item-det">Cuenta con diversos certificados y diplomas obtenidos en instituciones como la Universidad de Buenos Aires (UBA), el Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires (CPCE), la Universidad Kennedy (UK), HSBC Bank Argentina, entre otras entidades de reconocido prestigio académico.</span></li>
-                            <li><strong class="perfil-item-txt">Experiencia docente en programas educativos de formación de la UBA.</strong></li>
-                        </ul>
-                    </section>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="membresias" aria-labelledby="membresias-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">02</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="membresias-tit">Membresías y Credenciales</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><strong class="perfil-item-tit">Matrícula: Contador Público Nacional</strong><span class="perfil-item-det">Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires</span></li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="formacion" aria-labelledby="formacion-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">01</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="formacion-tit">Formación académica</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><strong class="perfil-item-tit">Contador Público Nacional</strong><span class="perfil-item-det">Universidad Kennedy</span></li>
+                                <li><strong class="perfil-item-tit">Formación ejecutiva continua</strong><span class="perfil-item-det">Cuenta con diversos certificados y diplomas obtenidos en instituciones como la Universidad de Buenos Aires (UBA), el Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires (CPCE), la Universidad Kennedy (UK), HSBC Bank Argentina, entre otras entidades de reconocido prestigio académico.</span></li>
+                                <li><strong class="perfil-item-txt">Experiencia docente en programas educativos de formación de la UBA.</strong></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="perfil" aria-labelledby="perfil-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">03</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="perfil-tit">Perfil Ejecutivo</h2>
-                            </div>
-                        </header>
-                        <p>Con más de 23 años de trayectoria en el sector Banking y Finanzas, el Dr. Alejandro Romeo ha desarrollado una sólida experiencia en el asesoramiento a empresas, PYMES, emprendedores y startups, especialmente en el desarrollo y gestión de grandes cuentas.</p>
-                        <p>Es Fundador del estudio contable y fiscal Romeo &amp; Asociados, a través del cual ha brindado asesoramiento estratégico a empresas de diversos sectores en materia contable, fiscal, impositiva, aduanera y comercial.</p>
-                        <p>Se destaca por su perfil comercial senior, su empatía y calidez humana, su capacidad de escucha activa y su enfoque en la detección de necesidades empresariales, permitiéndole diseñar soluciones integrales orientadas a la eficiencia, la rentabilidad y el crecimiento sostenido.</p>
-                        <p>Cuenta con amplia experiencia en la estructuración de modelos de gestión, optimización de recursos, mejora de márgenes de rentabilidad y administración de flujo de fondos (cash flow).</p>
-                        <p>Asimismo, ha participado en el desarrollo e implementación de Políticas KYC (Know Your Customer), Due Diligence de terceros y programas de prevención de lavado de activos (AML), en el marco de la Ley 25.246, normativa de la UIF y estándares internacionales del GAFI, incorporando una visión integral de Compliance en la gestión empresarial.</p>
-                    </section>
+                        <section class="perfil-sec reveal" id="membresias" aria-labelledby="membresias-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">02</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="membresias-tit">Membresías y Credenciales</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><strong class="perfil-item-tit">Matrícula: Contador Público Nacional</strong><span class="perfil-item-det">Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires</span></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="en-goharv" aria-labelledby="en-goharv-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">04</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="en-goharv-tit">En GoHarv.®</h2>
-                            </div>
-                        </header>
-                        <p>En GoHarv.®, ejecuta la estrategia comercial, participando activamente en la generación de nuevas oportunidades de negocio, el desarrollo de alianzas estratégicas y la expansión del ecosistema.</p>
-                        <p>A su vez, cumple un rol clave en la optimización de procesos, tiempos y recursos empresariales, contribuyendo a la reducción de costos operativos y al incremento de márgenes de rentabilidad, con foco en el desarrollo, crecimiento ordenado y expansión de empresas.</p>
-                    </section>
+                        <section class="perfil-sec reveal" id="perfil" aria-labelledby="perfil-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">03</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="perfil-tit">Perfil Ejecutivo</h2>
+                                </div>
+                            </header>
+                            <p>Con más de 23 años de trayectoria en el sector Banking y Finanzas, el Dr. Alejandro Romeo ha desarrollado una sólida experiencia en el asesoramiento a empresas, PYMES, emprendedores y startups, especialmente en el desarrollo y gestión de grandes cuentas.</p>
+                            <p>Es Fundador del estudio contable y fiscal Romeo &amp; Asociados, a través del cual ha brindado asesoramiento estratégico a empresas de diversos sectores en materia contable, fiscal, impositiva, aduanera y comercial.</p>
+                            <p>Se destaca por su perfil comercial senior, su empatía y calidez humana, su capacidad de escucha activa y su enfoque en la detección de necesidades empresariales, permitiéndole diseñar soluciones integrales orientadas a la eficiencia, la rentabilidad y el crecimiento sostenido.</p>
+                            <p>Cuenta con amplia experiencia en la estructuración de modelos de gestión, optimización de recursos, mejora de márgenes de rentabilidad y administración de flujo de fondos (cash flow).</p>
+                            <p>Asimismo, ha participado en el desarrollo e implementación de Políticas KYC (Know Your Customer), Due Diligence de terceros y programas de prevención de lavado de activos (AML), en el marco de la Ley 25.246, normativa de la UIF y estándares internacionales del GAFI, incorporando una visión integral de Compliance en la gestión empresarial.</p>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="areas" aria-labelledby="areas-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">05</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="areas-tit">Áreas con mayor participación estratégica</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-chips stagger">
-                            <li>Estrategia comercial y desarrollo de nuevos negocios</li>
-                            <li>Negocios B2B, B2C y B2B2C</li>
-                            <li>E-Commerce Management</li>
-                            <li>Franchising Management</li>
-                            <li>Capacitaciones comercial in / out company</li>
-                            <li>Negociación estratégica</li>
-                            <li>Estructuración financiera y optimización de recursos</li>
-                            <li>Planificación fiscal e impositiva</li>
-                            <li>Gestión de cash flow y rentabilidad</li>
-                            <li>Fidelización y desarrollo de clientes</li>
-                            <li>Expansión empresarial</li>
-                            <li>Optimización de procesos empresariales</li>
-                            <li>Reducción de costos</li>
-                            <li>Redacción de Manuales Operativos</li>
-                            <li>Ampliación de márgenes de rentabilidad</li>
-                            <li>Automatización de procesos</li>
-                            <li>Inteligencia Artificial aplicada a procesos de trabajo</li>
-                            <li>Integración de IA en modelos de negocio</li>
-                            <li>Técnicas de Up-Selling y Cross-Selling para incrementar ticket promedio</li>
-                            <li>Prospección comercial: High Ticket</li>
-                            <li>Desarrollo de Franquicias</li>
-                            <li>Asesoramiento a PYMES, StartUps y grandes empresas</li>
-                            <li>Apertura de mercados</li>
-                            <li>Estratega en expansión empresarial</li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="en-goharv" aria-labelledby="en-goharv-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">04</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="en-goharv-tit">En GoHarv.®</h2>
+                                </div>
+                            </header>
+                            <p>En GoHarv.®, ejecuta la estrategia comercial, participando activamente en la generación de nuevas oportunidades de negocio, el desarrollo de alianzas estratégicas y la expansión del ecosistema.</p>
+                            <p>A su vez, cumple un rol clave en la optimización de procesos, tiempos y recursos empresariales, contribuyendo a la reducción de costos operativos y al incremento de márgenes de rentabilidad, con foco en el desarrollo, crecimiento ordenado y expansión de empresas.</p>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="reconocimientos" aria-labelledby="reconocimientos-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">06</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="reconocimientos-tit">Reconocimientos</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-logros">
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>GoHarv.®, Candidato WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado del Sistema de Naciones Unidas, creado en 1967 – Categoría: Emerging company – Ginebra, Suiza.</span></li>
-                        </ul>
-                    </section>
-                </article>
+                        <section class="perfil-sec reveal" id="areas" aria-labelledby="areas-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">05</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="areas-tit">Áreas con mayor participación estratégica</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-chips stagger">
+                                <li>Estrategia comercial y desarrollo de nuevos negocios</li>
+                                <li>Negocios B2B, B2C y B2B2C</li>
+                                <li>E-Commerce Management</li>
+                                <li>Franchising Management</li>
+                                <li>Capacitaciones comercial in / out company</li>
+                                <li>Negociación estratégica</li>
+                                <li>Estructuración financiera y optimización de recursos</li>
+                                <li>Planificación fiscal e impositiva</li>
+                                <li>Gestión de cash flow y rentabilidad</li>
+                                <li>Fidelización y desarrollo de clientes</li>
+                                <li>Expansión empresarial</li>
+                                <li>Optimización de procesos empresariales</li>
+                                <li>Reducción de costos</li>
+                                <li>Redacción de Manuales Operativos</li>
+                                <li>Ampliación de márgenes de rentabilidad</li>
+                                <li>Automatización de procesos</li>
+                                <li>Inteligencia Artificial aplicada a procesos de trabajo</li>
+                                <li>Integración de IA en modelos de negocio</li>
+                                <li>Técnicas de Up-Selling y Cross-Selling para incrementar ticket promedio</li>
+                                <li>Prospección comercial: High Ticket</li>
+                                <li>Desarrollo de Franquicias</li>
+                                <li>Asesoramiento a PYMES, StartUps y grandes empresas</li>
+                                <li>Apertura de mercados</li>
+                                <li>Estratega en expansión empresarial</li>
+                            </ul>
+                        </section>
+
+                        <section class="perfil-sec reveal" id="reconocimientos" aria-labelledby="reconocimientos-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">06</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="reconocimientos-tit">Reconocimientos</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-logros">
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>GoHarv.®, Candidato WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado del Sistema de Naciones Unidas, creado en 1967 – Categoría: Emerging company – Ginebra, Suiza.</span></li>
+                            </ul>
+                        </section>
+                    </article>
+                </div>
             </div>
         </div>
+
+        <!-- ══════════ 2. MENCIONES ══════════
+             Notas de medios, empresas e instituciones que nombran al
+             profesional. Para agregar una, copiar este modelo DENTRO de la
+             lista <ul class="perfil-menciones">, la más nueva arriba.
+             Mientras la lista esté vacía se muestra el aviso "Todavía no hay…".
+
+             <li class="perfil-mencion">
+                 <div class="perfil-mencion-meta">
+                     <img class="perfil-mencion-logo" src="img/menciones/medio.webp" alt="">   ← opcional, se puede borrar
+                     <span class="perfil-mencion-fuente">Nombre del medio o empresa</span>
+                     <time datetime="2026-09-15">15 de septiembre de 2026</time>
+                 </div>
+                 <div class="perfil-mencion-cuerpo">
+                     <h3 class="perfil-mencion-tit"><a href="https://link-de-la-nota" class="perfil-mencion-link" target="_blank" rel="noopener">Título de la nota</a></h3>
+                     <p class="perfil-mencion-resumen">Una o dos líneas de resumen.</p>   ← opcional
+                 </div>
+                 <span class="perfil-mencion-ir" aria-hidden="true"><i class="bx bx-link-external"></i></span>
+             </li>
+        -->
+        <section class="perfil-bloque perfil-bloque--menciones" id="menciones" aria-labelledby="menciones-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="menciones-tit" data-i18n="perfil.tabMenciones">Menciones</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.mencionesSub">Publicaciones de medios, empresas e instituciones que incluyen a este profesional.</p>
+                </header>
+
+                <ul class="perfil-menciones">
+                </ul>
+
+                <p class="perfil-vacio"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="perfil.mencionesVacio">Todavía no hay menciones publicadas.</span></p>
+            </div>
+        </section>
+
+        <!-- ══════════ 3. CONTENIDO ══════════
+             Eventos, Insights y Novedades en los que participó. Cada uno
+             tiene su lista; para agregar, copiar este modelo DENTRO de la
+             lista que corresponda, el más nuevo arriba. Las listas vacías
+             no se muestran, y si están las tres vacías aparece el aviso.
+
+             <li class="perfil-card">
+                 <a href="insights/nombre-de-la-nota.html" class="perfil-card-link">
+                     <div class="perfil-card-media">
+                         <img src="img/contenidos/foto.webp" alt="" loading="lazy">
+                         (sin foto: borrar el <img> y poner <i class="bx bx-calendar-event" aria-hidden="true"></i>)
+                     </div>
+                     <div class="perfil-card-cuerpo">
+                         <p class="perfil-card-meta"><time datetime="2026-10-02">2 de octubre de 2026</time></p>
+                         <h4 class="perfil-card-tit">Título</h4>
+                         <p class="perfil-card-lugar"><i class="bx bx-map" aria-hidden="true"></i>Buenos Aires</p>   ← opcional
+                     </div>
+                 </a>
+             </li>
+
+             Si el enlace es a otro sitio, agregar al <a>: target="_blank" rel="noopener"
+        -->
+        <section class="perfil-bloque perfil-bloque--contenido" id="contenido" aria-labelledby="contenido-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="contenido-tit" data-i18n="perfil.tabContenido">Contenido</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.contenidoSub">Eventos, insights y novedades en los que participó.</p>
+                </header>
+
+                <div class="perfil-subbloque" id="eventos">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="nav.eventos">Eventos</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="insights">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-bulb" aria-hidden="true"></i><span data-i18n="nav.insights">Insights</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="novedades">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="nav.novedades">Novedades</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <p class="perfil-vacio"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="perfil.contenidoVacio">Todavía no hay contenido publicado.</span></p>
+            </div>
+        </section>
 
             <!-- ── CIERRE: llamada a la acción ── -->
             <section class="perfil-cta reveal">

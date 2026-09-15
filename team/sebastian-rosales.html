@@ -64,18 +64,117 @@
             </div>
         </section>
 
-        <!-- ── BIOGRAFÍA ── -->
-        <div class="perfil-cuerpo">
-            <div class="container perfil-cuerpo-in perfil-cuerpo-in--simple">
+        <!-- ── ATAJOS ──
+             Perfil, Menciones y Contenido están uno debajo del otro en esta
+             misma página. La barra queda fija arriba al bajar y sirve para
+             saltar rápido a cada parte; marca en cuál se está leyendo. -->
+        <nav class="perfil-tabs" aria-label="Secciones del perfil">
+            <div class="container perfil-tabs-in">
+                <a href="team/sebastian-rosales.html#seccion-perfil" class="perfil-tab" data-i18n="perfil.tabPerfil">Perfil</a>
+                <a href="team/sebastian-rosales.html#menciones" class="perfil-tab"><span data-i18n="perfil.tabMenciones">Menciones</span><span class="perfil-tab-num" hidden></span></a>
+                <a href="team/sebastian-rosales.html#contenido" class="perfil-tab"><span data-i18n="perfil.tabContenido">Contenido</span><span class="perfil-tab-num" hidden></span></a>
+            </div>
+        </nav>
 
-                <article class="perfil-contenido">
-                    <section class="perfil-sec perfil-pendiente reveal" id="perfil-intro">
-                        <i class="bx bx-time-five" aria-hidden="true"></i>
-                        <p data-i18n="perfil.preparacion">El perfil completo de este profesional está en preparación.</p>
-                    </section>
-                </article>
+        <!-- ══════════ 1. PERFIL ══════════ -->
+        <div class="perfil-bloque" id="seccion-perfil">
+            <!-- ── BIOGRAFÍA ── -->
+            <div class="perfil-cuerpo">
+                <div class="container perfil-cuerpo-in perfil-cuerpo-in--simple">
+
+                    <article class="perfil-contenido">
+                        <section class="perfil-sec perfil-pendiente reveal" id="perfil-intro">
+                            <i class="bx bx-time-five" aria-hidden="true"></i>
+                            <p data-i18n="perfil.preparacion">El perfil completo de este profesional está en preparación.</p>
+                        </section>
+                    </article>
+                </div>
             </div>
         </div>
+
+        <!-- ══════════ 2. MENCIONES ══════════
+             Notas de medios, empresas e instituciones que nombran al
+             profesional. Para agregar una, copiar este modelo DENTRO de la
+             lista <ul class="perfil-menciones">, la más nueva arriba.
+             Mientras la lista esté vacía se muestra el aviso "Todavía no hay…".
+
+             <li class="perfil-mencion">
+                 <div class="perfil-mencion-meta">
+                     <img class="perfil-mencion-logo" src="img/menciones/medio.webp" alt="">   ← opcional, se puede borrar
+                     <span class="perfil-mencion-fuente">Nombre del medio o empresa</span>
+                     <time datetime="2026-09-15">15 de septiembre de 2026</time>
+                 </div>
+                 <div class="perfil-mencion-cuerpo">
+                     <h3 class="perfil-mencion-tit"><a href="https://link-de-la-nota" class="perfil-mencion-link" target="_blank" rel="noopener">Título de la nota</a></h3>
+                     <p class="perfil-mencion-resumen">Una o dos líneas de resumen.</p>   ← opcional
+                 </div>
+                 <span class="perfil-mencion-ir" aria-hidden="true"><i class="bx bx-link-external"></i></span>
+             </li>
+        -->
+        <section class="perfil-bloque perfil-bloque--menciones" id="menciones" aria-labelledby="menciones-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="menciones-tit" data-i18n="perfil.tabMenciones">Menciones</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.mencionesSub">Publicaciones de medios, empresas e instituciones que incluyen a este profesional.</p>
+                </header>
+
+                <ul class="perfil-menciones">
+                </ul>
+
+                <p class="perfil-vacio"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="perfil.mencionesVacio">Todavía no hay menciones publicadas.</span></p>
+            </div>
+        </section>
+
+        <!-- ══════════ 3. CONTENIDO ══════════
+             Eventos, Insights y Novedades en los que participó. Cada uno
+             tiene su lista; para agregar, copiar este modelo DENTRO de la
+             lista que corresponda, el más nuevo arriba. Las listas vacías
+             no se muestran, y si están las tres vacías aparece el aviso.
+
+             <li class="perfil-card">
+                 <a href="insights/nombre-de-la-nota.html" class="perfil-card-link">
+                     <div class="perfil-card-media">
+                         <img src="img/contenidos/foto.webp" alt="" loading="lazy">
+                         (sin foto: borrar el <img> y poner <i class="bx bx-calendar-event" aria-hidden="true"></i>)
+                     </div>
+                     <div class="perfil-card-cuerpo">
+                         <p class="perfil-card-meta"><time datetime="2026-10-02">2 de octubre de 2026</time></p>
+                         <h4 class="perfil-card-tit">Título</h4>
+                         <p class="perfil-card-lugar"><i class="bx bx-map" aria-hidden="true"></i>Buenos Aires</p>   ← opcional
+                     </div>
+                 </a>
+             </li>
+
+             Si el enlace es a otro sitio, agregar al <a>: target="_blank" rel="noopener"
+        -->
+        <section class="perfil-bloque perfil-bloque--contenido" id="contenido" aria-labelledby="contenido-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="contenido-tit" data-i18n="perfil.tabContenido">Contenido</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.contenidoSub">Eventos, insights y novedades en los que participó.</p>
+                </header>
+
+                <div class="perfil-subbloque" id="eventos">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="nav.eventos">Eventos</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="insights">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-bulb" aria-hidden="true"></i><span data-i18n="nav.insights">Insights</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="novedades">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="nav.novedades">Novedades</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <p class="perfil-vacio"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="perfil.contenidoVacio">Todavía no hay contenido publicado.</span></p>
+            </div>
+        </section>
 
         <!-- ── NAVEGACIÓN ENTRE PROFESIONALES ── -->
         <nav class="perfil-nav container" aria-label="Otros profesionales">

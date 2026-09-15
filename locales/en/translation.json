@@ -345,6 +345,13 @@
     "anterior": "Previous",
     "siguiente": "Next",
     "volver": "Back to Team",
-    "preparacion": "This professional's full profile is being prepared."
+    "preparacion": "This professional's full profile is being prepared.",
+    "tabPerfil": "Profile",
+    "tabMenciones": "Mentions",
+    "tabContenido": "Content",
+    "mencionesSub": "Articles from media, companies and institutions that feature this professional.",
+    "mencionesVacio": "No mentions published yet.",
+    "contenidoSub": "Events, insights and news this professional took part in.",
+    "contenidoVacio": "No content published yet."
   }
 }

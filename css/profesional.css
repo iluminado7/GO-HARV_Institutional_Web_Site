@@ -591,3 +591,371 @@
     .perfil-nav-link img { width: 44px; height: 44px; }
     .perfil-nav-link { font-size: .84rem; }
 }
+
+
+/* ═══════════════════════════════════════════════
+   PERFIL · MENCIONES · CONTENIDO
+   ═══════════════════════════════════════════════
+   Las tres partes van una debajo de la otra. La barra de atajos queda
+   pegada bajo el header y marca en cuál se está leyendo. */
+.perfil {
+    --perfil-tabs-alto: 3.4rem;
+}
+
+/* ── Barra de atajos ── */
+.perfil-tabs {
+    position: sticky;
+    top: var(--perfil-header-alto, 3.5rem);
+    z-index: 20;
+    background: rgba(255, 255, 255, .96);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    border-bottom: 1px solid #ebe7db;
+}
+
+.perfil-tabs-in {
+    display: flex;
+    gap: clamp(1.25rem, 4vw, 3rem);
+    height: var(--perfil-tabs-alto);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.perfil-tabs-in::-webkit-scrollbar { display: none; }
+
+.perfil-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color var(--anim-rapida) ease;
+}
+
+.perfil-tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+}
+
+.perfil-tab:hover { color: #111; }
+
+.perfil-tab.is-activa { color: #111; }
+.perfil-tab.is-activa::after { transform: scaleX(1); }
+
+.perfil-tab:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: -2px;
+}
+
+/* Cantidad de menciones / contenidos, solo si hay alguno */
+.perfil-tab-num {
+    min-width: 1.35rem;
+    height: 1.35rem;
+    padding: 0 .35rem;
+    display: inline-grid;
+    place-items: center;
+    background: rgba(191, 174, 118, .18);
+    color: var(--dorado-oscuro);
+    font-size: .64rem;
+    letter-spacing: 0;
+}
+
+.perfil-tab-num[hidden] { display: none; }
+
+/* Al saltar desde la barra (o desde el índice de la biografía), el
+   inicio queda debajo de header + barra, no tapado por ellos. */
+.perfil-bloque {
+    scroll-margin-top: calc(var(--perfil-header-alto, 3.5rem) + var(--perfil-tabs-alto));
+}
+
+.perfil-tabs ~ .perfil-bloque .perfil-indice {
+    top: calc(var(--perfil-header-alto, 3.5rem) + var(--perfil-tabs-alto) + 1.5rem);
+}
+
+.perfil-tabs ~ .perfil-bloque .perfil-sec {
+    scroll-margin-top: calc(var(--perfil-header-alto, 3.5rem) + var(--perfil-tabs-alto) + 1.5rem);
+}
+
+/* ── Bloques de Menciones y Contenido ── */
+.perfil-bloque--menciones,
+.perfil-bloque--contenido {
+    border-top: 1px solid #ebe7db;
+}
+
+/* Contenido sobre un fondo apenas cálido: separa las dos partes sin
+   otra línea más */
+.perfil-bloque--contenido { background: #faf8f2; }
+
+.perfil-panel-in {
+    padding-block: 4.5rem 5rem;
+}
+
+.perfil-panel-cab {
+    max-width: 640px;
+    margin-bottom: 2.4rem;
+}
+
+.perfil-panel-tit {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -.015em;
+    color: var(--negro);
+    margin-bottom: .6rem;
+}
+
+.perfil-panel-sub {
+    font-size: .98rem;
+    line-height: 1.7;
+    color: #6b6b6b;
+}
+
+/* Aviso de vacío: se muestra solo mientras no haya ningún ítem cargado.
+   Se resuelve en CSS con :has(), así cargar a mano no exige tocar nada más. */
+.perfil-vacio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 640px;
+    padding: 1.4rem 1.6rem;
+    border: 1px dashed rgba(191, 174, 118, .7);
+    font-size: .95rem;
+    color: #6b6b6b;
+}
+
+.perfil-vacio i { font-size: 1.5rem; color: var(--dorado-oscuro); }
+
+.perfil-bloque--menciones:has(.perfil-mencion) .perfil-vacio,
+.perfil-bloque--contenido:has(.perfil-card) .perfil-vacio { display: none; }
+
+.perfil-menciones:not(:has(.perfil-mencion)),
+.perfil-subbloque:not(:has(.perfil-card)) { display: none; }
+
+/* ── Menciones: filas tipo listado de prensa ── */
+.perfil-menciones {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #ebe7db;
+}
+
+.perfil-mencion {
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) auto;
+    gap: 1rem 2.5rem;
+    align-items: start;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid #ebe7db;
+    transition: background-color var(--anim-rapida) ease;
+}
+
+.perfil-mencion:hover { background: #faf8f2; }
+
+.perfil-mencion-meta {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    padding-left: .2rem;
+}
+
+.perfil-mencion-logo {
+    max-width: 120px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    margin-bottom: .3rem;
+}
+
+.perfil-mencion-fuente {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+}
+
+.perfil-mencion-meta time,
+.perfil-card-meta time {
+    font-size: .82rem;
+    color: #8a8a8a;
+}
+
+.perfil-mencion-tit {
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: .4rem;
+}
+
+.perfil-mencion-link {
+    color: #111;
+    text-decoration: none;
+}
+
+/* Toda la fila es clickeable sin anidar enlaces */
+.perfil-mencion-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.perfil-mencion-link:focus-visible { outline: none; }
+.perfil-mencion:focus-within { outline: 2px solid var(--dorado); outline-offset: 2px; }
+
+.perfil-mencion-resumen {
+    font-size: .94rem;
+    line-height: 1.65;
+    color: #555;
+}
+
+.perfil-mencion-ir {
+    font-size: 1.2rem;
+    color: #b5b5b5;
+    padding-right: .4rem;
+    transition: color var(--anim-rapida) ease, transform var(--anim-rapida) ease;
+}
+
+.perfil-mencion:hover .perfil-mencion-ir {
+    color: var(--dorado-oscuro);
+    transform: translate(2px, -2px);
+}
+
+/* ── Contenido: Eventos, Insights, Novedades ── */
+.perfil-subbloque + .perfil-subbloque { margin-top: 3rem; }
+
+.perfil-subbloque-tit {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    padding-bottom: .8rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid rgba(191, 174, 118, .35);
+}
+
+.perfil-subbloque-tit i { font-size: 1.1rem; }
+
+.perfil-contenidos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.5rem;
+}
+
+.perfil-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--blanco);
+    border: 1px solid #ebe7db;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color var(--anim-rapida) ease, transform var(--anim-rapida) ease;
+}
+
+.perfil-card-link:hover {
+    border-color: var(--dorado);
+    transform: translateY(-3px);
+}
+
+.perfil-card-link:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.perfil-card-media {
+    aspect-ratio: 16 / 9;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(191, 174, 118, .14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 174, 118, .14) 1px, transparent 1px),
+        #faf8f2;
+    background-size: 24px 24px, 24px 24px, auto;
+}
+
+.perfil-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s var(--anim-curva);
+}
+
+.perfil-card-link:hover .perfil-card-media img { transform: scale(1.04); }
+
+.perfil-card-media i {
+    font-size: 2.4rem;
+    color: var(--dorado);
+}
+
+.perfil-card-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    padding: 1.2rem 1.3rem 1.4rem;
+}
+
+.perfil-card-meta { margin: 0; }
+
+.perfil-card-tit {
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111;
+}
+
+.perfil-card-lugar {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .84rem;
+    color: #6b6b6b;
+}
+
+.perfil-card-lugar i { color: var(--dorado-oscuro); }
+
+@media screen and (max-width: 900px) {
+    .perfil-mencion { grid-template-columns: minmax(0, 1fr) auto; }
+    .perfil-mencion-meta { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: .3rem .9rem; }
+    .perfil-mencion-logo { margin-bottom: 0; }
+}
+
+@media screen and (max-width: 600px) {
+    .perfil { --perfil-tabs-alto: 3rem; }
+    .perfil-tab { font-size: .66rem; letter-spacing: .12em; }
+    .perfil-panel-in { padding-block: 3rem 4rem; }
+    .perfil-mencion { padding: 1.4rem 0; gap: .8rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .perfil-tab::after,
+    .perfil-card-link,
+    .perfil-card-media img,
+    .perfil-mencion-ir { transition: none; }
+}

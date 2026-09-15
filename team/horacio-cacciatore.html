@@ -63,181 +63,280 @@
             </div>
         </section>
 
-        <!-- ── BIOGRAFÍA ── -->
-        <div class="perfil-cuerpo">
-            <div class="container perfil-cuerpo-in">
+        <!-- ── ATAJOS ──
+             Perfil, Menciones y Contenido están uno debajo del otro en esta
+             misma página. La barra queda fija arriba al bajar y sirve para
+             saltar rápido a cada parte; marca en cuál se está leyendo. -->
+        <nav class="perfil-tabs" aria-label="Secciones del perfil">
+            <div class="container perfil-tabs-in">
+                <a href="team/horacio-cacciatore.html#seccion-perfil" class="perfil-tab" data-i18n="perfil.tabPerfil">Perfil</a>
+                <a href="team/horacio-cacciatore.html#menciones" class="perfil-tab"><span data-i18n="perfil.tabMenciones">Menciones</span><span class="perfil-tab-num" hidden></span></a>
+                <a href="team/horacio-cacciatore.html#contenido" class="perfil-tab"><span data-i18n="perfil.tabContenido">Contenido</span><span class="perfil-tab-num" hidden></span></a>
+            </div>
+        </nav>
 
-                <aside class="perfil-indice" aria-label="Índice del perfil">
-                    <p class="perfil-indice-tit" data-i18n="perfil.indice">Perfil</p>
-                    <ol>
-                        <li><a href="team/horacio-cacciatore.html#perfil-intro">Perfil</a></li>
-                        <li><a href="team/horacio-cacciatore.html#formacion">Formación</a></li>
-                        <li><a href="team/horacio-cacciatore.html#formacion-en-curso">Formación en curso</a></li>
-                        <li><a href="team/horacio-cacciatore.html#membresias">Membresías</a></li>
-                        <li><a href="team/horacio-cacciatore.html#perfil">Perfil ejecutivo</a></li>
-                        <li><a href="team/horacio-cacciatore.html#en-goharv">En GoHarv.®</a></li>
-                        <li><a href="team/horacio-cacciatore.html#trayectoria">Trayectoria emprendedora</a></li>
-                        <li><a href="team/horacio-cacciatore.html#areas">Áreas</a></li>
-                        <li><a href="team/horacio-cacciatore.html#reconocimientos">Reconocimientos</a></li>
-                    </ol>
-                </aside>
+        <!-- ══════════ 1. PERFIL ══════════ -->
+        <div class="perfil-bloque" id="seccion-perfil">
+            <!-- ── BIOGRAFÍA ── -->
+            <div class="perfil-cuerpo">
+                <div class="container perfil-cuerpo-in">
 
-                <article class="perfil-contenido">
-                    <section class="perfil-sec perfil-intro reveal" id="perfil-intro" aria-label="Perfil">
+                    <aside class="perfil-indice" aria-label="Índice del perfil">
+                        <p class="perfil-indice-tit" data-i18n="perfil.indice">Perfil</p>
+                        <ol>
+                            <li><a href="team/horacio-cacciatore.html#perfil-intro">Perfil</a></li>
+                            <li><a href="team/horacio-cacciatore.html#formacion">Formación</a></li>
+                            <li><a href="team/horacio-cacciatore.html#formacion-en-curso">Formación en curso</a></li>
+                            <li><a href="team/horacio-cacciatore.html#membresias">Membresías</a></li>
+                            <li><a href="team/horacio-cacciatore.html#perfil">Perfil ejecutivo</a></li>
+                            <li><a href="team/horacio-cacciatore.html#en-goharv">En GoHarv.®</a></li>
+                            <li><a href="team/horacio-cacciatore.html#trayectoria">Trayectoria emprendedora</a></li>
+                            <li><a href="team/horacio-cacciatore.html#areas">Áreas</a></li>
+                            <li><a href="team/horacio-cacciatore.html#reconocimientos">Reconocimientos</a></li>
+                        </ol>
+                    </aside>
 
-                        <p>El Dr. Horacio Cacciatore es Co-Fundador y Director Ejecutivo de GoHarv.®.</p>
+                    <article class="perfil-contenido">
+                        <section class="perfil-sec perfil-intro reveal" id="perfil-intro" aria-label="Perfil">
 
-                        <p>En su carácter de Chief Executive Officer, lidera la arquitectura y visión estratégica del ecosistema, integrando derecho, compliance y desarrollo de negocios para diseñar estructuras empresariales sostenibles y crear modelos de negocio, escalables y orientados a la expansión.</p>
+                            <p>El Dr. Horacio Cacciatore es Co-Fundador y Director Ejecutivo de GoHarv.®.</p>
 
-                        <p>Su enfoque combina arquitectura legal, pensamiento estratégico y dirección empresarial, con una fuerte orientación a la prevención de riesgos, la generación de alianzas clave y la promoción de la expansión de empresas.</p>
+                            <p>En su carácter de Chief Executive Officer, lidera la arquitectura y visión estratégica del ecosistema, integrando derecho, compliance y desarrollo de negocios para diseñar estructuras empresariales sostenibles y crear modelos de negocio, escalables y orientados a la expansión.</p>
 
-                    </section>
+                            <p>Su enfoque combina arquitectura legal, pensamiento estratégico y dirección empresarial, con una fuerte orientación a la prevención de riesgos, la generación de alianzas clave y la promoción de la expansión de empresas.</p>
 
-                    <section class="perfil-sec reveal" id="formacion" aria-labelledby="formacion-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">01</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="formacion-tit">Formación académica</h2>
-                                <p class="perfil-sec-sub">Grado y Posgrado</p>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><strong class="perfil-item-tit">Abogado</strong><span class="perfil-item-det">Universidad del Museo Social Argentino (UMSA)</span></li>
-                            <li><strong class="perfil-item-tit">Specialization in Compliance</strong><span class="perfil-item-det">The George Washington University, School of Business (USA)</span></li>
-                            <li><strong class="perfil-item-tit">Programa Especializado en Compliance</strong><span class="perfil-item-det">ADEN University, Business School (USA)</span></li>
-                            <li><strong class="perfil-item-tit">International Certified Compliance Practitioner (CIPC)</strong><span class="perfil-item-det">International Federation of Compliance Associations (Ireland)</span></li>
-                            <li><strong class="perfil-item-tit">International Law</strong><span class="perfil-item-det">International Business Management Institute IBMI (Germany)</span></li>
-                            <li><strong class="perfil-item-tit">McKinsey Forward Program 2025</strong><span class="perfil-item-det">McKinsey &amp; Company</span></li>
-                            <li><strong class="perfil-item-tit">Certificación Internacional 2025: “Ecosistemas de tecnologías. Introducción a las nuevas tecnologías disruptivas”</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
-                            <li><strong class="perfil-item-tit">Advanced Anti-Corruption: Prevention of Corruption e-Learning Certificate</strong><span class="perfil-item-det">United Nations Office on Drugs and Crime (UNODC)</span></li>
-                            <li><strong class="perfil-item-tit">Protección de los Denunciantes e-Learning Certificate</strong><span class="perfil-item-det">United Nations Office on Drugs and Crime (UNODC)</span></li>
-                            <li><strong class="perfil-item-tit">Certificación Internacional en Inteligencia Artificial 2023 (OAS Youth Academy: Academia para Jóvenes en Tecnologías Transformadoras para las Américas de la OEA)</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
-                            <li><strong class="perfil-item-tit">Certificación Internacional Impacto de la Inteligencia Artificial en la empresa</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
-                            <li><strong class="perfil-item-tit">Certificación Internacional en Ética y Compliance</strong><span class="perfil-item-det">Universidad del CEMA</span></li>
-                            <li><strong class="perfil-item-tit">Diplomatura en Derecho Procesal Civil y Comercial (Posgrado)</strong><span class="perfil-item-det">UMSA</span></li>
-                            <li><strong class="perfil-item-tit">Diplomatura en Derecho de la Propiedad Horizontal, Administración de Consorcios y Urbanizaciones</strong><span class="perfil-item-det">Universidad de Belgrano</span></li>
-                        </ul>
-                    </section>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="formacion-en-curso" aria-labelledby="formacion-en-curso-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">02</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="formacion-en-curso-tit">Formación en curso</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><strong class="perfil-item-tit">Specialization in AI for business</strong><span class="perfil-item-det">The George Washington University (USA)</span></li>
-                            <li><strong class="perfil-item-tit">Negotiation</strong><span class="perfil-item-det">University of Michigan (USA)</span></li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="formacion" aria-labelledby="formacion-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">01</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="formacion-tit">Formación académica</h2>
+                                    <p class="perfil-sec-sub">Grado y Posgrado</p>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><strong class="perfil-item-tit">Abogado</strong><span class="perfil-item-det">Universidad del Museo Social Argentino (UMSA)</span></li>
+                                <li><strong class="perfil-item-tit">Specialization in Compliance</strong><span class="perfil-item-det">The George Washington University, School of Business (USA)</span></li>
+                                <li><strong class="perfil-item-tit">Programa Especializado en Compliance</strong><span class="perfil-item-det">ADEN University, Business School (USA)</span></li>
+                                <li><strong class="perfil-item-tit">International Certified Compliance Practitioner (CIPC)</strong><span class="perfil-item-det">International Federation of Compliance Associations (Ireland)</span></li>
+                                <li><strong class="perfil-item-tit">International Law</strong><span class="perfil-item-det">International Business Management Institute IBMI (Germany)</span></li>
+                                <li><strong class="perfil-item-tit">McKinsey Forward Program 2025</strong><span class="perfil-item-det">McKinsey &amp; Company</span></li>
+                                <li><strong class="perfil-item-tit">Certificación Internacional 2025: “Ecosistemas de tecnologías. Introducción a las nuevas tecnologías disruptivas”</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
+                                <li><strong class="perfil-item-tit">Advanced Anti-Corruption: Prevention of Corruption e-Learning Certificate</strong><span class="perfil-item-det">United Nations Office on Drugs and Crime (UNODC)</span></li>
+                                <li><strong class="perfil-item-tit">Protección de los Denunciantes e-Learning Certificate</strong><span class="perfil-item-det">United Nations Office on Drugs and Crime (UNODC)</span></li>
+                                <li><strong class="perfil-item-tit">Certificación Internacional en Inteligencia Artificial 2023 (OAS Youth Academy: Academia para Jóvenes en Tecnologías Transformadoras para las Américas de la OEA)</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
+                                <li><strong class="perfil-item-tit">Certificación Internacional Impacto de la Inteligencia Artificial en la empresa</strong><span class="perfil-item-det">Organización de Estados Americanos (OEA).</span></li>
+                                <li><strong class="perfil-item-tit">Certificación Internacional en Ética y Compliance</strong><span class="perfil-item-det">Universidad del CEMA</span></li>
+                                <li><strong class="perfil-item-tit">Diplomatura en Derecho Procesal Civil y Comercial (Posgrado)</strong><span class="perfil-item-det">UMSA</span></li>
+                                <li><strong class="perfil-item-tit">Diplomatura en Derecho de la Propiedad Horizontal, Administración de Consorcios y Urbanizaciones</strong><span class="perfil-item-det">Universidad de Belgrano</span></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="membresias" aria-labelledby="membresias-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">03</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="membresias-tit">Membresías y trayectoria académica</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><strong class="perfil-item-tit">Matrícula: Abogado</strong><span class="perfil-item-det">Colegio Público de Abogados de la Capital Federal</span></li>
-                            <li><strong class="perfil-item-tit">Matrícula: Agente de la Propiedad Industrial INPI</strong><span class="perfil-item-det">Instituto Nacional de la Propiedad Industrial</span></li>
-                            <li><strong class="perfil-item-tit">Profesor de Posgrado - Diplomatura en Programas de Integridad, Compliance y Transparencia (1° y 2° Cohorte, 2021 y 2022)</strong><span class="perfil-item-det">Universidad de Belgrano.</span></li>
-                            <li><span class="perfil-item-txt">Professor de Pós-Graduação em Direito (convidado): Seminário Jurídico Internacional Compliance 2020 (Brasil) - Faculdade Olga Mettig (Brasil)</span></li>
-                            <li><span class="perfil-item-txt">Membership “Society of Corporate Compliance and Ethics” (SCCE), (2019-2020) Minneapolis, Minnesota, United States of América.</span></li>
-                            <li><span class="perfil-item-txt">Miembro de &quot;World Compliance Association&quot; (España) (2018 – 2022).</span></li>
-                            <li><strong class="perfil-item-tit">Ex Coordinador de los Comités Técnicos de Compliance</strong><span class="perfil-item-det">Capítulo Argentina de la WCA (2021-2022).</span></li>
-                            <li><span class="perfil-item-txt">Miembro de “International Federation of Compliance” (FINASOC), México (2026).</span></li>
-                            <li><span class="perfil-item-txt">Miembro de la “Asociación Argentina de Ética y Compliance” (2018-2020).</span></li>
-                            <li><span class="perfil-item-txt">Miembro del Comité de Innovación, MetLife Seguros S.A. (2016).</span></li>
-                            <li><span class="perfil-item-txt">Miembro del Comité de Investigación de Mercado de Compañías de Seguros, MetLife Seguros S.A. (2014).</span></li>
-                            <li><span class="perfil-item-txt">Autor de más de 15 obras académicas sobre Derecho y Compliance para el Grupo Editorial Errepar–Erreius (2017-2020).</span></li>
-                            <li><span class="perfil-item-txt">Expositor y conferencista en congresos nacionales e internacionales.</span></li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="formacion-en-curso" aria-labelledby="formacion-en-curso-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">02</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="formacion-en-curso-tit">Formación en curso</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><strong class="perfil-item-tit">Specialization in AI for business</strong><span class="perfil-item-det">The George Washington University (USA)</span></li>
+                                <li><strong class="perfil-item-tit">Negotiation</strong><span class="perfil-item-det">University of Michigan (USA)</span></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="perfil" aria-labelledby="perfil-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">04</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="perfil-tit">Perfil Ejecutivo</h2>
-                                <p class="perfil-sec-sub">Trayectoria Profesional</p>
-                            </div>
-                        </header>
-                        <p>Con una sólida trayectoria en derecho corporativo, compliance y consultoría empresarial, el Dr. Horacio Cacciatore ha desarrollado su carrera combinando práctica legal, diseño de estructuras empresariales y desarrollo de negocios.</p>
-                        <p>Es Fundador de Cacciatore &amp; Cacciatore Abogados, desde donde ha asesorado a empresas en materia civil, comercial, contractual, empresarial y compliance, con un enfoque centrado en la prevención de riesgos y la expansión empresarial.</p>
-                        <p>Se especializa en la constitución de sociedades, registro de marcas y patentes, redacción de contratos y acuerdos complejos, consultoría de franquicias, negociación estratégica y diseño de programas de compliance adaptados a los riesgos a los que se enfrenta cada organización.</p>
-                        <p>A lo largo de su carrera, ha participado en la creación y desarrollo de sistemas de franquicias, redes de distribución y dropshipping, modelos de licenciamiento de marcas y esquemas de expansión comercial.</p>
-                        <p>Cuenta con experiencia en compañías nacionales e internacionales como HSBC Bank, MetLife Seguros, Errepar, Erreius, PTM, Garbarino y Falabella, desempeñándose en áreas vinculadas a negociación, compra y contrataciones, desarrollo de negocios y estructuras contractuales.</p>
-                    </section>
+                        <section class="perfil-sec reveal" id="membresias" aria-labelledby="membresias-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">03</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="membresias-tit">Membresías y trayectoria académica</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><strong class="perfil-item-tit">Matrícula: Abogado</strong><span class="perfil-item-det">Colegio Público de Abogados de la Capital Federal</span></li>
+                                <li><strong class="perfil-item-tit">Matrícula: Agente de la Propiedad Industrial INPI</strong><span class="perfil-item-det">Instituto Nacional de la Propiedad Industrial</span></li>
+                                <li><strong class="perfil-item-tit">Profesor de Posgrado - Diplomatura en Programas de Integridad, Compliance y Transparencia (1° y 2° Cohorte, 2021 y 2022)</strong><span class="perfil-item-det">Universidad de Belgrano.</span></li>
+                                <li><span class="perfil-item-txt">Professor de Pós-Graduação em Direito (convidado): Seminário Jurídico Internacional Compliance 2020 (Brasil) - Faculdade Olga Mettig (Brasil)</span></li>
+                                <li><span class="perfil-item-txt">Membership “Society of Corporate Compliance and Ethics” (SCCE), (2019-2020) Minneapolis, Minnesota, United States of América.</span></li>
+                                <li><span class="perfil-item-txt">Miembro de &quot;World Compliance Association&quot; (España) (2018 – 2022).</span></li>
+                                <li><strong class="perfil-item-tit">Ex Coordinador de los Comités Técnicos de Compliance</strong><span class="perfil-item-det">Capítulo Argentina de la WCA (2021-2022).</span></li>
+                                <li><span class="perfil-item-txt">Miembro de “International Federation of Compliance” (FINASOC), México (2026).</span></li>
+                                <li><span class="perfil-item-txt">Miembro de la “Asociación Argentina de Ética y Compliance” (2018-2020).</span></li>
+                                <li><span class="perfil-item-txt">Miembro del Comité de Innovación, MetLife Seguros S.A. (2016).</span></li>
+                                <li><span class="perfil-item-txt">Miembro del Comité de Investigación de Mercado de Compañías de Seguros, MetLife Seguros S.A. (2014).</span></li>
+                                <li><span class="perfil-item-txt">Autor de más de 15 obras académicas sobre Derecho y Compliance para el Grupo Editorial Errepar–Erreius (2017-2020).</span></li>
+                                <li><span class="perfil-item-txt">Expositor y conferencista en congresos nacionales e internacionales.</span></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="en-goharv" aria-labelledby="en-goharv-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">05</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="en-goharv-tit">En GoHarv.®</h2>
-                            </div>
-                        </header>
-                        <p>En GoHarv.®, como arquitecto del ecosistema, lidera la integración y la dirección de las distintas unidades de negocio —Business, IA, Academy, Compliance y Consulting—, participando activamente en decisiones estratégicas, generación de acuerdos y alianzas clave, procesos de expansión empresarial y diseño de nuevos modelos de negocio.</p>
-                    </section>
+                        <section class="perfil-sec reveal" id="perfil" aria-labelledby="perfil-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">04</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="perfil-tit">Perfil Ejecutivo</h2>
+                                    <p class="perfil-sec-sub">Trayectoria Profesional</p>
+                                </div>
+                            </header>
+                            <p>Con una sólida trayectoria en derecho corporativo, compliance y consultoría empresarial, el Dr. Horacio Cacciatore ha desarrollado su carrera combinando práctica legal, diseño de estructuras empresariales y desarrollo de negocios.</p>
+                            <p>Es Fundador de Cacciatore &amp; Cacciatore Abogados, desde donde ha asesorado a empresas en materia civil, comercial, contractual, empresarial y compliance, con un enfoque centrado en la prevención de riesgos y la expansión empresarial.</p>
+                            <p>Se especializa en la constitución de sociedades, registro de marcas y patentes, redacción de contratos y acuerdos complejos, consultoría de franquicias, negociación estratégica y diseño de programas de compliance adaptados a los riesgos a los que se enfrenta cada organización.</p>
+                            <p>A lo largo de su carrera, ha participado en la creación y desarrollo de sistemas de franquicias, redes de distribución y dropshipping, modelos de licenciamiento de marcas y esquemas de expansión comercial.</p>
+                            <p>Cuenta con experiencia en compañías nacionales e internacionales como HSBC Bank, MetLife Seguros, Errepar, Erreius, PTM, Garbarino y Falabella, desempeñándose en áreas vinculadas a negociación, compra y contrataciones, desarrollo de negocios y estructuras contractuales.</p>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="trayectoria" aria-labelledby="trayectoria-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">06</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="trayectoria-tit">Trayectoria emprendedora</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-lista">
-                            <li><span class="perfil-item-txt">Fundador de Infinity RockStone 1981® (e-commerce business)</span></li>
-                            <li><span class="perfil-item-txt">Creador de Programas Académicos sobre Compliance, IA y Franquicias, desarrollados para diversas entidades académicas.</span></li>
-                            <li><span class="perfil-item-txt">Impulsor del proyecto “Universidades” y de la “Iniciativa Compliance” dentro del Grupo Editorial Errepar</span></li>
-                            <li><span class="perfil-item-txt">Desarrollo de múltiples modelos de negocio y sistemas de franquicias para diferentes clientes-empresa a lo largo de su trayectoria</span></li>
-                            <li><span class="perfil-item-txt">Participación activa en desarrollos tecnológicos con IA</span></li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="en-goharv" aria-labelledby="en-goharv-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">05</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="en-goharv-tit">En GoHarv.®</h2>
+                                </div>
+                            </header>
+                            <p>En GoHarv.®, como arquitecto del ecosistema, lidera la integración y la dirección de las distintas unidades de negocio —Business, IA, Academy, Compliance y Consulting—, participando activamente en decisiones estratégicas, generación de acuerdos y alianzas clave, procesos de expansión empresarial y diseño de nuevos modelos de negocio.</p>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="areas" aria-labelledby="areas-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">07</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="areas-tit">Áreas estratégicas</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-chips stagger">
-                            <li>Estrategia empresarial y expansión de negocios</li>
-                            <li>Compliance y gobierno corporativo</li>
-                            <li>Estructuración legal de negocios</li>
-                            <li>Negociación estratégica (Harvard Method)</li>
-                            <li>Contratos complejos</li>
-                            <li>Creación de sistemas de franquicias y modelos de expansión</li>
-                            <li>Franchising Management</li>
-                            <li>Licenciamiento de marcas y derechos de propiedad intelectual</li>
-                            <li>Prevención de riesgos legales y empresariales</li>
-                            <li>Integración de IA en modelos de negocio</li>
-                            <li>Creación y desarrollo de ecosistemas empresariales</li>
-                        </ul>
-                    </section>
+                        <section class="perfil-sec reveal" id="trayectoria" aria-labelledby="trayectoria-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">06</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="trayectoria-tit">Trayectoria emprendedora</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-lista">
+                                <li><span class="perfil-item-txt">Fundador de Infinity RockStone 1981® (e-commerce business)</span></li>
+                                <li><span class="perfil-item-txt">Creador de Programas Académicos sobre Compliance, IA y Franquicias, desarrollados para diversas entidades académicas.</span></li>
+                                <li><span class="perfil-item-txt">Impulsor del proyecto “Universidades” y de la “Iniciativa Compliance” dentro del Grupo Editorial Errepar</span></li>
+                                <li><span class="perfil-item-txt">Desarrollo de múltiples modelos de negocio y sistemas de franquicias para diferentes clientes-empresa a lo largo de su trayectoria</span></li>
+                                <li><span class="perfil-item-txt">Participación activa en desarrollos tecnológicos con IA</span></li>
+                            </ul>
+                        </section>
 
-                    <section class="perfil-sec reveal" id="reconocimientos" aria-labelledby="reconocimientos-tit">
-                        <header class="perfil-sec-cab">
-                            <span class="perfil-sec-num" aria-hidden="true">08</span>
-                            <div>
-                                <h2 class="perfil-sec-tit" id="reconocimientos-tit">Reconocimientos</h2>
-                            </div>
-                        </header>
-                        <ul class="perfil-logros">
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>Candidato a Best CEO Awards 2026 — Madrid, España</span></li>
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>GoHarv.®, Candidato WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado del Sistema de Naciones Unidas, creado en 1967 – Categoría: Emerging company – Ginebra, Suiza.</span></li>
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>McKinsey Forward Program 2025, McKinsey &amp; Company – New York, USA · <a href="https://www.credly.com/badges/06ca9abc-319e-4363-bc45-a2b984015626" target="_blank" rel="noopener">Ver credencial</a></span></li>
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>Nomination for &quot;Small Business Awards 2022&quot;, Corporate Vision, Staffordshire, United Kingdom.</span></li>
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>Calificado para la &quot;1ª Convención Region LatAm - MetLife&quot; Representante de MetLife Argentina para la &quot;Región Americas&quot; - Destino: Atenas 2017 (Grecia) – Premio expedido por Dirección de MetLife Seguros S.A. – Argentina, mayo 2017.</span></li>
-                            <li><i class="bx bx-award" aria-hidden="true"></i><span>Seniority MetLife, obtención de Categoría &quot;Business Seniority&quot; (Reconocimiento a la excelencia y el desarrollo profesional durante el período 2016/2017, expedido por la Dirección Comercial de MetLife Seguros S.A., marzo 2017)</span></li>
-                        </ul>
-                    </section>
-                </article>
+                        <section class="perfil-sec reveal" id="areas" aria-labelledby="areas-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">07</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="areas-tit">Áreas estratégicas</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-chips stagger">
+                                <li>Estrategia empresarial y expansión de negocios</li>
+                                <li>Compliance y gobierno corporativo</li>
+                                <li>Estructuración legal de negocios</li>
+                                <li>Negociación estratégica (Harvard Method)</li>
+                                <li>Contratos complejos</li>
+                                <li>Creación de sistemas de franquicias y modelos de expansión</li>
+                                <li>Franchising Management</li>
+                                <li>Licenciamiento de marcas y derechos de propiedad intelectual</li>
+                                <li>Prevención de riesgos legales y empresariales</li>
+                                <li>Integración de IA en modelos de negocio</li>
+                                <li>Creación y desarrollo de ecosistemas empresariales</li>
+                            </ul>
+                        </section>
+
+                        <section class="perfil-sec reveal" id="reconocimientos" aria-labelledby="reconocimientos-tit">
+                            <header class="perfil-sec-cab">
+                                <span class="perfil-sec-num" aria-hidden="true">08</span>
+                                <div>
+                                    <h2 class="perfil-sec-tit" id="reconocimientos-tit">Reconocimientos</h2>
+                                </div>
+                            </header>
+                            <ul class="perfil-logros">
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>Candidato a Best CEO Awards 2026 — Madrid, España</span></li>
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>GoHarv.®, Candidato WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado del Sistema de Naciones Unidas, creado en 1967 – Categoría: Emerging company – Ginebra, Suiza.</span></li>
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>McKinsey Forward Program 2025, McKinsey &amp; Company – New York, USA · <a href="https://www.credly.com/badges/06ca9abc-319e-4363-bc45-a2b984015626" target="_blank" rel="noopener">Ver credencial</a></span></li>
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>Nomination for &quot;Small Business Awards 2022&quot;, Corporate Vision, Staffordshire, United Kingdom.</span></li>
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>Calificado para la &quot;1ª Convención Region LatAm - MetLife&quot; Representante de MetLife Argentina para la &quot;Región Americas&quot; - Destino: Atenas 2017 (Grecia) – Premio expedido por Dirección de MetLife Seguros S.A. – Argentina, mayo 2017.</span></li>
+                                <li><i class="bx bx-award" aria-hidden="true"></i><span>Seniority MetLife, obtención de Categoría &quot;Business Seniority&quot; (Reconocimiento a la excelencia y el desarrollo profesional durante el período 2016/2017, expedido por la Dirección Comercial de MetLife Seguros S.A., marzo 2017)</span></li>
+                            </ul>
+                        </section>
+                    </article>
+                </div>
             </div>
         </div>
+
+        <!-- ══════════ 2. MENCIONES ══════════
+             Notas de medios, empresas e instituciones que nombran al
+             profesional. Para agregar una, copiar este modelo DENTRO de la
+             lista <ul class="perfil-menciones">, la más nueva arriba.
+             Mientras la lista esté vacía se muestra el aviso "Todavía no hay…".
+
+             <li class="perfil-mencion">
+                 <div class="perfil-mencion-meta">
+                     <img class="perfil-mencion-logo" src="img/menciones/medio.webp" alt="">   ← opcional, se puede borrar
+                     <span class="perfil-mencion-fuente">Nombre del medio o empresa</span>
+                     <time datetime="2026-09-15">15 de septiembre de 2026</time>
+                 </div>
+                 <div class="perfil-mencion-cuerpo">
+                     <h3 class="perfil-mencion-tit"><a href="https://link-de-la-nota" class="perfil-mencion-link" target="_blank" rel="noopener">Título de la nota</a></h3>
+                     <p class="perfil-mencion-resumen">Una o dos líneas de resumen.</p>   ← opcional
+                 </div>
+                 <span class="perfil-mencion-ir" aria-hidden="true"><i class="bx bx-link-external"></i></span>
+             </li>
+        -->
+        <section class="perfil-bloque perfil-bloque--menciones" id="menciones" aria-labelledby="menciones-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="menciones-tit" data-i18n="perfil.tabMenciones">Menciones</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.mencionesSub">Publicaciones de medios, empresas e instituciones que incluyen a este profesional.</p>
+                </header>
+
+                <ul class="perfil-menciones">
+                </ul>
+
+                <p class="perfil-vacio"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="perfil.mencionesVacio">Todavía no hay menciones publicadas.</span></p>
+            </div>
+        </section>
+
+        <!-- ══════════ 3. CONTENIDO ══════════
+             Eventos, Insights y Novedades en los que participó. Cada uno
+             tiene su lista; para agregar, copiar este modelo DENTRO de la
+             lista que corresponda, el más nuevo arriba. Las listas vacías
+             no se muestran, y si están las tres vacías aparece el aviso.
+
+             <li class="perfil-card">
+                 <a href="insights/nombre-de-la-nota.html" class="perfil-card-link">
+                     <div class="perfil-card-media">
+                         <img src="img/contenidos/foto.webp" alt="" loading="lazy">
+                         (sin foto: borrar el <img> y poner <i class="bx bx-calendar-event" aria-hidden="true"></i>)
+                     </div>
+                     <div class="perfil-card-cuerpo">
+                         <p class="perfil-card-meta"><time datetime="2026-10-02">2 de octubre de 2026</time></p>
+                         <h4 class="perfil-card-tit">Título</h4>
+                         <p class="perfil-card-lugar"><i class="bx bx-map" aria-hidden="true"></i>Buenos Aires</p>   ← opcional
+                     </div>
+                 </a>
+             </li>
+
+             Si el enlace es a otro sitio, agregar al <a>: target="_blank" rel="noopener"
+        -->
+        <section class="perfil-bloque perfil-bloque--contenido" id="contenido" aria-labelledby="contenido-tit">
+            <div class="container perfil-panel-in">
+                <header class="perfil-panel-cab">
+                    <h2 class="perfil-panel-tit" id="contenido-tit" data-i18n="perfil.tabContenido">Contenido</h2>
+                    <p class="perfil-panel-sub" data-i18n="perfil.contenidoSub">Eventos, insights y novedades en los que participó.</p>
+                </header>
+
+                <div class="perfil-subbloque" id="eventos">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="nav.eventos">Eventos</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="insights">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-bulb" aria-hidden="true"></i><span data-i18n="nav.insights">Insights</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <div class="perfil-subbloque" id="novedades">
+                    <h3 class="perfil-subbloque-tit"><i class="bx bx-news" aria-hidden="true"></i><span data-i18n="nav.novedades">Novedades</span></h3>
+                    <ul class="perfil-contenidos">
+                    </ul>
+                </div>
+
+                <p class="perfil-vacio"><i class="bx bx-calendar-event" aria-hidden="true"></i><span data-i18n="perfil.contenidoVacio">Todavía no hay contenido publicado.</span></p>
+            </div>
+        </section>
 
             <!-- ── CIERRE: llamada a la acción ── -->
             <section class="perfil-cta reveal">

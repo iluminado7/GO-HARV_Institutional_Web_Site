@@ -345,6 +345,13 @@
     "anterior": "Anterior",
     "siguiente": "Siguiente",
     "volver": "Volver al Team",
-    "preparacion": "El perfil completo de este profesional está en preparación."
+    "preparacion": "El perfil completo de este profesional está en preparación.",
+    "tabPerfil": "Perfil",
+    "tabMenciones": "Menciones",
+    "tabContenido": "Contenido",
+    "mencionesSub": "Publicaciones de medios, empresas e instituciones que incluyen a este profesional.",
+    "mencionesVacio": "Todavía no hay menciones publicadas.",
+    "contenidoSub": "Eventos, insights y novedades en los que participó.",
+    "contenidoVacio": "Todavía no hay contenido publicado."
   }
 }
