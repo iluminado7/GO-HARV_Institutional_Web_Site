@@ -3112,3 +3112,29 @@ opacity: 0.7;
     .js-stagger.js-stagger > .metodo-item { transform: none; }
     .historia { background-position: center center !important; }
 }
+
+/* ── Símbolo de marca registrada ──
+   El ® venía al mismo tamaño que el texto, y en los titulares grandes
+   pesaba tanto como una letra. Se reduce y se sube, que es como se
+   compone tipográficamente.
+
+   El <sup> lo crea js/marca-registrada.js: el símbolo aparece 156 veces
+   entre las páginas y las traducciones, así que marcarlo a mano no era
+   viable, y además i18next reescribe el HTML al cambiar de idioma. */
+.marca-reg {
+    font-size: .42em;
+    /* line-height 0 evita que el <sup> agrande el alto de la línea y
+       desarme el interlineado de los titulares. */
+    line-height: 0;
+    vertical-align: super;
+    letter-spacing: 0;
+    font-weight: inherit;
+    margin-left: .04em;
+}
+
+/* En el texto corrido puede ser un poco más grande sin molestar */
+p .marca-reg,
+li .marca-reg,
+span .marca-reg {
+    font-size: .55em;
+}
