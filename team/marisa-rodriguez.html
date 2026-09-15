@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Todas las rutas del sitio son relativas a la raíz (css/, img/,
+         components/...). Esta página vive un nivel más abajo, en team/,
+         así que <base> las hace resolver desde la raíz sin reescribirlas.
+         Ojo: por lo mismo, un href="#algo" apunta a index; los anclajes
+         internos llevan la ruta completa (team/archivo.html#algo). -->
+    <base href="../">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marisa Rodriguez | GoHarv. Team</title>
+    <meta name="description" content="Marisa Rodriguez — Academic and Administrative Coordinator. Strategic Advisors | Project Leaders, GoHarv.®">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Marisa Rodriguez | GoHarv.">
+    <meta property="og:description" content="Marisa Rodriguez — Academic and Administrative Coordinator. Strategic Advisors | Project Leaders, GoHarv.®">
+    <meta property="og:image" content="img/team/marisa-rodriguez.webp">
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
+    <link rel="stylesheet" href="css/profesional.css">
+    <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Marisa Rodriguez","jobTitle":"Academic and Administrative Coordinator","worksFor":{"@type":"Organization","name":"GoHarv."},"image":"img/team/marisa-rodriguez.webp","sameAs":["https://www.linkedin.com/in/marisa-laura-rodriguez-8663a5152/"]}</script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="perfil">
+
+        <!-- ── FICHA: foto, nombre, cargo y contacto ── -->
+        <section class="perfil-hero">
+            <div class="container perfil-hero-in">
+
+                <figure class="perfil-foto reveal">
+                    <img src="img/team/marisa-rodriguez.webp" alt="Marisa Rodriguez" width="900" height="1125">
+                </figure>
+
+                <div class="perfil-datos stagger">
+                    <nav class="perfil-migas" aria-label="Ubicación">
+                        <a href="team.html" data-i18n="nav.team">Team</a>
+                        <span aria-hidden="true">/</span>
+                        <span aria-current="page">Marisa Rodriguez</span>
+                    </nav>
+                    <p class="perfil-grupo">Strategic Advisors | Project Leaders</p>
+                    <h1 class="perfil-nombre">Marisa Rodriguez</h1>
+                    <ul class="perfil-roles">
+                        <li>Academic and Administrative Coordinator</li>
+                    </ul>
+                    <div class="perfil-acciones">
+                        <a href="index.html#contacto" class="perfil-btn" data-i18n="perfil.contactar">Contactar</a>
+                            <a href="https://www.linkedin.com/in/marisa-laura-rodriguez-8663a5152/" class="perfil-linkedin" target="_blank" rel="noopener"><i class="bx bxl-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── BIOGRAFÍA ── -->
+        <div class="perfil-cuerpo">
+            <div class="container perfil-cuerpo-in perfil-cuerpo-in--simple">
+
+                <article class="perfil-contenido">
+                    <section class="perfil-sec perfil-pendiente reveal" id="perfil-intro">
+                        <i class="bx bx-time-five" aria-hidden="true"></i>
+                        <p data-i18n="perfil.preparacion">El perfil completo de este profesional está en preparación.</p>
+                    </section>
+                </article>
+            </div>
+        </div>
+
+        <!-- ── NAVEGACIÓN ENTRE PROFESIONALES ── -->
+        <nav class="perfil-nav container" aria-label="Otros profesionales">
+            <a href="team/franco-romero.html" class="perfil-nav-link perfil-nav-link--ant">
+                <img src="img/team/franco-romero.webp" alt="" loading="lazy">
+                <span><small data-i18n="perfil.anterior">Anterior</small>Franco Romero</span>
+            </a>
+            <a href="team.html" class="perfil-nav-volver"><i class="bx bx-grid-alt" aria-hidden="true"></i><span data-i18n="perfil.volver">Volver al Team</span></a>
+            <a href="team/angie-rovito.html" class="perfil-nav-link perfil-nav-link--sig">
+                <span><small data-i18n="perfil.siguiente">Siguiente</small>Angie Rovito</span>
+                <img src="img/team/angie-rovito.webp" alt="" loading="lazy">
+            </a>
+        </nav>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <div class="floating-buttons">
+        <button id="scrollTopBtn" aria-label="Volver arriba">↑</button>
+        <a href="https://www.whatsapp.com/channel/0029VbBnHM3Jf05YKOohJb1y" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="bx bxl-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23/i18next.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scrollreveal.js"></script>
+    <script src="js/profesional.js"></script>
+    <script src="js/btn-up.js"></script>
+    <script src="js/marca-registrada.js" defer></script>
+</body>
+</html>

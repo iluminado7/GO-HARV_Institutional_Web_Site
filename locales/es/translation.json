@@ -337,5 +337,14 @@
     "cta.text": "👉 ¿Querés expandir tu empresa?",
     "cta.btn": "Agendemos una reunión y te contamos cómo hacerlo",
     "def.eyebrow": "Cómo pensamos"
+  },
+  "perfil": {
+    "contactar": "Contactar",
+    "indice": "Perfil",
+    "hablemos": "Hablemos",
+    "anterior": "Anterior",
+    "siguiente": "Siguiente",
+    "volver": "Volver al Team",
+    "preparacion": "El perfil completo de este profesional está en preparación."
   }
 }

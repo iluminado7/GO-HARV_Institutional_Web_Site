@@ -1,0 +1,592 @@
+/* ═══════════════════════════════════════════════
+   PERFIL PROFESIONAL — team/<nombre>.html
+   ═══════════════════════════════════════════════
+   Reemplaza al modal de team.html: cada profesional tiene su propia
+   página, con dirección propia para compartir e indexar.
+   Estructura: ficha (foto + cargo + contacto) → índice lateral y
+   biografía por secciones numeradas → cierre con CTA → anterior/siguiente. */
+
+.perfil {
+    background: var(--blanco);
+    color: #222;
+}
+
+/* ── FICHA ──
+   Las fotos tienen fondo blanco: sobre blanco se integran sin recuadro.
+   La trama de líneas finas a la derecha da el tono técnico sin competir
+   con la foto. */
+.perfil-hero {
+    position: relative;
+    padding: calc(3.5rem + 4rem) 0 4rem;
+    border-bottom: 1px solid rgba(191, 174, 118, .3);
+    overflow: hidden;
+}
+
+.perfil-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 45%;
+    background-image:
+        linear-gradient(rgba(191, 174, 118, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 174, 118, .12) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 40%);
+            mask-image: linear-gradient(to right, transparent, #000 40%);
+    pointer-events: none;
+}
+
+.perfil-hero-in {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: end;
+}
+
+/* Foto con escuadras doradas en dos esquinas */
+.perfil-foto {
+    position: relative;
+    margin: 0;
+}
+
+.perfil-foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.perfil-foto::before,
+.perfil-foto::after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--dorado);
+    pointer-events: none;
+}
+
+.perfil-foto::before { top: -10px;    left: -10px;  border-right: 0; border-bottom: 0; }
+.perfil-foto::after  { bottom: -10px; right: -10px; border-left: 0;  border-top: 0; }
+
+.perfil-datos { padding-bottom: .5rem; }
+
+/* Migas */
+.perfil-migas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: 2.2rem;
+}
+
+.perfil-migas a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color var(--anim-rapida) ease;
+}
+
+.perfil-migas a:hover { color: var(--dorado-oscuro); }
+.perfil-migas [aria-current] { color: #222; }
+
+.perfil-grupo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--dorado-oscuro);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.perfil-grupo::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+.perfil-nombre {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    color: var(--negro);
+    margin-bottom: 1.6rem;
+}
+
+.perfil-roles {
+    list-style: none;
+    padding: 0 0 0 1.1rem;
+    margin: 0 0 2.2rem;
+    border-left: 2px solid var(--dorado);
+}
+
+.perfil-roles li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.perfil-roles li:first-child {
+    color: #111;
+    font-weight: 600;
+}
+
+.perfil-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+/* ── BOTONES ──
+   Mismo lenguaje que .button-about / .button-team: bloque negro y
+   relleno dorado que entra desde la izquierda. */
+.perfil-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .78rem 1.6rem;
+    background: var(--negro);
+    color: #fff;
+    border: 1px solid var(--negro);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+    transition: color .3s ease, border-color .3s ease;
+}
+
+.perfil-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--dorado);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .42s cubic-bezier(.22, 1, .36, 1);
+    z-index: -1;
+}
+
+.perfil-btn:hover { color: #111; border-color: var(--dorado); }
+.perfil-btn:hover::before { transform: scaleX(1); }
+
+/* Variante sobre fondo negro */
+.perfil-btn--claro {
+    background: transparent;
+    border-color: var(--dorado);
+    color: #fff;
+}
+
+.perfil-btn:focus-visible,
+.perfil-linkedin:focus-visible,
+.perfil-indice a:focus-visible,
+.perfil-nav a:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+/* LinkedIn en su azul de marca, como en las fichas de team.html */
+.perfil-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    min-height: 44px;
+    padding: .78rem 1.3rem;
+    background: #0077b5;
+    border: 1px solid #0077b5;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .28s ease, border-color .28s ease;
+}
+
+.perfil-linkedin i { font-size: 1.1rem; }
+.perfil-linkedin:hover { background: #005582; border-color: #005582; color: #fff; }
+
+/* ── CUERPO ── */
+.perfil-cuerpo { padding: 4.5rem 0 5rem; }
+
+.perfil-cuerpo-in {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+}
+
+.perfil-cuerpo-in--simple { grid-template-columns: minmax(0, 1fr); }
+
+/* Índice fijo: con biografías de 10+ secciones, saber dónde se está y
+   saltar a una parte evita un scroll a ciegas. */
+.perfil-indice {
+    position: sticky;
+    top: calc(3.5rem + 2rem);
+}
+
+.perfil-indice-tit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: 1rem;
+}
+
+.perfil-indice ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid #e6e1d3;
+}
+
+.perfil-indice a {
+    position: relative;
+    display: block;
+    padding: .5rem 0 .5rem 1.1rem;
+    font-size: .86rem;
+    line-height: 1.35;
+    color: #6b6b6b;
+    text-decoration: none;
+    transition: color var(--anim-rapida) ease;
+}
+
+.perfil-indice a::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--dorado);
+    transform: scaleY(0);
+    transition: transform var(--anim-rapida) ease;
+}
+
+.perfil-indice a:hover { color: #111; }
+
+.perfil-indice a.is-activo {
+    color: #111;
+    font-weight: 600;
+}
+
+.perfil-indice a.is-activo::before { transform: scaleY(1); }
+
+.perfil-contenido { max-width: 780px; }
+
+/* ── SECCIONES ── */
+.perfil-sec {
+    padding-block: 2.8rem;
+    border-top: 1px solid #ebe7db;
+    /* que el header fijo no tape el título al saltar desde el índice */
+    scroll-margin-top: calc(3.5rem + 1.5rem);
+}
+
+.perfil-sec:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.perfil-sec p {
+    font-size: .98rem;
+    line-height: 1.8;
+    color: #3a3a3a;
+    margin-bottom: 1.1rem;
+}
+
+.perfil-sec p:last-child { margin-bottom: 0; }
+
+/* La bajada abre la biografía con más cuerpo */
+.perfil-intro p:first-child {
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    line-height: 1.55;
+    font-weight: 500;
+    color: #111;
+}
+
+.perfil-sec-cab {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.perfil-sec-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: var(--dorado-oscuro);
+    flex-shrink: 0;
+}
+
+.perfil-sec-tit {
+    font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    color: var(--negro);
+}
+
+.perfil-sec-sub {
+    margin: .3rem 0 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .7rem !important;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #8a8a8a !important;
+}
+
+.perfil-logo {
+    display: block;
+    max-height: 72px;
+    max-width: 220px;
+    width: auto;
+    height: auto;
+    margin-bottom: 1.6rem;
+}
+
+/* Listas: título en negrita, institución debajo en gris */
+.perfil-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-lista li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    padding: .9rem 0 .9rem 1.4rem;
+    border-bottom: 1px solid #f0ede4;
+    line-height: 1.55;
+}
+
+.perfil-lista li:last-child { border-bottom: 0; }
+
+.perfil-lista li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(.9rem + .55em);
+    width: 6px;
+    height: 6px;
+    background: var(--dorado);
+}
+
+.perfil-item-tit { font-weight: 600; color: #111; font-size: .96rem; }
+.perfil-item-det { font-size: .9rem; color: #6b6b6b; }
+.perfil-item-txt { font-size: .96rem; color: #3a3a3a; }
+
+.perfil-lista--compacta { margin: .2rem 0 1.4rem; }
+.perfil-lista--compacta li { padding-block: .55rem; border-bottom: 0; }
+.perfil-lista--compacta li::before { top: calc(.55rem + .55em); }
+
+/* Áreas como etiquetas: 20+ renglones sueltos se leían como un muro */
+.perfil-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+}
+
+.perfil-chips li {
+    padding: .55rem .9rem;
+    border: 1px solid rgba(191, 174, 118, .55);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .76rem;
+    line-height: 1.35;
+    color: #333;
+    transition: background-color var(--anim-rapida) ease, border-color var(--anim-rapida) ease;
+}
+
+.perfil-chips li:hover {
+    background: rgba(191, 174, 118, .12);
+    border-color: var(--dorado);
+}
+
+/* Reconocimientos */
+.perfil-logros {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: .75rem;
+}
+
+.perfil-logros li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1.1rem 1.2rem;
+    background: #faf8f2;
+    border-left: 2px solid var(--dorado);
+    font-size: .94rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.perfil-logros i {
+    font-size: 1.4rem;
+    color: var(--dorado-oscuro);
+    line-height: 1.1;
+}
+
+.perfil-logros a {
+    color: var(--dorado-oscuro);
+    font-weight: 600;
+    text-underline-offset: 3px;
+}
+
+/* Perfil todavía sin biografía */
+.perfil-pendiente {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 640px;
+    padding: 1.4rem 1.6rem !important;
+    background: #faf8f2;
+    border-left: 2px solid var(--dorado);
+}
+
+.perfil-pendiente i { font-size: 1.5rem; color: var(--dorado-oscuro); }
+
+/* ── CTA ── */
+.perfil-cta {
+    background: var(--negro);
+    color: #fff;
+    padding: 4.5rem 0;
+}
+
+.perfil-cta-in {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem 3rem;
+    align-items: center;
+}
+
+.perfil-cta-eyebrow {
+    grid-column: 1 / -1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--dorado);
+}
+
+.perfil-cta-txt {
+    font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+    line-height: 1.5;
+    color: #f2f2f2;
+    max-width: 760px;
+}
+
+/* ── ANTERIOR / SIGUIENTE ── */
+.perfil-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 2.5rem 4rem;
+}
+
+.perfil-nav a { text-decoration: none; color: #111; }
+
+.perfil-nav-link {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    font-weight: 600;
+    font-size: .92rem;
+    line-height: 1.3;
+}
+
+.perfil-nav-link--sig { justify-content: flex-end; text-align: right; }
+
+.perfil-nav-link img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid #e6e1d3;
+    transition: border-color var(--anim-rapida) ease;
+}
+
+.perfil-nav-link:hover img { border-color: var(--dorado); }
+
+.perfil-nav-link small {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .64rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: .2rem;
+}
+
+.perfil-nav-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: .7rem 1.1rem;
+    border: 1px solid #e6e1d3;
+    transition: border-color var(--anim-rapida) ease;
+}
+
+.perfil-nav-volver:hover { border-color: var(--dorado); }
+
+/* ── RESPONSIVE ── */
+@media screen and (max-width: 900px) {
+    .perfil-hero-in { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .perfil-foto { max-width: 300px; margin-inline: 10px; }
+    .perfil-hero::before { inset: 0; }
+
+    .perfil-cuerpo-in { grid-template-columns: minmax(0, 1fr); }
+    /* En pantalla angosta el índice fijo le quitaría ancho al texto */
+    .perfil-indice { display: none; }
+
+    .perfil-cta-in { grid-template-columns: minmax(0, 1fr); }
+    .perfil-cta-in .perfil-btn { justify-self: start; }
+}
+
+@media screen and (max-width: 600px) {
+    .perfil-hero { padding-top: calc(3.5rem + 2.5rem); }
+    .perfil-migas { margin-bottom: 1.6rem; }
+
+    .perfil-nav { grid-template-columns: 1fr 1fr; }
+    .perfil-nav-volver { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
+    .perfil-nav-link img { width: 44px; height: 44px; }
+    .perfil-nav-link { font-size: .84rem; }
+}

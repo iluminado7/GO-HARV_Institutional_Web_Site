@@ -26,8 +26,11 @@ async function initI18n() {
     interpolation: { escapeValue: false }
   });
 
-  /* Ruta base: carpeta donde está el HTML actual */
-  const base = window.location.href.replace(/\/[^/]*(\?.*)?$/, '');
+  /* Ruta base: la raíz del sitio. Se toma de document.baseURI y no de
+     location.href para respetar <base>: las páginas de team/ están un
+     nivel más abajo y declaran <base href="../">. Sin <base>, las dos
+     coinciden. */
+  const base = document.baseURI.replace(/[?#].*$/, '').replace(/\/[^/]*$/, '');
 
   await Promise.all(
     SUPPORTED.map(lang =>
