@@ -352,7 +352,8 @@
 .perfil-sec-sub {
     margin: .3rem 0 0 !important;
     font-family: 'Montserrat', sans-serif;
-    font-size: .7rem !important;
+    font-size: .8rem !important;
+    font-weight: 500;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: #8a8a8a !important;
