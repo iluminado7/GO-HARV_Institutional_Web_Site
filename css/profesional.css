@@ -959,3 +959,58 @@
     .perfil-card-media img,
     .perfil-mencion-ir { transition: none; }
 }
+
+
+/* ═══════════════════════════════════════════════
+   REDES DE CONTACTO — íconos redondos de la ficha
+   ═══════════════════════════════════════════════
+   Reemplazan a los botones "Contactar" y "LinkedIn". Cada uno en el color
+   de su marca, que es como se los reconoce de un vistazo. */
+.perfil-redes {
+    gap: .8rem;
+}
+
+.perfil-red {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.45rem;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .12);
+    transition: transform var(--anim-rapida) ease, box-shadow var(--anim-rapida) ease, background-color var(--anim-rapida) ease;
+}
+
+.perfil-red--linkedin { background: #0077b5; }
+.perfil-red--whatsapp { background: #25D366; }
+.perfil-red--email    { background: #EC6464; }
+
+.perfil-red:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
+}
+
+.perfil-red--linkedin:hover { background: #005582; }
+.perfil-red--whatsapp:hover { background: #1da851; }
+.perfil-red--email:hover    { background: #d44f4f; }
+
+.perfil-red:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+/* Enlace todavía sin cargar (href="#"): atenuado y sin acción. Con
+   <base href="../"> un "#" llevaría a la home en vez de no hacer nada. */
+.perfil-red[href="#"] {
+    opacity: .35;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .perfil-red { transition: none; }
+    .perfil-red:hover { transform: none; }
+}
