@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GoHarv. es una plataforma de consulting, tecnología e inteligencia artificial enfocada en empresas que buscan expandirse. Próximamente.">
-<meta name="keywords" content="consulting, inteligencia artificial, empresas, compliance, tecnología, negocios">
-<meta name="author" content="GoHarv.®">
-<meta name="robots" content="index, follow">
-<title>GoHarv. | Coming Soon</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- ICONOS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Debe ir en el <head> y lo antes posible: el navegador restaura la
-         posicion de scroll al recargar, y en este sitio el header y el footer
-         se inyectan con fetch DESPUES de cargar, asi que esa posicion termina
-         apuntando a otro contenido (normalmente el formulario, lo mas bajo de
-         la pagina). Puesto al final del body llegaba tarde. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GoHarv. es una plataforma de consulting, tecnología e inteligencia artificial enfocada en empresas que buscan expandirse. Próximamente.">
+    <meta name="author" content="GoHarv.®">
+    <!-- Página provisoria de Eventos, Insights y Novedades: no conviene que
+         Google la indexe como contenido. -->
+    <meta name="robots" content="noindex, follow">
+    <title>GoHarv. | Próximamente</title>
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/lang-switcher.css">
+    <link rel="stylesheet" href="css/coming-soon.css">
     <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 </head>
-
 <body>
+    <div id="header-container"></div>
 
-<div class="container">
+    <main class="pronto">
+        <section class="pronto-hero">
+            <div class="container pronto-in stagger">
 
-<div class="services">
-CONSULTING | BUSINESS | TECH + IA | ACADEMY | COMPLIANCE
-</div>
+                <p class="pronto-eyebrow" data-i18n="pronto.eyebrow">Próximamente</p>
 
-<div class="main-text">
-El futuro de las empresas que buscan expandirse,<br>
-se está construyendo aquí.
-</div>
+                <p class="pronto-unidades" translate="no">
+                    CONSULTING <span>|</span> BUSINESS <span>|</span> TECH + IA <span>|</span> ACADEMY <span>|</span> COMPLIANCE
+                </p>
 
+                <h1 class="pronto-titulo" data-i18n="pronto.titulo">
+                    El futuro de las empresas que buscan expandirse,<br>
+                    se está construyendo aquí.
+                </h1>
 
-<div class="socials">
+                <div class="pronto-redes">
+                    <a href="https://www.instagram.com/goharvey.com.ar/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/company/go-harvey%C2%AE/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/GoHarveyFanPage/" target="_blank" rel="noopener" aria-label="Facebook"><i class="bx bxl-facebook" aria-hidden="true"></i></a>
+                    <a href="https://ar.pinterest.com/GoHarveyAcademy/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="bx bxl-pinterest-alt" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5491134007699" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bx bxl-whatsapp" aria-hidden="true"></i></a>
+                </div>
 
-<a href="https://www.instagram.com/goharvey.com.ar/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.linkedin.com/company/go-harvey%C2%AE/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://www.facebook.com/GoHarveyFanPage/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://ar.pinterest.com/GoHarveyAcademy/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-<a href="https://wa.me/5491134007699" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="index.html" class="pronto-btn" data-i18n="pronto.volver">Volver al inicio</a>
 
-</div>
+            </div>
+        </section>
+    </main>
 
+    <div id="footer-container"></div>
 
+    <div class="floating-buttons">
+        <button id="scrollTopBtn" aria-label="Volver arriba">↑</button>
+        <a href="https://www.whatsapp.com/channel/0029VbBnHM3Jf05YKOohJb1y" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="bx bxl-whatsapp"></i>
+        </a>
+    </div>
 
-<div class="footer">
-
-Building solutions for companies looking to expand.<br>
-The official website is coming soon.<br>
-Copyright © 2026 GoHarv. S.A.S. – All rights reserved.
-
-</div>
-
-</div>
-
-<script>
-
-const targetDate = new Date("April 10, 2026 00:00:00").getTime()
-
-setInterval(function(){
-
-const now = new Date().getTime()
-
-const distance = targetDate - now
-
-const days = Math.floor(distance / (1000*60*60*24))
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60))
-const seconds = Math.floor((distance%(1000*60))/1000)
-
-document.getElementById("days").innerHTML = days
-document.getElementById("hours").innerHTML = hours
-document.getElementById("minutes").innerHTML = minutes
-document.getElementById("seconds").innerHTML = seconds
-
-},1000)
-
-</script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23/i18next.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/scrollreveal.js"></script>
+    <script src="js/btn-up.js"></script>
     <script src="js/marca-registrada.js" defer></script>
 </body>
 </html>

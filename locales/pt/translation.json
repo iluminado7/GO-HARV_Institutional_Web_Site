@@ -353,5 +353,10 @@
     "mencionesVacio": "Ainda não há menções publicadas.",
     "contenidoSub": "Eventos, insights e novidades dos quais participou.",
     "contenidoVacio": "Ainda não há conteúdo publicado."
+  },
+  "pronto": {
+    "eyebrow": "Em breve",
+    "titulo": "O futuro das empresas que buscam expandir-se<br>está sendo construído aqui.",
+    "volver": "Voltar ao início"
   }
 }

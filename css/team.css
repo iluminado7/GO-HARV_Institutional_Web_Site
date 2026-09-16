@@ -3,7 +3,7 @@
    estilos.css, invirtiendo la cascada y anulando el responsive. */
 /* TEAM */
 html{
-    font-family: 'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .container{
     width: 100%;

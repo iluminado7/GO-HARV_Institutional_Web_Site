@@ -3,7 +3,6 @@
    GoHarv.® | No contiene colores ni componentes visuales
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
@@ -36,7 +35,7 @@ img { max-width: 100%; height: auto; }
 button, input { border: none; outline: none; }
 button {
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .938rem;
 }
 
@@ -351,7 +350,6 @@ button {
     margin-left: auto;
     margin-right: auto;
     padding: 4rem 1.5rem;
-    font-family: 'DM Sans', sans-serif;
 }
 
 .sec-label {

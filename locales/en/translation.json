@@ -353,5 +353,10 @@
     "mencionesVacio": "No mentions published yet.",
     "contenidoSub": "Events, insights and news this professional took part in.",
     "contenidoVacio": "No content published yet."
+  },
+  "pronto": {
+    "eyebrow": "Coming soon",
+    "titulo": "The future of companies looking to expand<br>is being built here.",
+    "volver": "Back to home"
   }
 }

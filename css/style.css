@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
 
 /* ═══════════════════════════════════════════════
    TOKENS — valores base del sistema de diseño.
@@ -144,7 +143,7 @@ input {
 
 button {
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .938rem;
 }
 
@@ -409,7 +408,7 @@ button {
 
 .button-cat {
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .938rem;
 }
 
@@ -430,7 +429,7 @@ button {
 
 .button-cat-met{
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: .938rem;
     display: inline-block;
     background-color: #111111;
@@ -872,7 +871,6 @@ button {
   margin-left: auto;
   margin-right: auto;
   padding: 4rem 1.5rem;
-  font-family: 'DM Sans', sans-serif;
 }
 
 .sec-label {
