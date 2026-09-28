@@ -352,11 +352,71 @@
     "mencionesSub": "Articles from media, companies and institutions that feature this professional.",
     "mencionesVacio": "No mentions published yet.",
     "contenidoSub": "Events, insights and news this professional took part in.",
-    "contenidoVacio": "No content published yet."
+    "contenidoVacio": "No content published yet.",
+    "sec": {
+      "perfil": "Profile",
+      "formacion": "Education",
+      "membresias": "Memberships",
+      "perfilEjec": "Executive profile",
+      "enGoharv": "At GoHarv.®",
+      "areas": "Areas",
+      "reconocim": "Awards"
+    },
+    "tit": {
+      "formacion": "Academic background",
+      "membresias": "Memberships",
+      "perfilEjec": "Executive Profile",
+      "enGoharv": "At GoHarv.®",
+      "areasPart": "Areas of greatest strategic involvement",
+      "reconocim": "Awards and recognition"
+    }
   },
   "pronto": {
     "eyebrow": "Coming soon",
     "titulo": "The future of companies looking to expand<br>is being built here.",
     "volver": "Back to home"
+  },
+  "perfiles": {
+    "pablo": {
+      "intro1": "Dr. Pablo N. Cacciatore is Co-Founder and a member of the senior management of GoHarv.®.",
+      "intro2": "As Chief Legal Officer, he combines legal vision with business strategy to mitigate risk and ensure regulatory compliance, thereby safeguarding the interests and assets of companies.",
+      "intro3": "As an entrepreneur and corporate lawyer, he leads litigation strategy in complex cases and in dispute resolution within business contexts of high economic impact.",
+      "form1": "Lawyer",
+      "form2": "Mediator",
+      "form3": "Licensed Insurance Broker",
+      "form4": "Ongoing executive education",
+      "form4det": "He holds several certificates and diplomas attesting to his training and professional development, obtained at institutions such as the Universidad de Buenos Aires (UBA), the CPACF Graduate School and the UNLZ, among other entities of recognised academic prestige.",
+      "memb1": "Bar admission: Lawyer",
+      "memb2": "Licence: Insurance Broker",
+      "memb3": "Member: Asociación Argentina de Productores Asesores de Seguros",
+      "ejec1": "With more than 20 years in professional practice, Dr. Pablo Nicolás Cacciatore has a solid track record as counsel and attorney-in-fact for companies in complex litigation.",
+      "ejec2": "He specialises in estates and succession planning for the continuity of family businesses, as well as in property insurance and damages claims.",
+      "ejec3": "His training as a Mediator enables him to take part in highly complex negotiations, applying alternative dispute resolution methods in sensitive scenarios of high economic impact.",
+      "ejec4": "He has extensive experience drafting and negotiating commercial contracts for companies.",
+      "ejec5": "He is the Founder of the full-service law firm Cacciatore &amp; Asociados, through which he has advised individuals and companies from a range of sectors for more than two decades across multiple areas of law —Civil, Commercial, Labour, Criminal, Family and Succession.",
+      "ejec6": "He also served as Legal Advisor to the National Ministry of Security of the Argentine Republic, taking part in inter-agency investigations alongside federal forces.",
+      "goharv1": "He leads the legal vertical, coordinating the network of legal advisors and contributing legal strategy and litigation experience across jurisdictions, with an approach based on risk prevention and governance in business transformation processes.",
+      "goharv2": "He takes an active part in the development of the GoHarv.® ecosystem, supporting business owners, business families and boards through critical processes of transformation, continuity and expansion.",
+      "area1": "Business continuity and succession",
+      "area2": "Corporate governance in family businesses",
+      "area3": "Alternative dispute resolution",
+      "area4": "Insurance as a management tool",
+      "area5": "Strategic negotiation (Harvard Method)",
+      "area6": "Contracts of high economic impact",
+      "area7": "Civil and commercial litigation",
+      "area8": "Engagement with regulatory bodies",
+      "area9": "Business expansion",
+      "area10": "Business development",
+      "area11": "New business creation",
+      "area12": "Market entry",
+      "area13": "Strategic leadership of negotiation teams",
+      "area14": "Commercial strategy",
+      "area15": "Disruptive businesses",
+      "area16": "Sales prospecting",
+      "area17": "Franchising Management",
+      "area18": "Business expansion strategist",
+      "premio1": "GoHarv.®, nominee for the WIPO Global Awards 2026 (World Intellectual Property Organization), a specialised agency of the United Nations System founded in 1967 – Category: Emerging company – Geneva, Switzerland.",
+      "cta": "If your organisation faces challenges related to business continuity, succession in family businesses, legal risk management or complex dispute resolution, you can count on the advice of our team."
+    }
   }
 }

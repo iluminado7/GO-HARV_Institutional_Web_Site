@@ -352,11 +352,71 @@
     "mencionesSub": "Publicaciones de medios, empresas e instituciones que incluyen a este profesional.",
     "mencionesVacio": "Todavía no hay menciones publicadas.",
     "contenidoSub": "Eventos, insights y novedades en los que participó.",
-    "contenidoVacio": "Todavía no hay contenido publicado."
+    "contenidoVacio": "Todavía no hay contenido publicado.",
+    "sec": {
+      "perfil": "Perfil",
+      "formacion": "Formación",
+      "membresias": "Membresías",
+      "perfilEjec": "Perfil ejecutivo",
+      "enGoharv": "En GoHarv.®",
+      "areas": "Áreas",
+      "reconocim": "Reconocimientos"
+    },
+    "tit": {
+      "formacion": "Formación académica",
+      "membresias": "Membresías",
+      "perfilEjec": "Perfil Ejecutivo",
+      "enGoharv": "En GoHarv.®",
+      "areasPart": "Áreas con mayor participación estratégica",
+      "reconocim": "Reconocimientos"
+    }
   },
   "pronto": {
     "eyebrow": "Próximamente",
     "titulo": "El futuro de las empresas que buscan expandirse,<br>se está construyendo aquí.",
     "volver": "Volver al inicio"
+  },
+  "perfiles": {
+    "pablo": {
+      "intro1": "El Dr. Pablo N. Cacciatore es Co-Fundador y miembro de la alta dirección de GoHarv.®.",
+      "intro2": "En su carácter de Chief Legal Officer, combina visión jurídica con estrategia de negocio para mitigar riesgos y asegurar el cumplimiento normativo, procurando así la preservación de los intereses y del patrimonio de empresas.",
+      "intro3": "Como empresario y abogado corporativo, lidera la estrategia procesal en litigios complejos y en la resolución de conflictos en contextos empresariales de alto impacto económico.",
+      "form1": "Abogado",
+      "form2": "Mediador",
+      "form3": "Productor Asesor de Seguros",
+      "form4": "Formación ejecutiva continua",
+      "form4det": "Cuenta con diversos certificados y diplomas que acreditan su formación y actualización profesional, obtenidos en instituciones como la Universidad de Buenos Aires (UBA), la Escuela de Posgrado del CPACF y la UNLZ, entre otras entidades de reconocido prestigio académico.",
+      "memb1": "Matrícula: Abogado",
+      "memb2": "Matrícula: Productor Asesor de Seguros",
+      "memb3": "Membresía: Asociación Argentina de Productores Asesores de Seguros",
+      "ejec1": "Con más de 20 años de ejercicio profesional, el Dr. Pablo Nicolás Cacciatore cuenta con una sólida trayectoria como letrado patrocinante y apoderado de empresas en litigios complejos.",
+      "ejec2": "Es especialista en sucesiones y planificación sucesoria para la continuidad de empresas familiares, así como en seguros patrimoniales, daños y perjuicios.",
+      "ejec3": "Su formación como Mediador le permite intervenir en negociaciones de alta complejidad, aplicando métodos alternativos de resolución de conflictos ante disputas en escenarios sensibles y de alto impacto económico.",
+      "ejec4": "Posee amplia experiencia en la redacción y negociación de contratos comerciales para empresas.",
+      "ejec5": "Es Fundador del estudio jurídico integral Cacciatore &amp; Asociados, a través del cual ha asesorado durante más de dos décadas a particulares y compañías de diversos sectores en múltiples áreas del Derecho —Civil, Comercial, Laboral, Penal, Familia y Sucesiones—.",
+      "ejec6": "Asimismo, se desempeñó como Asesor Legal del Ministerio de Seguridad Nacional de la República Argentina, participando en investigaciones interagenciales junto a fuerzas federales.",
+      "goharv1": "Lidera la vertical legal, coordinando la red de legal advisors, aportando estrategia jurídica y experiencia procesal en distintos fueros, con un enfoque basado en la prevención de riesgos y la gobernanza en procesos de transformación empresarial.",
+      "goharv2": "Participa activamente en el desarrollo del ecosistema GoHarv.®, acompañando a empresarios, familias empresarias y directorios en procesos críticos de transformación, continuidad y expansión.",
+      "area1": "Continuidad empresaria y sucesión",
+      "area2": "Gobierno corporativo en empresas familiares",
+      "area3": "Resolución alternativa de conflictos",
+      "area4": "Seguros como herramienta de gestión",
+      "area5": "Negociación estratégica (Harvard Method)",
+      "area6": "Contratos de alto impacto económico",
+      "area7": "Litigios civiles y comerciales",
+      "area8": "Interacción con organismos regulatorios",
+      "area9": "Expansión empresarial",
+      "area10": "Desarrollo comercial",
+      "area11": "Creación de nuevos negocios",
+      "area12": "Apertura de mercados",
+      "area13": "Dirección estratégica de equipos de negociación",
+      "area14": "Estrategia comercial",
+      "area15": "Negocios disruptivos",
+      "area16": "Prospección comercial",
+      "area17": "Franchising Management",
+      "area18": "Estratega en expansión empresarial",
+      "premio1": "GoHarv.®, Candidato WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado del Sistema de Naciones Unidas, creado en 1967 – Categoría: Emerging company – Ginebra, Suiza.",
+      "cta": "Si tu organización enfrenta desafíos vinculados a continuidad empresaria, sucesión en empresas familiares, gestión de riesgos legales o resolución de conflictos complejos, podrás contar con el asesoramiento de nuestro equipo."
+    }
   }
 }

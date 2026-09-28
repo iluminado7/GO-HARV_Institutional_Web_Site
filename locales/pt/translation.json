@@ -352,11 +352,71 @@
     "mencionesSub": "Publicações de mídia, empresas e instituições que incluem este profissional.",
     "mencionesVacio": "Ainda não há menções publicadas.",
     "contenidoSub": "Eventos, insights e novidades dos quais participou.",
-    "contenidoVacio": "Ainda não há conteúdo publicado."
+    "contenidoVacio": "Ainda não há conteúdo publicado.",
+    "sec": {
+      "perfil": "Perfil",
+      "formacion": "Formação",
+      "membresias": "Filiações",
+      "perfilEjec": "Perfil executivo",
+      "enGoharv": "Na GoHarv.®",
+      "areas": "Áreas",
+      "reconocim": "Reconhecimentos"
+    },
+    "tit": {
+      "formacion": "Formação acadêmica",
+      "membresias": "Filiações",
+      "perfilEjec": "Perfil Executivo",
+      "enGoharv": "Na GoHarv.®",
+      "areasPart": "Áreas de maior participação estratégica",
+      "reconocim": "Reconhecimentos"
+    }
   },
   "pronto": {
     "eyebrow": "Em breve",
     "titulo": "O futuro das empresas que buscam expandir-se<br>está sendo construído aqui.",
     "volver": "Voltar ao início"
+  },
+  "perfiles": {
+    "pablo": {
+      "intro1": "O Dr. Pablo N. Cacciatore é Cofundador e membro da alta direção da GoHarv.®.",
+      "intro2": "Na qualidade de Chief Legal Officer, combina visão jurídica com estratégia de negócio para mitigar riscos e assegurar o cumprimento normativo, preservando assim os interesses e o patrimônio das empresas.",
+      "intro3": "Como empresário e advogado corporativo, lidera a estratégia processual em litígios complexos e na resolução de conflitos em contextos empresariais de alto impacto econômico.",
+      "form1": "Advogado",
+      "form2": "Mediador",
+      "form3": "Corretor de Seguros",
+      "form4": "Formação executiva contínua",
+      "form4det": "Conta com diversos certificados e diplomas que atestam sua formação e atualização profissional, obtidos em instituições como a Universidad de Buenos Aires (UBA), a Escola de Pós-Graduação do CPACF e a UNLZ, entre outras entidades de reconhecido prestígio acadêmico.",
+      "memb1": "Inscrição: Advogado",
+      "memb2": "Inscrição: Corretor de Seguros",
+      "memb3": "Membro: Asociación Argentina de Productores Asesores de Seguros",
+      "ejec1": "Com mais de 20 anos de exercício profissional, o Dr. Pablo Nicolás Cacciatore conta com uma sólida trajetória como advogado patrono e procurador de empresas em litígios complexos.",
+      "ejec2": "É especialista em sucessões e planejamento sucessório para a continuidade de empresas familiares, bem como em seguros patrimoniais e danos.",
+      "ejec3": "Sua formação como Mediador permite-lhe intervir em negociações de alta complexidade, aplicando métodos alternativos de resolução de conflitos em cenários sensíveis e de alto impacto econômico.",
+      "ejec4": "Possui ampla experiência na redação e negociação de contratos comerciais para empresas.",
+      "ejec5": "É Fundador do escritório jurídico integral Cacciatore &amp; Asociados, por meio do qual assessorou durante mais de duas décadas pessoas físicas e empresas de diversos setores em múltiplas áreas do Direito —Civil, Comercial, Trabalhista, Penal, Família e Sucessões—.",
+      "ejec6": "Atuou também como Assessor Jurídico do Ministério da Segurança Nacional da República Argentina, participando de investigações interagenciais junto a forças federais.",
+      "goharv1": "Lidera a vertical jurídica, coordenando a rede de legal advisors e aportando estratégia jurídica e experiência processual em diferentes foros, com um enfoque baseado na prevenção de riscos e na governança em processos de transformação empresarial.",
+      "goharv2": "Participa ativamente do desenvolvimento do ecossistema GoHarv.®, acompanhando empresários, famílias empresárias e conselhos em processos críticos de transformação, continuidade e expansão.",
+      "area1": "Continuidade empresarial e sucessão",
+      "area2": "Governança corporativa em empresas familiares",
+      "area3": "Resolução alternativa de conflitos",
+      "area4": "Seguros como ferramenta de gestão",
+      "area5": "Negociação estratégica (Harvard Method)",
+      "area6": "Contratos de alto impacto econômico",
+      "area7": "Litígios cíveis e comerciais",
+      "area8": "Interação com órgãos reguladores",
+      "area9": "Expansão empresarial",
+      "area10": "Desenvolvimento comercial",
+      "area11": "Criação de novos negócios",
+      "area12": "Abertura de mercados",
+      "area13": "Direção estratégica de equipes de negociação",
+      "area14": "Estratégia comercial",
+      "area15": "Negócios disruptivos",
+      "area16": "Prospecção comercial",
+      "area17": "Franchising Management",
+      "area18": "Estrategista em expansão empresarial",
+      "premio1": "GoHarv.®, candidata ao WIPO Global Awards 2026 (World Intellectual Property Organization), organismo especializado do Sistema das Nações Unidas, criado em 1967 – Categoria: Emerging company – Genebra, Suíça.",
+      "cta": "Se a sua organização enfrenta desafios ligados à continuidade empresarial, sucessão em empresas familiares, gestão de riscos jurídicos ou resolução de conflitos complexos, poderá contar com a assessoria da nossa equipe."
+    }
   }
 }
