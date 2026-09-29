@@ -22,3 +22,10 @@ desktop.ini
 *.bak
 *.old
 *.orig
+
+# ─── Material de trabajo, no forma parte del sitio ───
+# academy/ son los PDF de origen (proyecto y certificados editables);
+# textos/ son los documentos de redaccion. Lo que el sitio usa son las
+# imagenes ya convertidas en img/academy/.
+/academy/
+/textos/
