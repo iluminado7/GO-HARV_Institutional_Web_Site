@@ -1252,3 +1252,63 @@
     outline: 2px solid var(--dorado);
     outline-offset: 2px;
 }
+
+
+/* ── Texto justificado ──
+   Va con hyphens:auto (la página declara lang="es", así que el navegador
+   corta las palabras donde corresponde). Sin eso, justificar abre huecos
+   entre palabras y aparecen "ríos" blancos en las líneas largas.
+
+   Quedan fuera los títulos, las etiquetas, las listas cortas y los
+   bloques centrados: justificar ahí no aporta y desalinea. */
+.academy-intro-text p,
+.academy-intro-box p,
+.academy-valor-grid p,
+.academy-programas-intro p,
+.prog-texto p,
+.prog-eco-intro,
+.acc-panel-in p,
+.academy-bajada,
+.academy-parrafo,
+.academy-dos-col p,
+.academy-destacado,
+.academy-nota,
+.area-txt,
+.academy-metodo-grid p,
+.academy-metodo-box,
+.workshop-desc,
+.workshop-extra,
+.alianza-wca p,
+.prog-apartado span {
+    text-align: justify;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    text-wrap: pretty;
+}
+
+/* En columna angosta el justificado deja huecos grandes: ahí gana el
+   alineado a la izquierda, que es como se lee mejor en celular. */
+@media screen and (max-width: 600px) {
+    .academy-intro-text p,
+    .academy-intro-box p,
+    .academy-valor-grid p,
+    .academy-programas-intro p,
+    .prog-texto p,
+    .prog-eco-intro,
+    .acc-panel-in p,
+    .academy-bajada,
+    .academy-parrafo,
+    .academy-dos-col p,
+    .academy-destacado,
+    .academy-nota,
+    .area-txt,
+    .academy-metodo-grid p,
+    .academy-metodo-box,
+    .workshop-desc,
+    .workshop-extra,
+    .alianza-wca p,
+    .prog-apartado span {
+        text-align: left;
+    }
+}
