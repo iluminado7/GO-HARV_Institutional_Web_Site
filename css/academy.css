@@ -1841,6 +1841,12 @@
     }
 }
 
+/* ── ALIANZAS ──
+   Franja clara: fondo blanco y texto oscuro. La base le daba crema
+   (#faf8f2). La ficha de World Compliance queda igual: sus estilos base
+   (fondo blanco, borde y filete dorado) son los mismos que tenia. */
+.academy-page .academy-alianzas { background: var(--blanco); }
+
 /* ── TITULOS ── */
 .academy-page .academy-h2,
 .academy-page .academy-cierre-tit {
