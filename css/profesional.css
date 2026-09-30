@@ -17,7 +17,7 @@
    con la foto. */
 .perfil-hero {
     position: relative;
-    padding: calc(3.5rem + 4rem) 0 4rem;
+    padding: calc(3.5rem + 2.75rem) 0 2.75rem;
     border-bottom: 1px solid rgba(191, 174, 118, .3);
     overflow: hidden;
 }
@@ -25,23 +25,29 @@
 .perfil-hero::before {
     content: "";
     position: absolute;
-    inset: 0 0 0 45%;
+    inset: 0 45% 0 0;
     background-image:
         linear-gradient(rgba(191, 174, 118, .12) 1px, transparent 1px),
         linear-gradient(90deg, rgba(191, 174, 118, .12) 1px, transparent 1px);
     background-size: 48px 48px;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 40%);
-            mask-image: linear-gradient(to right, transparent, #000 40%);
+    -webkit-mask-image: linear-gradient(to left, transparent, #000 40%);
+            mask-image: linear-gradient(to left, transparent, #000 40%);
     pointer-events: none;
 }
 
+/* Datos a la izquierda y foto a la derecha: el orden visual se invierte
+   con CSS para no tocar el HTML de cada ficha. En móvil (una columna)
+   vuelve el orden del HTML, con la foto arriba. */
 .perfil-hero-in {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4.5rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: end;
 }
+
+.perfil-hero-in > .perfil-foto  { grid-column: 2; grid-row: 1; }
+.perfil-hero-in > .perfil-datos { grid-column: 1; grid-row: 1; }
 
 /* Foto con escuadras doradas en dos esquinas */
 .perfil-foto {
@@ -571,6 +577,8 @@
 /* ── RESPONSIVE ── */
 @media screen and (max-width: 900px) {
     .perfil-hero-in { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .perfil-hero-in > .perfil-foto,
+    .perfil-hero-in > .perfil-datos { grid-column: auto; grid-row: auto; }
     .perfil-foto { max-width: 300px; margin-inline: 10px; }
     .perfil-hero::before { inset: 0; }
 
@@ -964,8 +972,9 @@
 /* ═══════════════════════════════════════════════
    REDES DE CONTACTO — íconos redondos de la ficha
    ═══════════════════════════════════════════════
-   Reemplazan a los botones "Contactar" y "LinkedIn". Cada uno en el color
-   de su marca, que es como se los reconoce de un vistazo. */
+   Reemplazan a los botones "Contactar" y "LinkedIn". En los colores de la
+   firma: negro con el ícono dorado; al pasar el cursor, dorado con el
+   ícono blanco. */
 .perfil-redes {
     gap: .8rem;
 }
@@ -976,26 +985,20 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    color: #fff;
+    background: var(--negro);
+    color: var(--dorado);
     font-size: 1.45rem;
     text-decoration: none;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .12);
-    transition: transform var(--anim-rapida) ease, box-shadow var(--anim-rapida) ease, background-color var(--anim-rapida) ease;
+    transition: transform var(--anim-rapida) ease, box-shadow var(--anim-rapida) ease, background-color var(--anim-rapida) ease, color var(--anim-rapida) ease;
 }
 
-.perfil-red--linkedin { background: #0077b5; }
-.perfil-red--whatsapp { background: #25D366; }
-.perfil-red--email    { background: #EC6464; }
-
 .perfil-red:hover {
+    background: var(--dorado);
     color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
 }
-
-.perfil-red--linkedin:hover { background: #005582; }
-.perfil-red--whatsapp:hover { background: #1da851; }
-.perfil-red--email:hover    { background: #d44f4f; }
 
 .perfil-red:focus-visible {
     outline: 2px solid var(--dorado);

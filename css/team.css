@@ -805,3 +805,35 @@ transform:rotateY(0deg) scale(1);
 .team-grid .team-card .button-team {
     margin-top: auto;
 }
+
+/* ── Fila de 5 (Founding Partners) ──
+   Las fichas miden 250px fijos: cinco más los huecos (≈1390px) no entran
+   en el contenedor de 1200px. En esta fila las fichas se vuelven fluidas
+   y se reparten el ancho. Con flex + wrap centrado, si en pantallas medias
+   bajan a 3 + 2, la segunda fila queda centrada y no pegada a la izquierda. */
+.team-grid.team-grid--5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-grid.team-grid--5 .team-card {
+    width: auto;
+    flex: 0 1 calc((100% - 4 * 20px) / 5);
+    padding: 1.4rem 1.1rem 1.6rem;
+}
+
+.team-grid.team-grid--5 .team-name { font-size: 1rem; }
+
+@media screen and (max-width: 1100px) {
+    .team-grid.team-grid--5 .team-card { flex-basis: calc((100% - 2 * 20px) / 3); }
+}
+
+@media screen and (max-width: 992px) {
+    .team-grid.team-grid--5 .team-card { flex-basis: calc((100% - 20px) / 2); }
+}
+
+@media screen and (max-width: 767px) {
+    .team-grid.team-grid--5 .team-card { flex-basis: 100%; max-width: 320px; }
+}
