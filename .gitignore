@@ -27,5 +27,6 @@ desktop.ini
 # academy/ son los PDF de origen (proyecto y certificados editables);
 # textos/ son los documentos de redaccion. Lo que el sitio usa son las
 # imagenes ya convertidas en img/academy/.
-/academy/
+/academy/certificados/
+/academy/estructura&texto/
 /textos/

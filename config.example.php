@@ -25,6 +25,25 @@ return [
         'to_name'    => 'GoHarv.',
     ],
 
+    /* ─────────── Temas de los formularios ───────────
+       La pagina manda un campo oculto 'tema'. Solo se aceptan las claves
+       de esta lista: cualquier otro valor se descarta (un formulario
+       falso no puede inventar una etiqueta ni desviar el mail).
+
+         'etiqueta' → texto que va al asunto del mail y al CSV
+         'to'       → destinatario propio; vacio usa smtp.to_email
+
+       Para sumar un formulario nuevo, se agrega una clave aca y el campo
+       oculto correspondiente en el HTML. */
+    'temas' => [
+        'contacto'            => ['etiqueta' => 'Contacto general',                 'to' => ''],
+        'academy-ia'          => ['etiqueta' => 'Programa Ejecutivo: IA',           'to' => ''],
+        'academy-compliance'  => ['etiqueta' => 'Programa Ejecutivo: Compliance',   'to' => ''],
+        'academy-franquicias' => ['etiqueta' => 'Programa Ejecutivo: Franquicias',  'to' => ''],
+        'academy-in-company'  => ['etiqueta' => 'Formacion In Company',             'to' => ''],
+        'academy-empresa'     => ['etiqueta' => 'Academy para empresas',            'to' => ''],
+    ],
+
     /* ─────────── Cloudflare Turnstile ─────────── */
     // Claves en: https://dash.cloudflare.com  →  Turnstile  →  Add site
     // Si 'secret_key' queda vacío, la verificación se OMITE (útil en local).

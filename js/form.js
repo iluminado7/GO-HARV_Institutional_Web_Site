@@ -20,6 +20,20 @@
   let csrfToken = '';
   let turnstileId = null;
 
+  /* ─────────── De qué formulario viene la consulta ───────────
+     Los botones de otras secciones llegan con ?tema=... en el enlace
+     (por ejemplo "Inscribirme" de cada Programa Ejecutivo). Eso completa
+     el campo oculto, para que el mail llegue etiquetado.
+
+     Es solo comodidad: el servidor valida el tema contra su propia lista
+     blanca, así que un valor inventado en la URL no cambia nada. */
+  (function temaDesdeLaUrl() {
+    const campo = form.querySelector('input[name="tema"]');
+    if (!campo) return;
+    const tema = new URLSearchParams(window.location.search).get('tema');
+    if (tema) campo.value = tema;
+  })();
+
   /* ─────────── Mensajes en la página ─────────── */
   function mostrar(texto, tipo) {
     if (!aviso) return;

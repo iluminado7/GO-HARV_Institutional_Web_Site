@@ -425,6 +425,11 @@
                 <!-- Columna derecha — formulario -->
                 <div class="contact-form">
                     <form id="formContacto" method="POST" action="form.php">
+
+                        <!-- De que formulario viene el mensaje. Los botones de
+                             otras secciones pueden cambiarlo con ?tema=... en el
+                             enlace; el servidor valida contra su lista blanca. -->
+                        <input type="hidden" name="tema" value="contacto">
                         <p class="form-grupo-tit" data-i18n="contact.grupo.datos">Tus datos</p>
                         <div class="form-grid">
                             <div>

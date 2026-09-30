@@ -3142,3 +3142,14 @@ li .marca-reg,
 span .marca-reg {
     font-size: .55em;
 }
+
+
+/* Mismo caso que en academy: .sec-eyebrow es flex con gap, y el <sup> del
+   simbolo de marca quedaba separado como si fuera otro elemento. */
+.sec-eyebrow { gap: 0; }
+.sec-eyebrow::after { margin-left: .8rem; }
+
+.sec-eyebrow .marca-reg {
+    font-size: .45em;
+    margin-left: 0;
+}

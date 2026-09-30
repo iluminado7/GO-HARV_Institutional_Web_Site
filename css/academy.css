@@ -138,8 +138,8 @@
     align-items: center;
     gap: .8rem;
     font-family: 'Montserrat', sans-serif;
-    font-size: .72rem;
-    font-weight: 600;
+    font-size: .85rem;
+    font-weight: 700;
     letter-spacing: .22em;
     text-transform: uppercase;
     color: var(--dorado-oscuro);
@@ -1180,7 +1180,7 @@
    Ficha dentro de Alianzas. El logo va sobre blanco (el archivo trae
    fondo blanco) para que no se recorte contra el crema de la sección. */
 .alianza-wca {
-    max-width: var(--ancho-lectura);
+    /* Ancho completo del contenedor, igual que las dos columnas de arriba */
     margin-top: 2.6rem;
     padding: 2rem 1.9rem;
     background: var(--blanco);
@@ -1189,6 +1189,11 @@
 }
 
 .alianza-cab {
+    /* Centrada como los parrafos: si no, el logo quedaba alineado al borde
+       de la ficha y el texto arrancaba mas adentro. */
+    max-width: var(--ancho-lectura);
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1230,6 +1235,11 @@
 .alianza-estado i { font-size: .95rem; }
 
 .alianza-wca p {
+    /* La ficha es ancha, pero una linea de 1.200px cansa la vista: el texto
+       mantiene el ancho de lectura y se centra dentro de la ficha. */
+    max-width: var(--ancho-lectura);
+    margin-left: auto;
+    margin-right: auto;
     font-size: .96rem;
     line-height: 1.8;
     color: #3a3a3a;
@@ -1311,4 +1321,421 @@
     .prog-apartado span {
         text-align: left;
     }
+}
+
+
+/* ═══════════════════════════════════════════════
+   PROGRAMAS: TARJETAS EN ACADEMY Y PAGINA PROPIA
+   ═══════════════════════════════════════════════
+   Cada Programa Ejecutivo vive en academy/programa-*.html. En academy.html
+   queda una tarjeta enlazada con la misma cabecera que tenia antes. */
+
+.prog-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.prog-card a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem 1.8rem 5rem;
+    background: var(--blanco);
+    border: 1px solid #ebe7db;
+    border-top: 3px solid var(--dorado);
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    transition: border-color var(--anim-rapida) ease, transform var(--anim-rapida) ease, box-shadow var(--anim-rapida) ease;
+}
+
+.prog-card a:hover {
+    border-color: var(--dorado);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .08);
+}
+
+.prog-card a:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.prog-card .prog-num {
+    font-size: 1.4rem;
+    margin-bottom: .6rem;
+}
+
+.prog-card .prog-tit {
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    margin-bottom: .3rem;
+}
+
+.prog-card .prog-sub {
+    margin-bottom: 1.4rem;
+}
+
+/* Los tres datos, uno debajo del otro para que entren en la tarjeta */
+.prog-card .prog-datos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    margin-bottom: 0;
+}
+
+.prog-card .prog-dato {
+    width: 100%;
+    background: #faf8f2;
+}
+
+/* La flecha que indica que la tarjeta lleva a otra pagina */
+.prog-card-ir {
+    position: absolute;
+    left: 1.8rem;
+    bottom: 1.7rem;
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #d8d2c0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #111;
+    transition: background-color var(--anim-rapida) ease, border-color var(--anim-rapida) ease, color var(--anim-rapida) ease, transform var(--anim-rapida) ease;
+}
+
+.prog-card a:hover .prog-card-ir {
+    background: var(--dorado);
+    border-color: var(--dorado);
+    color: #111;
+    transform: translateX(4px);
+}
+
+/* ── Pagina del programa ── */
+.prog-hero {
+    position: relative;
+    padding: calc(3.5rem + 4.5rem) 0 3.5rem;
+    background: var(--negro);
+    color: #fff;
+    overflow: hidden;
+}
+
+.prog-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(191, 174, 118, .10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 174, 118, .10) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: linear-gradient(to left, #000, transparent 65%);
+            mask-image: linear-gradient(to left, #000, transparent 65%);
+    pointer-events: none;
+}
+
+.prog-hero-in { position: relative; }
+
+.prog-migas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .55);
+}
+
+.prog-migas a {
+    color: rgba(255, 255, 255, .55);
+    text-decoration: none;
+    transition: color var(--anim-rapida) ease;
+}
+
+.prog-migas a:hover { color: var(--dorado); }
+.prog-migas [aria-current] { color: #fff; }
+
+.prog-hero .prog-num {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--dorado);
+    margin-bottom: .5rem;
+}
+
+.prog-hero .prog-tipo { color: var(--dorado); }
+
+.prog-hero .prog-tit {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    margin-bottom: .4rem;
+}
+
+.prog-hero .prog-sub {
+    color: rgba(255, 255, 255, .7);
+    margin-bottom: 2rem;
+}
+
+/* Los datos, sobre el negro del hero */
+.prog-hero .prog-datos { margin-bottom: 0; }
+
+.prog-hero .prog-dato {
+    background: rgba(255, 255, 255, .06);
+    border-left-color: var(--dorado);
+}
+
+.prog-hero .prog-dato-val { color: #fff; }
+.prog-hero .prog-dato-tit { color: rgba(255, 255, 255, .6); }
+
+/* El cuerpo de la pagina usa las mismas clases que tenia en academy.html */
+.prog-cuerpo .prog-texto,
+.prog-cuerpo .prog-acordeon,
+.prog-cuerpo .prog-eco,
+.prog-cuerpo .prog-apartado {
+    max-width: var(--ancho-contenido);
+}
+
+.prog-cuerpo .prog-cta { margin-top: 0; }
+
+@media screen and (max-width: 600px) {
+    .prog-card a { padding: 1.6rem 1.4rem 4.6rem; }
+    .prog-card-ir { left: 1.4rem; bottom: 1.4rem; width: 40px; height: 40px; }
+    .prog-hero { padding-top: calc(3.5rem + 3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .prog-card a, .prog-card-ir { transition: none; }
+    .prog-card a:hover { transform: none; }
+    .prog-card a:hover .prog-card-ir { transform: none; }
+}
+
+
+/* Titulo que introduce las tres etapas. Estaba dentro del <ol>, y como la
+   lista es una grilla de tres columnas ocupaba una celda y empujaba el
+   tercer paso a la fila de abajo. */
+.academy-pasos-tit {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--negro);
+    margin: 2.2rem 0 1.2rem;
+}
+
+
+/* Descripcion de cada tarjeta de programa. Antes dos usaban .prog-sub
+   (gris) y la del medio era un <p> suelto, que heredaba el negro del
+   cuerpo: se veian de distinto color. */
+.prog-card-desc {
+    font-size: .95rem;
+    line-height: 1.75;
+    color: #111;
+    text-align: justify;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+    margin-top: .9rem;
+}
+
+@media screen and (max-width: 600px) {
+    .prog-card-desc { text-align: left; }
+}
+
+
+/* ── Faculty: cada parrafo en su propio recuadro ──
+   Se resuelve por CSS sobre los <p> que ya estaban: no hace falta
+   envolverlos en divs ni tocar el texto. */
+.academy-faculty .academy-dos-col {
+    gap: 1.2rem;
+    align-items: stretch;
+}
+
+.academy-faculty .academy-dos-col p {
+    padding: 1.7rem 1.6rem;
+    background: #faf8f2;
+    border: 1px solid #ebe7db;
+    border-top: 2px solid var(--dorado);
+    transition: border-color var(--anim-rapida) ease, transform var(--anim-rapida) ease;
+}
+
+.academy-faculty .academy-dos-col p:hover {
+    border-color: var(--dorado);
+    transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .academy-faculty .academy-dos-col p { transition: none; }
+    .academy-faculty .academy-dos-col p:hover { transform: none; }
+}
+
+
+/* ── El ® dentro de las etiquetas ──
+   .academy-kicker y .academy-label son contenedores flex con gap: el <sup>
+   que crea js/marca-registrada.js es un elemento, asi que recibia ese
+   espacio a los dos lados y el simbolo quedaba suelto y agrandado.
+   El gap pasa a la linea decorativa, que es para quien estaba pensado. */
+.academy-kicker,
+.academy-label {
+    gap: 0;
+}
+
+.academy-kicker::after { margin-left: .8rem; }
+.academy-label::before { margin-right: .9rem; }
+.academy-label::after { margin-left: .9rem; }
+
+.academy-kicker .marca-reg,
+.academy-label .marca-reg,
+.prog-tipo .marca-reg {
+    font-size: .45em;
+    margin-left: 0;
+}
+
+
+/* ═══════════════════════════════════════════════
+   SECCIONES ALTERNADAS: NEGRO Y BLANCO
+   ═══════════════════════════════════════════════
+   La pagina alterna fondo claro y oscuro de arriba a abajo. Cada franja
+   oscura corta el bloque de texto y marca donde empieza un tema nuevo.
+
+   Una sola clase, .academy-negro, invierte los colores de todo lo que
+   vive adentro: no hay que duplicar componentes. */
+
+.academy-negro {
+    background: var(--negro);
+    color: #fff;
+}
+
+/* Etiqueta y titulos */
+.academy-negro .academy-kicker { color: var(--dorado); }
+
+.academy-negro .academy-kicker::after {
+    background: linear-gradient(to right, var(--dorado), transparent);
+}
+
+.academy-negro .academy-h2,
+.academy-negro .academy-pasos-tit,
+.academy-negro h2,
+.academy-negro h3 { color: #fff; }
+
+/* Texto corrido */
+.academy-negro p,
+.academy-negro .academy-bajada,
+.academy-negro .academy-parrafo,
+.academy-negro .academy-dos-col p,
+.academy-negro .academy-valor-grid p { color: rgba(255, 255, 255, .8); }
+
+.academy-negro .academy-sub-tit { color: var(--dorado); }
+
+/* Frase destacada */
+.academy-negro .academy-principio {
+    color: #fff;
+    border-left-color: var(--dorado);
+}
+
+/* Tarjetas: en vez de blanco sobre negro, un gris apenas mas claro que
+   el fondo. El blanco puro daria un contraste duro y cansador. */
+.academy-negro .paso,
+.academy-negro .workshop,
+.academy-negro .pregunta,
+.academy-negro .prog-card a,
+.academy-negro .academy-chips li {
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .14);
+    color: rgba(255, 255, 255, .85);
+}
+
+.academy-negro .paso:hover,
+.academy-negro .workshop:hover,
+.academy-negro .pregunta:hover,
+.academy-negro .prog-card a:hover,
+.academy-negro .academy-chips li:hover {
+    border-color: var(--dorado);
+    background: rgba(191, 174, 118, .1);
+}
+
+.academy-negro .paso-tit,
+.academy-negro .workshop-tit,
+.academy-negro .prog-tit,
+.academy-negro .area-tit { color: #fff; }
+
+.academy-negro .paso-txt,
+.academy-negro .workshop-desc,
+.academy-negro .workshop-extra,
+.academy-negro .workshop-lista li,
+.academy-negro .area-txt,
+.academy-negro .prog-card-desc { color: rgba(255, 255, 255, .78); }
+
+/* La flecha de cada paso y las vinetas siguen doradas: son el hilo que
+   guia la lectura. */
+.academy-negro .paso:not(:last-child)::after { border-color: var(--dorado); }
+
+/* Listas */
+.academy-negro .academy-lista li,
+.academy-negro .academy-areas li { border-bottom-color: rgba(255, 255, 255, .12); }
+
+.academy-negro .academy-areas { border-top-color: rgba(255, 255, 255, .12); }
+
+/* Datos de los programas */
+.academy-negro .prog-dato { background: rgba(255, 255, 255, .06); }
+.academy-negro .prog-dato-val { color: #fff; }
+.academy-negro .prog-dato-tit { color: rgba(255, 255, 255, .6); }
+
+.academy-negro .prog-card-ir {
+    border-color: rgba(255, 255, 255, .25);
+    color: #fff;
+}
+
+.academy-negro .prog-card a:hover .prog-card-ir {
+    background: var(--dorado);
+    border-color: var(--dorado);
+    color: #111;
+}
+
+/* Estados y notas */
+.academy-negro .workshop-estado { color: rgba(255, 255, 255, .55); }
+
+.academy-negro .academy-nota {
+    background: rgba(191, 174, 118, .14);
+    color: #fff;
+}
+
+/* El boton negro desaparece sobre negro: pasa a contorno dorado */
+.academy-negro .academy-btn {
+    background: transparent;
+    border-color: var(--dorado);
+    color: #fff;
+}
+
+.academy-negro .academy-btn:hover { color: #111; }
+
+/* La ficha de World Compliance queda clara a proposito: el logo viene con
+   fondo blanco y asi ademas resalta sobre la franja oscura. */
+.academy-negro .alianza-wca {
+    background: var(--blanco);
+    border-color: #ebe7db;
+}
+
+.academy-negro .alianza-wca p { color: #3a3a3a; }
+.academy-negro .alianza-tit { color: var(--negro); }
+.academy-negro .alianza-cab { border-bottom-color: #ebe7db; }
+
+/* Franjas claras: se unifican en blanco para que el alternado se note.
+   Alianzas no entra aca: es una de las oscuras y esta regla le ganaba por
+   venir despues en el archivo. */
+.academy-eventos { background: transparent; }
+
+
+/* El boton secundario (.button-about.button-outline) esta pensado para
+   fondo claro: texto negro y borde negro traslucido. Sobre la franja
+   oscura quedaba invisible. */
+.academy-negro .button-about.button-outline {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .35);
+}
+
+.academy-negro .button-about.button-outline:hover {
+    color: #111;
+    background: var(--dorado);
+    border-color: var(--dorado);
 }

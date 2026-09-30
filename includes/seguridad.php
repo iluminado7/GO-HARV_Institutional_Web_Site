@@ -198,13 +198,22 @@ function gh_rotar_csv(string $archivo, float $maxMB): void
  * caído o la App Password vence, el contacto se pierde y nadie se entera.
  * Este CSV es la red de seguridad. Se puede desactivar en config.php.
  */
-function gh_respaldar_contacto(array $campos, string $ip): void
+function gh_respaldar_contacto(array $campos, string $ip, string $tema = ''): void
 {
     $archivo = gh_dir_logs() . '/contactos.csv';
 
     /* Se comprueba ANTES de escribir: si toca archivar, esta fila ya
        inaugura el archivo nuevo. */
     gh_rotar_csv($archivo, gh_config_csv_max());
+
+    /* Un CSV anterior no tiene la columna 'tema'. Mezclar filas con y sin
+       esa columna deja el archivo corrido, asi que el viejo se archiva. */
+    if (is_file($archivo)) {
+        $primera = (string)@fgets(@fopen($archivo, 'r'));
+        if (strpos($primera, 'tema') === false) {
+            @rename($archivo, gh_dir_logs() . '/contactos-' . date('Y-m-d_His') . '.csv');
+        }
+    }
 
     $nuevo = !is_file($archivo);
 
@@ -218,11 +227,12 @@ function gh_respaldar_contacto(array $campos, string $ip): void
         if ($nuevo) {
             // BOM para que Excel abra los acentos correctamente.
             fwrite($fh, "\xEF\xBB\xBF");
-            fputcsv($fh, ['fecha', 'nombre', 'apellido', 'empresa', 'email',
+            fputcsv($fh, ['fecha', 'tema', 'nombre', 'apellido', 'empresa', 'email',
                           'telefono', 'pais', 'mensaje', 'ip']);
         }
         fputcsv($fh, [
             date('Y-m-d H:i:s'),
+            $tema,
             $campos['nombre'], $campos['apellido'], $campos['empresa'],
             $campos['email'],  $campos['telefono'], $campos['pais'],
             $campos['mensaje'], $ip,
@@ -230,6 +240,30 @@ function gh_respaldar_contacto(array $campos, string $ip): void
         flock($fh, LOCK_UN);
     }
     fclose($fh);
+}
+
+/* ══════════════ 7. Tema del formulario ══════════════ */
+/**
+ * Devuelve el tema recibido solo si esta en la lista de config.php.
+ *
+ * Es una lista blanca a proposito: el tema decide el asunto del mail y
+ * puede decidir el destinatario, asi que un valor libre dejaria que
+ * cualquiera desviara los envios o metiera texto arbitrario en el asunto.
+ * Si el valor no figura, se cae al primero de la lista.
+ */
+function gh_tema(string $recibido, array $temas): array
+{
+    if ($temas === []) {
+        return ['clave' => 'contacto', 'etiqueta' => 'Contacto general', 'to' => ''];
+    }
+    $clave = isset($temas[$recibido]) ? $recibido : array_key_first($temas);
+    $tema  = $temas[$clave];
+
+    return [
+        'clave'    => $clave,
+        'etiqueta' => (string)($tema['etiqueta'] ?? $clave),
+        'to'       => (string)($tema['to'] ?? ''),
+    ];
 }
 
 /* ══════════════ 6. Cloudflare Turnstile ══════════════ */

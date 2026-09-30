@@ -117,16 +117,20 @@ foreach (['legal', 'privacidad'] as $consentimiento) {
     }
 }
 
-/* ══════════ 9. Filtro de spam ══════════ */
+/* ══════════ 9. Tema del formulario ══════════ */
+// De que formulario vino el mensaje. Lista blanca: ver config.php.
+$tema = gh_tema((string)($_POST['tema'] ?? ''), (array)($config['temas'] ?? []));
+
+/* ══════════ 10. Filtro de spam ══════════ */
 if (gh_parece_spam($campos['mensaje'], $campos['nombre'], (int)$anti['max_enlaces'])) {
     gh_log("Spam filtrado desde $ip <{$campos['email']}>");
     // Igual que el honeypot: no le damos pistas al spammer.
     gh_json(['ok' => true, 'codigo' => 'OK', 'mensaje' => 'Mensaje enviado.']);
 }
 
-/* ══════════ 10. Respaldo y registro del envío ══════════ */
+/* ══════════ 11. Respaldo y registro del envío ══════════ */
 if (!empty($anti['respaldo_csv'])) {
-    gh_respaldar_contacto($campos, $ip);
+    gh_respaldar_contacto($campos, $ip, $tema['etiqueta']);
 }
 
 gh_registrar_intento($ip, (int)$anti['ventana_minutos']);
@@ -134,7 +138,7 @@ gh_registrar_intento($ip, (int)$anti['ventana_minutos']);
 /* Token de un solo uso: evita reenvíos por doble clic o replay. */
 unset($_SESSION['csrf_token'], $_SESSION['csrf_emitido']);
 
-/* ══════════ 11. Enviar el email ══════════ */
+/* ══════════ 12. Enviar el email ══════════ */
 $smtp = $config['smtp'];
 $mail = new PHPMailer(true);
 
@@ -155,17 +159,20 @@ try {
     $mail->Timeout    = 15;
 
     $mail->setFrom($smtp['from_email'], $smtp['from_name']);
-    $mail->addAddress($smtp['to_email'], $smtp['to_name']);
+    // El tema puede tener su propia casilla (ventas, academy, legales...)
+    $destino = $tema['to'] !== '' ? $tema['to'] : $smtp['to_email'];
+    $mail->addAddress($destino, $smtp['to_name']);
     // "Responder" va directo al contacto. PHPMailer valida la dirección y
     // rechaza saltos de línea, así que no hay header injection posible.
     $mail->addReplyTo($campos['email'], $campos['nombre'] . ' ' . $campos['apellido']);
 
     $mail->isHTML(true);
-    $mail->Subject = 'Nuevo contacto web — ' . $campos['nombre'] . ' ' . $campos['apellido'];
+    $mail->Subject = '[' . $tema['etiqueta'] . '] ' . $campos['nombre'] . ' ' . $campos['apellido'];
 
     $mail->Body =
         '<h2 style="font-family:sans-serif">Nuevo contacto desde la web</h2>'
         . '<table style="font-family:sans-serif;border-collapse:collapse" cellpadding="6">'
+        . '<tr><td><strong>Formulario</strong></td><td>' . $esc($tema['etiqueta']) . '</td></tr>'
         . '<tr><td><strong>Nombre</strong></td><td>'   . $esc($campos['nombre'] . ' ' . $campos['apellido']) . '</td></tr>'
         . '<tr><td><strong>Empresa</strong></td><td>'  . $esc($campos['empresa'])  . '</td></tr>'
         . '<tr><td><strong>Email</strong></td><td>'    . $esc($campos['email'])    . '</td></tr>'
@@ -177,7 +184,7 @@ try {
         . '<hr><p style="font-family:sans-serif;font-size:12px;color:#777">Recibido el '
         . date('d/m/Y H:i') . ' — IP ' . $esc($ip) . '</p>';
 
-    $mail->AltBody = "Nuevo contacto de {$campos['nombre']} {$campos['apellido']}\n"
+    $mail->AltBody = "Formulario: {$tema['etiqueta']}\nNuevo contacto de {$campos['nombre']} {$campos['apellido']}\n"
         . "Empresa: {$campos['empresa']}\nEmail: {$campos['email']}\n"
         . "Teléfono: {$campos['telefono']}\nPaís: {$campos['pais']}\n\n"
         . "Mensaje:\n{$campos['mensaje']}";
