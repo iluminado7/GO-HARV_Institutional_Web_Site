@@ -1739,3 +1739,380 @@
     background: var(--dorado);
     border-color: var(--dorado);
 }
+
+
+/* ═══════════════════════════════════════════════
+   ACADEMY.HTML — RITMO, JERARQUÍA Y MOVIMIENTO
+   ═══════════════════════════════════════════════
+   Todo va bajo .academy-page (clase del <body> de academy.html): las
+   paginas de academy/ comparten esta hoja y no deben cambiar.
+
+   Solo diseño: ningun texto se agrega, se quita ni se reescribe. */
+
+/* ── Aire de las franjas ──
+   .section trae 4.5rem arriba y 2rem abajo (7rem/2rem en desktop). Con
+   franjas negras y blancas alternadas, el contenido quedaba pegado al
+   borde inferior de cada una. Aca el aire es el mismo arriba y abajo. */
+.academy-page .main > .section {
+    padding: clamp(4.5rem, 9vw, 7rem) 0;
+    scroll-margin-top: 3.5rem;   /* los anclas no quedan bajo el header */
+}
+
+/* ── HERO ── */
+.academy-page .academy-hero::before {
+    /* Un halo dorado muy tenue detras del titulo: da profundidad al negro */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 55% 45% at 50% 45%, rgba(191, 174, 118, .14), transparent 70%);
+    pointer-events: none;
+}
+
+/* La trama se desliza muy despacio: la pagina se siente viva sin que el
+   movimiento llame la atencion sobre si mismo. */
+.academy-page .academy-hero-overlay {
+    animation: academy-trama 60s linear infinite;
+}
+
+@keyframes academy-trama {
+    to { background-position: 56px 56px, 56px 56px; }
+}
+
+.academy-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .9rem 1rem;
+}
+
+/* Accion principal: dorado lleno. La secundaria queda en contorno. */
+.academy-btn--dorado {
+    background: var(--dorado);
+    border-color: var(--dorado);
+    color: #111;
+}
+
+.academy-btn--dorado::before { background: #fff; }
+.academy-btn--dorado:hover { color: #111; border-color: #fff; }
+
+/* Entrada del hero al cargar: el titulo se descubre (mismo efecto que los
+   titulos del resto del sitio) y detras llegan la bajada y los botones.
+   Enganchado a .js-anim: sin JS todo se ve quieto y completo. */
+.js-anim .academy-page .academy-title {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(14px);
+    animation: academy-titulo 1s var(--anim-curva) .1s forwards;
+}
+
+.js-anim .academy-page .academy-description,
+.js-anim .academy-page .academy-hero-ctas {
+    opacity: 0;
+    transform: translateY(var(--anim-recorrido));
+    animation: academy-entra .9s var(--anim-curva) .35s forwards;
+}
+
+.js-anim .academy-page .academy-hero-ctas { animation-delay: .5s; }
+
+@keyframes academy-titulo {
+    to { clip-path: inset(0 0 -10% 0); transform: none; }
+}
+
+@keyframes academy-entra {
+    to { opacity: 1; transform: none; }
+}
+
+/* ── ETIQUETAS ──
+   En Que es, Programas y Eventos la etiqueta es el unico titulo de la
+   seccion: se la agranda para que no pese menos que las demas. */
+.academy-page :is(.academy-intro, .academy-programas, .academy-eventos) .academy-kicker {
+    font-size: clamp(.95rem, 1.5vw, 1.1rem);
+}
+
+.academy-page :is(.academy-intro, .academy-programas, .academy-eventos) .academy-kicker::after {
+    max-width: 320px;
+}
+
+/* En celular vuelven al tamaño comun: "¿QUE ES GOHARV ACADEMY®?" no
+   entraba en una linea y se cortaba. */
+@media screen and (max-width: 600px) {
+    .academy-page :is(.academy-intro, .academy-programas, .academy-eventos) .academy-kicker {
+        font-size: .85rem;
+        letter-spacing: .16em;
+    }
+}
+
+/* ── TITULOS ── */
+.academy-page .academy-h2,
+.academy-page .academy-cierre-tit {
+    text-wrap: balance;
+}
+
+/* Los <br> de titulos y bajadas estan pensados para el ancho de desktop.
+   En pantalla angosta cortaban la frase en lugares raros. */
+@media screen and (max-width: 900px) {
+    .academy-page :is(.academy-h2, .academy-bajada) br { display: none; }
+}
+
+/* En In Company la bajada comparte fila con el boton: la columna es mas
+   angosta y el <br> cortaba en "de acuerdo con sus / necesidades". */
+.academy-page .academy-incompany .academy-bajada br { display: none; }
+
+/* "El servicio podra comprender" quedaba pegado al parrafo de arriba */
+.academy-page .academy-unidad-empresa .academy-sub-tit { margin-top: 2.6rem; }
+
+/* ── ANCHO DE LECTURA ──
+   Parrafos que ocupaban el contenedor entero (1.200px por linea). */
+.academy-page .academy-valor-grid,
+.academy-page .academy-unidad-empresa .academy-dos-col {
+    max-width: var(--ancho-lectura);
+}
+
+.academy-page .academy-valor .container > p.reveal {
+    max-width: var(--ancho-lectura);
+    font-size: .98rem;
+    line-height: 1.85;
+    text-align: justify;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .academy-page .academy-valor .container > p.reveal { text-align: left; }
+}
+
+/* La idea central de "Creamos el Academy" se leia como un parrafo mas:
+   pasa a frase destacada, con el mismo tratamiento que la cita de Valor. */
+.academy-page .academy-unidad-empresa .container > p:not([class]) {
+    max-width: var(--ancho-lectura);
+    margin-top: 2.6rem;
+    padding-left: 1.4rem;
+    border-left: 3px solid var(--dorado);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    font-weight: 500;
+    color: #111;
+}
+
+/* La banda con el boton: centrada y con la trama del hero, para que no
+   sea una caja negra con un boton suelto en una esquina. */
+.academy-page .academy-cta-band--negro {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    justify-content: center;
+    padding: clamp(2.2rem, 5vw, 3.2rem) 2rem;
+}
+
+.academy-page .academy-cta-band--negro::before,
+.academy-page .academy-incompany::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(191, 174, 118, .10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 174, 118, .10) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 10%, transparent 70%);
+            mask-image: radial-gradient(ellipse at center, #000 10%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── IN COMPANY ──
+   Poco contenido en una franja entera: pasa a banda horizontal, texto a
+   la izquierda y boton a la derecha. La trama entra desde la derecha,
+   como en el hero de las paginas de programa. */
+.academy-page .academy-incompany {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.academy-page .academy-incompany::before {
+    -webkit-mask-image: linear-gradient(to left, #000, transparent 60%);
+            mask-image: linear-gradient(to left, #000, transparent 60%);
+}
+
+@media screen and (min-width: 901px) {
+    .academy-page .academy-incompany .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 4rem;
+        align-items: center;
+    }
+
+    .academy-page .academy-incompany .container > * { grid-column: 1; }
+
+    .academy-page .academy-incompany .container > .academy-btn {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+    }
+
+    .academy-page .academy-incompany .academy-bajada { margin-bottom: 0; }
+}
+
+/* ── LAS TRES ETAPAS ──
+   Solo la primera tiene subtexto: con el numero grande las tres tienen
+   el mismo peso visual. */
+.academy-page .paso-num {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--dorado);
+    margin-bottom: 1.2rem;
+}
+
+/* ── HOVER SOLO EN LO QUE SE PUEDE CLICKEAR ──
+   Pasos, chips, workshops y recuadros de Faculty se levantaban o
+   cambiaban de color al pasar el mouse: eso promete un click que no
+   existe. */
+.academy-page .academy-negro .paso:hover,
+.academy-page .academy-negro .workshop:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .05);
+}
+
+.academy-page .academy-chips li:hover {
+    background: var(--blanco);
+    border-color: rgba(191, 174, 118, .55);
+}
+
+.academy-page .academy-faculty .academy-dos-col p:hover {
+    transform: none;
+    border-color: #ebe7db;
+    border-top-color: var(--dorado);
+}
+
+/* ── PROGRAMAS ──
+   La descripcion iba en #111, mas oscura que los titulos. Justificada en
+   una columna de ~350px abria huecos: a la izquierda se lee mejor. */
+.academy-page .prog-card-desc {
+    color: #4a4a4a;
+    text-align: left;
+}
+
+/* ── WORKSHOPS ──
+   Las dos tarjetas tienen largos distintos: el estado y el boton quedan
+   siempre al pie, a la misma altura en ambas. */
+.academy-page .workshop {
+    display: flex;
+    flex-direction: column;
+}
+
+.academy-page .workshop-estado {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: 1.2rem;
+}
+
+.academy-page .workshop > .button-about { align-self: flex-start; }
+
+/* ── WORLD COMPLIANCE ASSOCIATION ──
+   En desktop, logo y titulo quedan fijos a la izquierda mientras se lee
+   el texto a la derecha, en vez de una columna centrada con margenes
+   vacios a los costados. */
+@media screen and (min-width: 901px) {
+    .academy-page .alianza-wca {
+        display: grid;
+        grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+        column-gap: clamp(2rem, 4vw, 3.5rem);
+        padding: 2.6rem clamp(1.9rem, 4vw, 3rem);
+    }
+
+    .academy-page .alianza-cab {
+        grid-column: 1;
+        grid-row: 1 / span 5;   /* los cinco parrafos de la ficha */
+        align-self: start;
+        position: sticky;
+        top: calc(3.5rem + 2rem);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        max-width: none;
+        margin: 0;
+    }
+
+    .academy-page .alianza-wca p {
+        grid-column: 2;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* ── LAS CINCO UNIDADES ──
+   Con auto-fit quedaban 4 + 1 en anchos intermedios. Columnas fijas:
+   5 → 3 → 2 (la ultima ocupa la fila entera) → 1. */
+.academy-page .academy-unidades { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+@media screen and (max-width: 1100px) {
+    .academy-page .academy-unidades { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media screen and (max-width: 760px) {
+    .academy-page .academy-unidades { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .academy-page .unidad:last-child { grid-column: 1 / -1; }
+}
+
+@media screen and (max-width: 480px) {
+    .academy-page .academy-unidades { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* La unidad en la que el usuario ya esta */
+.academy-page .unidad a[aria-current="page"] {
+    border-color: var(--dorado);
+    background: rgba(191, 174, 118, .08);
+    cursor: default;
+}
+
+.academy-page .unidad a[aria-current="page"]:hover { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .academy-page .academy-hero-overlay { animation: none; }
+    .academy-page .academy-title,
+    .academy-page .academy-description,
+    .academy-page .academy-hero-ctas {
+        animation: none;
+        opacity: 1;
+        clip-path: none;
+        transform: none;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════
+   APARICION LIGADA AL SCROLL
+   ═══════════════════════════════════════════════
+   Cada bloque (parrafo, titulo, tarjeta, item) aparece a medida que el
+   usuario scrollea: sube 36px y se asienta en su lugar. La posicion del
+   scroll decide cuanto se ve, no un temporizador. Una vez que llego, queda.
+
+   js/academy.js marca los bloques con .sr y les escribe --p (de 0 a 1).
+   Al llegar a 1 les saca la clase y quedan como cualquier elemento. */
+
+/* El sistema general (.reveal y .stagger de scrollreveal.js) queda
+   apagado en esta pagina: lo reemplaza este. Sin JS, todo visible. */
+.academy-page .main .reveal,
+.academy-page .main .js-stagger.js-stagger > * {
+    opacity: 1;
+    transform: none;
+}
+
+/* .sr.sr y .sr-activo suben la especificidad por encima de las dos
+   reglas de arriba (el .stagger usa una clase duplicada). */
+.academy-page.sr-activo .main .sr.sr {
+    opacity: var(--p, 0);
+    transform: translate3d(0, calc((1 - var(--p, 0)) * 36px), 0);
+    /* Un respiro corto: la rueda del mouse avanza a saltos de ~100px y
+       sin esto el bloque saltaria con ella. */
+    transition: opacity .3s cubic-bezier(.2, .6, .3, 1),
+                transform .3s cubic-bezier(.2, .6, .3, 1);
+}
+
+/* La linea dorada de la etiqueta crece con el mismo avance */
+.academy-page.sr-activo .main .academy-kicker.sr::after {
+    transform: scaleX(var(--p, 0));
+    transform-origin: left center;
+    transition: transform .3s cubic-bezier(.2, .6, .3, 1);
+}
